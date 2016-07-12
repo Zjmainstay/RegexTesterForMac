@@ -2,10 +2,10 @@
 A regular expression tester for Mac base on regex101.com
 
 ##Screenshot
-![RegexTesterForMac](screenshot.png)
+![RegexTesterForMac](app/screenshot.png)
 
 ##Download
-[Regex101.zip](dist/Regex101.zip)
+[Regex101.zip](https://raw.githubusercontent.com/Zjmainstay/RegexTesterForMac/master/dist/Regex101.zip)
 
 ## Build
 
