@@ -44,7 +44,18 @@
             </div>
             <div class="text_overflow">
                 <h1 id="logo">
-                    <a href="/">
+                    <script>
+                        var appHref = location.href;    //Init App and get href
+                        function resetApp() {
+                            var homeObj = document.getElementById('home');
+                            if(homeObj.href.indexOf('regex101.com') != -1) {
+                                homeObj.href=appHref;
+                            } else {
+                                homeObj.href='?t=' + Math.random();
+                            }
+                        }
+                    </script>
+                    <a href="javascript:;" id="home" onclick="resetApp();">
                         <div id="large_header"><span class="part1">regular</span> <span class="part2">expressions</span> <span class="part3">101</span></div>
                         <div id="small_header"><span class="part1">reg</span><span class="part2">ex</span> <span class="part3">101</span></div>
                     </a>
