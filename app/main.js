@@ -28255,6 +28255,7 @@ function(e, t, n) {
     },
     f = {
         initialize: function(e, t) {
+            return void i("gaTrackingID is required in initialize()");
             return e ? (t && (t.debug && t.debug === !0 && (u = !0), t.titleCase === !1 && (s = !1)),
             function(e, t, n, r, o, a, i) {
                 e.GoogleAnalyticsObject = o,
