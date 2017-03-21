@@ -12,10 +12,15 @@ A regular expression tester for Mac base on regex101.com
 1. Install [MacGap](https://github.com/MacGapProject/MacGap1) 
 
    ```$ sudo gem install macgap```
+2. Clone Project
 
+   ```$ git clone https://github.com/Zjmainstay/RegexTesterForMac.git```
 2. Build application:
 
-    ```$ macgap build app --name Regex101 --output build```
+    ```
+    $ cd RegexTesterForMac
+    $ sh ./install.sh
+    ```
 
 
 The build script generates an application, available inside the `build` folder.
