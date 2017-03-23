@@ -1,3 +1,482 @@
+var globalSettings;
+var _HOST = location.protocol + "//" + location.hostname;
+if(_HOST == 'file://') {
+    _HOST = 'http://regex.zjmainstay.cn';
+}
+var langMap = {
+    
+    "Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript" : {
+        "zh": "在线正则表达式测试与调试工具：PHP, PCRE, Python, Golang and JavaScript"
+    },
+    "Save & Share" : {
+        "zh": "保存与分享"
+    },
+    "Save Regex" : {
+        "zh": "保存正则表达式"
+    },
+    "Flavor" : {
+        "zh": "语言风格"
+    },
+    "Regex Library" : {
+        "zh": "正则库"
+    },
+    "Regex Editor" : {
+        "zh": "正则编辑器"
+    },
+    "Live Help (IRC, opens new window)" : {
+        "zh": "在线帮助（IRC，新窗口打开）"
+    },
+    "Tools" : {
+        "zh": "工具"
+    },
+    "Code Generator" : {
+        "zh": "代码生成"
+    },
+    "Regex Debugger" : {
+        "zh": "正则执行步骤"
+    },
+    "Regular Expression" : {
+        "zh": "正则表达式"
+    },
+    "insert your regular expression here" : {
+        "zh": "在此输入你的正则表达式"
+    },
+    "insert your test string here" : {
+        "zh": "在此输入你的测试字符串文本"
+    },
+    "insert your replacement value here" : {
+        "zh": "在此输入你的替换文本（$1 表示引用正则表达式第一个子模式）"
+    },
+    "Test String" : {
+        "zh": "测试文本"
+    },
+    "Substitution" : {
+        "zh": "替换"
+    },
+    "Delimiters" : {
+        "zh": "分隔符"
+    },
+    "Regex Versions" : {
+        "zh": "正则版本"
+    },
+    "Match" : {
+        "zh": "匹配"
+    },
+    "steps" : {
+        "zh": "步"
+    },
+    "No Match" : {
+        "zh": "无匹配"
+    },
+    "{1} matches" : {
+        "zh": "{1} 次匹配"
+    },
+    "{1} match" : {
+        "zh": "{1} 次匹配"
+    },
+    "{1} step" : {
+        "zh": "{1} 步"
+    },
+    "{1} steps" : {
+        "zh": "{1} 步"
+    },
+    "Processing..." : {
+        "zh": "匹配中..."
+    },
+    "Engine Error" : {
+        "zh": "引擎错误"
+    },
+    "Catastrophic Backtracking" : {
+        "zh": "回溯次数过多"
+    },
+    "Timeout" : {
+        "zh": "超时（可在配置中调整超时时间）"
+    },
+    "Pattern Error" : {
+        "zh": "正则表达式错误"
+    },
+    "Debug data" : {
+        "zh": "调试数据"
+    },
+    "Generated Code" : {
+        "zh": "生成代码"
+    },
+    "Please keep in mind that these code samples are automatically generated and are not guaranteed to work. If you find any syntax errors, feel free to submit a bug report." : {
+        "zh": "请记住这里的代码是自动生成的，并不保证一定可以。如果你发现语法错误，你可以随意提交一个bug报告。"
+    },
+    "For a full regex reference for {1}, please visit:" : {
+        "zh": "完整{1}正则表达式参考，请访问："
+    },
+    "Regex Flags" : {
+        "zh": "正则模式修正符"
+    },
+    "Don't return after first match" : {
+        "zh": "匹配全部可匹配结果"
+    },
+    "Case insensitive match" : {
+        "zh": "不区分大小写"
+    },
+    "^ and $ match start/end of line" : {
+        "zh": "多行模式，此模式下^和$可以分别匹配行首和行尾"
+    },
+    "Dot matches newline" : {
+        "zh": "单行模式，此模式下.能匹配任意字符，包括换行符"
+    },
+    "Ignore whitespace" : {
+        "zh": "忽略空白字符，可以多行书写，并使用#进行注释说明"
+    },
+    "Allow duplicate subpattern names" : {
+        "zh": "允许子模式重复命名，如：(?<name>N1)(?<name>N2)"
+    },
+    "Match with full unicode" : {
+        "zh": "模式字符串被当成UTF-8"
+    },
+    "Make quantifiers lazy" : {
+        "zh": "使量词默认为非贪婪模式"
+    },
+    "Disallow meaningless escapes" : {
+        "zh": "禁止模式中的反斜线后面跟上一个没有特殊意义的字母"
+    },
+    "Anchor to start of pattern" : {
+        "zh": "强制仅从目标字符串的开头开始匹配"
+    },
+    "$ matches only end of pattern" : {
+        "zh": "$字符仅匹配目标字符串的结尾；没有此选项时，如果最后一个字符是换行符的话$字符也能匹配。"
+    },
+    "Make escape sequences perform ASCII-only matching" : {
+        "zh": "转义系列仅执行ASCII匹配"
+    },
+    "Proceed matching from where previous match ended only" : {
+        "zh": "仅匹配上次匹配结束位置开始的匹配，1 匹配1121中前面两个1"
+    },
+    "An explanation of your regex will be automatically generated as you type." : {
+        "zh": "你输入的正则表达式解释会自动生成。"
+    },
+    "Explanation" : {
+        "zh": "解释"
+    },
+    "View Explanation" : {
+        "zh": "查看解释"
+    },
+    "View Match Information" : {
+        "zh": "查看匹配信息"
+    },
+    "Match Information" : {
+        "zh": "匹配信息"
+    },
+    "View Regex Quick Reference" : {
+        "zh": "查看正则表达式快速参考"
+    },
+    "Quick Reference" : {
+        "zh": "快速参考"
+    },
+    "Detailed match information will be displayed here automatically." : {
+        "zh": "匹配详情会自动显示在这里。"
+    },
+    "Your regular expression does not match the subject string." : {
+        "zh": "你的正则表达式没有匹配目标字符串"
+    },
+    "Search reference" : {
+        "zh": "搜索"
+    },
+    "Settings" : {
+        "zh": "配置"
+    },
+    "Ignore Whitespace" : {
+        "zh": "忽略空白字符"
+    },
+    "All Tokens" : {
+        "zh": "全部"
+    },
+    "Common Tokens" : {
+        "zh": "常用"
+    },
+    "General Tokens" : {
+        "zh": "一般"
+    },
+    "Anchors" : {
+        "zh": "锚点"
+    },
+    "Meta Sequences" : {
+        "zh": "元字符序列"
+    },
+    "Quantifiers" : {
+        "zh": "重复"
+    },
+    "Group Constructs" : {
+        "zh": "组结构"
+    },
+    "Character Classes" : {
+        "zh": "字符类别"
+    },
+    "Flags/Modifiers" : {
+        "zh": "模式标记"
+    },
+    "Substitution" : {
+        "zh": "替换"
+    },
+    "Newline" : {
+        "zh": "换行符"
+    },
+    "Matches a newline character" : {
+        "zh": "匹配一个换行符\\x0A。"
+    },
+    "Carriage return" : {
+        "zh": "回车符"
+    },
+    "Matches a carriage return character, unicode character 2185." : {
+        "zh": "匹配一个回车符，即Unicode第2185号字符。"
+    },
+    "Tab" : {
+        "zh": "制表符"
+    },
+    "Matches a tab character. Historically, tab stops happen every 8 characters." : {
+        "zh": "匹配一个制表符。惯例上每个制表空位等于8个半角字符。"
+    },
+    "Null character" : {
+        "zh": "空字符"
+    },
+    "Matches a null character, most often visually represented in unicode using U+2400." : {
+        "zh": "匹配一个空字符，在视觉上一般代指Unicode 2400号字符。"
+    },
+    "Start of match" : {
+        "zh": "匹配检索开始的位置"
+    },
+    "This will match only at the starting point of the search or the position the previous successful match ended. Useful with the /g flag, or when you are only trying to match after a certain point in a string." : {
+        "zh": "匹配开始检索或上次成功匹配结束的位置。可配合/g或匹配文本特定位置后的文本时使用。"
+    },
+    "Start of string" : {
+        "zh": "文本开头"
+    },
+    "Matches the start of a string without consuming any characters. If multiline mode is used, this will also match immediately after a newline character." : {
+        "zh": "匹配文本开头的位置（不占用字符）。多行模式下亦匹配换行符后的位置，即行首。"
+    },
+    "End of string" : {
+        "zh": "文本末尾"
+    },
+    "Matches the end of a string without consuming any characters. If multiline mode is used, this will also match immediately before a newline character." : {
+        "zh": "匹配文本末尾的位置（不占用字符）。多行模式下亦匹配换行符前的位置，即行尾。"
+    },
+    "Matches the start of a string only. Unlike ^, this is not affected by multiline mode." : {
+        "zh": "匹配文本开头的位置（不占用字符），不受多行模式影响。"
+    },
+    "Matches the end of a string only. Unlike $, this is not affected by multiline mode." : {
+        "zh": "匹配文本末尾的位置（不占用字符），不受多行模式影响。"
+    },
+    "Absolute end of string" : {
+        "zh": "文本最末尾"
+    },
+    "Matches the end of a string only. Unlike $, this is not affected by multiline mode, and, in contrast to \\Z, will not match before a trailing newline at the end of a string." : {
+        "zh": "仅匹配文本末尾的位置（不占用字符），不受多行模式和分页符\\Z影响。"
+    },
+    "A word boundary" : {
+        "zh": "\\w字符边界"
+    },
+    "Matches, without consuming any characters, immediately between a character matched by \\w and a character not matched by \\w (in either order). It cannot be used to separate non words from words." : {
+        "zh": "匹配一边是\\w字符（英文字母、数字和下划线），另一边不是\\w字符的位置（不占用字符）。"
+    },
+    "Non-word boundary" : {
+        "zh": "非\\w字符边界"
+    },
+    "Matches, without consuming any characters, at the position between two characters matched by \\w." : {
+        "zh": "匹配两个\\w字符（英文字母、数字和下划线）之间的位置（不占用字符）。"
+    },
+    "Any single character" : {
+        "zh": "任意单个字符"
+    },
+    "Matches any character other than newline (or including newline with the /s flag)" : {
+        "zh": "匹配换行符外的字符（多行模式下也匹配换行符）。"
+    },
+    "Any whitespace character" : {
+        "zh": "任意空白字符"
+    },
+    "Matches any space, tab or newline character." : {
+        "zh": "匹配空格、制表符和换行符等空白字符。"
+    },
+    "Any non-whitespace character" : {
+        "zh": "非空白字符"
+    },
+    "Matches anything other than a space, tab or newline." : {
+        "zh": "匹配除空格、制表符和换行符以外的字符。"
+    },
+    "Any digit" : {
+        "zh": "阿拉伯数字字符"
+    },
+    "Matches any decimal digit. Equivalent to [0-9]." : {
+        "zh": "匹配十进制数字字符，等价于[0-9]。"
+    },
+    "Any non-digit" : {
+        "zh": "非阿拉伯数字字符"
+    },
+    "Matches any decimal digit. Equivalent to [0-9]." : {
+        "zh": "匹配除0到9以外的字符，等价于[^0-9]。"
+    },
+    "Any word character" : {
+        "zh": "字母、数字或下划线的字符"
+    },
+    "Matches any letter, digit or underscore. Equivalent to [a-zA-Z0-9_]." : {
+        "zh": "匹配英文字母、数字或下划线，等价于[a-zA-Z0-9_]。"
+    },
+    "Any non-word character" : {
+        "zh": "非字母、数字或下划线的字符"
+    },
+    "Matches anything other than a letter, digit or underscore." : {
+        "zh": "匹配除非字母、数字或下划线以外的字符，等价于[^a-zA-Z0-9_]。"
+    },
+    "Any Unicode sequences, linebreaks included" : {
+        "zh": "含换行符在内的Unicode字符"
+    },
+    "Matches any valid Unicode sequence, including line breaks." : {
+        "zh": "匹配换行符在内的所有合法Unicode字符。"
+    },
+    "Match one data unit" : {
+        "zh": "匹配一个数据单元"
+    },
+    "Matches exactly one data unit of input. Can match individual bytes in UTF-8 mode, leading to undefined behaviour if a search starts inside a character." : {
+        "zh": "匹配输入单元。在UTF-8模式下可能匹配单个字节，在字符内开始检索时导致“未定义行为”。"
+    },
+    "Unicode newlines" : {
+        "zh": "Unicode换行符"
+    },
+    "Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n].;" : {
+        "zh": "匹配Unicode下的换行符：<CR>（等价于\\r），<LF>（等价于\\n）。"
+    },
+    "Vertical whitespace character" : {
+        "zh": "纵向空白字符"
+    },
+    "Matches newlines and vertical tabs. Works with Unicode. Vertical tabs can be inserted in some word processors using CMD/CTRL+ENTER." : {
+        "zh": "匹配换行符和纵向制表符，适用于Unicode环境。可在部分文字处理程序中用CMD/CTRL+ENTER输入。"
+    },
+    "Negation of \\v - anything except newlines and vertical tabs" : {
+        "zh": "非纵向空白字符的字符"
+    },
+    "Matches anything not matched by  (newlines and vertical tabs)" : {
+        "zh": "匹配除换行符和纵向制表符以外的字符。"
+    },
+    "Horizontal whitespace character" : {
+        "zh": "横向空白字符"
+    },
+    "Matches spaces and horizontal tabs. Works with Unicode. Equivalent to [ s]." : {
+        "zh": "匹配空格和制表符，不匹配换行符，通用于Unicode环境。"
+    },
+    "Negation of \\h" : {
+        "zh": "\\h的反集"
+    },
+    "Matches any character that is not horizontal whitespace (\\H)." : {
+        "zh": "匹配除空格和制表符以外的字符。"
+    },
+    "Reset match" : {
+        "zh": "重置捕获起点"
+    },
+    "Sets the given position in the regex as the new \"start\" of the match. This means that nothing preceding the K will be captured in the overall match." : {
+        "zh": "将正则表达式中指定的位置设为新的捕获起点。在\\K之前的匹配内容将不会被捕获。"
+    },
+    "Match nth subpattern" : {
+        "zh": "匹配第n个子表达式/分组。"
+    },
+    "Usually referred to as a `backreference`, this will match a repeat of the text captured in a previous set of parentheses." : {
+        "zh": "后向引用，匹配此前子表达式成功捕获的相同文本。"
+    },
+    "Unicode property x" : {
+        "zh": "Unicode对应属性字符"
+    },
+    "Matches a unicode character with the given property:" : {
+        "zh": "匹配属性含后续字母的Unicode字符，参考："
+    },
+    "Unicode property or script category" : {
+        "zh": "Unicode对应组别字符"
+    },
+    "Matches a unicode character with the given group of properties or categories:" : {
+        "zh": "匹配对应组别的Unicode字符，参考："
+    },
+    "Negation of \\pX" : {
+        "zh": "\\pX的反集"
+    },
+    "Matches a unicode character without the given property." : {
+        "zh": "匹配不含该后续字母的属性的Unicode字符。"
+    },
+    "Negation of \\p" : {
+        "zh": "\\p的反集"
+    },
+    "Matches a unicode character that doesn't have any of the given properties." : {
+        "zh": "匹配不含该属性的Unicode字符。"
+    },
+    "Any characters between \\Q and \\E, including metacharacters, will be treated as literals." : {
+        "zh": "\\Q和\\E直接的字符，其中的元字符将失去正则功能，仅作为文本处理。"
+    },
+    "Match subpattern `name`" : {
+        "zh": "匹配'name'子表达式的捕获结果"
+    },
+    "Matches the text matched by a previously named capture group." : {
+        "zh": "后向引用，匹配此前'name'子表达式成功捕获的相同文本。"
+    },
+    "This is an alternate syntax for \\k<name> or \\k{name}." : {
+        "zh": "\\k<name>或\\k{name}外的另一种写法。"
+    }
+};;
+//语言翻译函数
+function LANG(str) {
+    if(!!langMap[str][globalSettings.language]) {
+        return langMap[str][globalSettings.language];
+    }
+    return str;
+}
+//cookie begin
+function getCookie(name){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+    return unescape(arr[2]);
+    else
+    return null;
+}
+function setCookie(name,value,time){
+    var strsec = getsec(time);
+    var exp = new Date();
+    exp.setTime(exp.getTime() + strsec*1);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function delCookie(name) {
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null) {
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+}
+//s20是代表20秒
+//h是指小时，如12小时则是：h12
+//d是天数，30天则：d30
+function getsec(str) {
+    var str1=str.substring(1,str.length)*1;
+    var str2=str.substring(0,1);
+    if (str2=="s") {
+        return str1*1000;
+    } else if (str2=="h") {
+        return str1*60*60*1000;
+    } else if (str2=="d") {
+        return str1*24*60*60*1000;
+    }
+}
+//cookie end
+
+try {
+    e = JSON.parse(decodeURIComponent(window.__INITIAL_STATE__));
+    var lang = getCookie("regex101_lang");
+    if(!!lang) {
+        e.settings.language = lang;
+    } else {
+        e.settings.language = 'zh'; //默认中文
+    }
+    globalSettings = e.settings;
+    setCookie("regex101_lang", globalSettings.language, 'd30');
+    document.title = LANG('Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript');
+} catch(e) {
+    console.log(e);
+}
+
+
+
+
 !
 function(e) {
     function t(r) {
@@ -2784,7 +3263,7 @@ function(e, t, n) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1,
         n = arguments[2];
         if (!e) return "/";
-        var r = "http://regex.zjmainstay.cn/r/" + e + "/" + t;
+        var r = "/r/" + e + "/" + t;
         if (n) {
             var o = (0, l.default)(n);
             return o.replace(/^(?:\/r\/[a-zA-Z0-9]+\/\d+)?/, r)
@@ -2792,7 +3271,7 @@ function(e, t, n) {
         return r
     }
     function a(e) {
-        return "http://regex.zjmainstay.cn/delete/" + e
+        return "/delete/" + e
     }
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -4773,6 +5252,7 @@ function(e, t, n) {
         value: !0
     }),
     t.default = function(e) {
+        e = e || {pathname: ""}
         var t = e.pathname,
         n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "";
         return a.default ? (t = (t || "").replace(/\/$/g, ""), ".." === n ? t.split("/").slice(0, -1).join("/") : n ? t + "/" + n: t) : "/"
@@ -5729,7 +6209,8 @@ function(e, t, n) {
                 return f.default.createElement(y.Link, {
                     className: (0, d.default)(v.default.root, this.props.noClick && v.default.noClick, this.props.className),
                     to: "/",
-                    absolute: !0
+                    absolute: !0,
+                    id: 'home'
                 },
                 f.default.createElement("span", {
                     className: v.default.regular
@@ -5752,10 +6233,13 @@ function(e, t, n) {
                 "Ex")), f.default.createElement("span", {
                     className: v.default.suffix
                 },
-                "101"), f.default.createElement("span", {
-                     className: v.default.qq
+                "101"), f.default.createElement("a", {
+                     className: v.default.qq,
+                     href: "http://shang.qq.com/wpa/qunwpa?idkey=aee4a3be2fc73fb1121f4544a8d469fd0d24937e0b06a583e7ef82c910806c0b",
+                     target:"_blank",
+                     id: "qq-group"
                 },
-                 "  【QQ群：专精正则表达式（434252251）】"))
+                 "  【点击加入Q群：专精正则表达式（434252251）】"))
             }
         }]),
         t
@@ -8921,19 +9405,19 @@ function(e, t, n) {
             value: function(e) {
                 switch (e) {
                 case c.default.PCRE:
-                    this._workerFile = "http://regex.zjmainstay.cn/pcreWorker.js",
+                    this._workerFile = _HOST + "/pcreWorker.js",
                     this._preRunHook = null;
                     break;
                 case c.default.PYTHON:
-                    this._workerFile = "http://regex.zjmainstay.cn/pcreWorker.js",
+                    this._workerFile = _HOST + "/pcreWorker.js",
                     this._preRunHook = p.default;
                     break;
                 case c.default.JAVASCRIPT:
-                    this._workerFile = "http://regex.zjmainstay.cn/javascriptWorker.js",
+                    this._workerFile = _HOST + "/javascriptWorker.js",
                     this._preRunHook = null;
                     break;
                 case c.default.GOLANG:
-                    this._workerFile = "http://regex.zjmainstay.cn/golangWorker.js",
+                    this._workerFile = _HOST + "/golangWorker.js",
                     this._preRunHook = null;
                     break;
                 default:
@@ -20582,7 +21066,7 @@ function(e, t, n) {
                 },
                 d.default.createElement(w.IconButton, {
                     size: k,
-                    tooltip: (0, v.default)("Regex Editor"),
+                    tooltip: (0, v.default)(LANG("Regex Editor")),
                     tooltipDirection: O.directions.E,
                     icon: "fa-code",
                     themeClass: T.default.iconButton
@@ -20594,7 +21078,7 @@ function(e, t, n) {
                 },
                 d.default.createElement(w.IconButton, {
                     size: k,
-                    tooltip: (0, v.default)("Regex Library"),
+                    tooltip: (0, v.default)(LANG("Regex Library")),
                     tooltipDirection: O.directions.E,
                     icon: "fa-book",
                     themeClass: T.default.iconButton
@@ -20607,7 +21091,7 @@ function(e, t, n) {
                 },
                 d.default.createElement(w.IconButton, {
                     size: k,
-                    tooltip: (0, v.default)("Live Help (IRC, opens new window)"),
+                    tooltip: (0, v.default)(LANG("Live Help (IRC, opens new window)")),
                     tooltipDirection: O.directions.E,
                     icon: "fa-comments",
                     themeClass: T.default.iconButton
@@ -22152,8 +22636,8 @@ function(e, t, n) {
 function(e, t) {
     "use strict";
     e.exports = {
-        english: "English",
-        chinese: "Chinese"
+        zh: "中文",
+        english: "English"
     }
 },
 function(e, t) {
@@ -28255,7 +28739,7 @@ function(e, t, n) {
     },
     f = {
         initialize: function(e, t) {
-            return void i("gaTrackingID is required in initialize()");
+            return void i("no google");
             return e ? (t && (t.debug && t.debug === !0 && (u = !0), t.titleCase === !1 && (s = !1)),
             function(e, t, n, r, o, a, i) {
                 e.GoogleAnalyticsObject = o,
@@ -31693,7 +32177,7 @@ function(e, t, n) {
         return function(e, n) {
             var r = n().general.permalinkFragment,
             o = n().general.version;
-            return r ? new Promise(function(n, a) { (0, l.default)((f.default ? "": "http://localhost:4001") + ("http://regex.zjmainstay.cn/api/regex/" + r + "/" + o), {
+            return r ? new Promise(function(n, a) { (0, l.default)((f.default ? "": "http://localhost:4001") + (_HOST + "/api/regex/" + r + "/" + o), {
                     method: "GET",
                     credentials: "same-origin",
                     headers: {
@@ -32273,7 +32757,7 @@ function(e, t, n) {
     }),
     t.default = function(e, t) {
         return function(e, n) {
-            return fetch("/api/regex", {
+            return fetch(_HOST + "/api/regex", {
                 method: "DELETE",
                 credentials: "same-origin",
                 headers: {
@@ -32525,7 +33009,7 @@ function(e, t, n) {
             return s && (0, a.default)(o, {
                 substitution: p || ""
             }),
-            fetch("http://regex.zjmainstay.cn/api/regex/fork", {
+            fetch(_HOST + "/api/regex/fork", {
                 method: "POST",
                 credentials: "same-origin",
                 headers: {
@@ -32602,7 +33086,7 @@ function(e, t, n) {
             return c && (0, i.default)(a, {
                 substitution: p || ""
             }),
-            fetch("http://regex.zjmainstay.cn/api/regex/", {
+            fetch(_HOST + "/api/regex/", {
                 method: "POST",
                 credentials: "same-origin",
                 headers: {
@@ -34401,7 +34885,7 @@ function(e, t, n) {
                 n = t.component;
                 return m.default.createElement(N.default, {
                     location: this.props.location,
-                    title: (0, O.default)("Code Generator")
+                    title: (0, O.default)(LANG("Code Generator"))
                 },
                 m.default.createElement("div", {
                     className: te.default.root
@@ -34433,7 +34917,7 @@ function(e, t, n) {
                     n.string)
                 }))), m.default.createElement(S.ContentWithHeader, {
                     header: m.default.createElement(S.Label, {
-                        text: (0, O.default)("Generated Code")
+                        text: (0, O.default)(LANG("Generated Code"))
                     }),
                     className: te.default.codeContainer
                 },
@@ -34457,10 +34941,10 @@ function(e, t, n) {
                 }))))), m.default.createElement(S.Notice, {
                     className: te.default.infoNotice
                 },
-                (0, O.default)("Please keep in mind that these code samples are automatically generated and are not guaranteed to work. If you find any syntax errors, feel free to submit a bug report.")), m.default.createElement(S.Notice, {
+                (0, O.default)(LANG("Please keep in mind that these code samples are automatically generated and are not guaranteed to work. If you find any syntax errors, feel free to submit a bug report."))), m.default.createElement(S.Notice, {
                     className: (0, E.default)(te.default.infoNotice, te.default.referenceUrl)
                 },
-                (0, O.default)("For a full regex reference for {1}, please visit:", t.string), " ", m.default.createElement(S.Link, {
+                (0, O.default)(LANG("For a full regex reference for {1}, please visit:"), t.string), " ", m.default.createElement(S.Link, {
                     to: t.referencePage
                 },
                 t.referencePage))))
@@ -36222,7 +36706,7 @@ function(e, t, n) {
                     noTheme: !0
                 },
                 d.default.createElement(m.IconButton, {
-                    tooltip: (0, y.default)("Settings"),
+                    tooltip: (0, y.default)(LANG("Settings")),
                     onClick: this.onModalClick,
                     className: _.default.settingsContainer,
                     themeClass: _.default.iconButton,
@@ -36989,7 +37473,7 @@ function(e, t, n) {
             value: function() {
                 return this.props.isLibraryEntry ? (0, b.default)("Update Library Entry"):
                 null != this.props.permalinkFragment ? (0, b.default)("Update Regex"):
-                (0, b.default)("Save Regex")
+                (0, b.default)(LANG("Save Regex"))
             }
         },
         {
@@ -37013,7 +37497,7 @@ function(e, t, n) {
                 return y.default.createElement("div", null, y.default.createElement(D.default, {
                     alignment: $.alignments.LEFT,
                     className: te.default.actionList,
-                    header: (0, b.default)("Save & Share")
+                    header: (0, b.default)(LANG("Save & Share"))
                 },
                 y.default.createElement(B.default, {
                     icon: null != o ? "fa-repeat": "fa-save",
@@ -37040,7 +37524,7 @@ function(e, t, n) {
                 (0, b.default)("Favorite Regex"))), y.default.createElement(D.default, {
                     alignment: $.alignments.LEFT,
                     className: te.default.actionList,
-                    header: (0, b.default)("Flavor")
+                    header: (0, b.default)(LANG("Flavor"))
                 },
                 y.default.createElement(G.default, {
                     icon: "fa-code",
@@ -37072,7 +37556,7 @@ function(e, t, n) {
                 },
                 "Golang")), y.default.createElement(D.default, {
                     alignment: $.alignments.LEFT,
-                    header: (0, b.default)("Tools")
+                    header: (0, b.default)(LANG("Tools"))
                 },
                 y.default.createElement(W.default, {
                     icon: "fa-file-code-o",
@@ -37088,7 +37572,7 @@ function(e, t, n) {
                         }
                     }
                 },
-                (0, b.default)("Code Generator")), u === R.default.PCRE && y.default.createElement(W.default, {
+                (0, b.default)(LANG("Code Generator"))), u === R.default.PCRE && y.default.createElement(W.default, {
                     icon: "fa-bug",
                     onClick: this.onRegexDebuggerClick,
                     isDisabled: "" === n || l === P.PATTERN_ERROR,
@@ -37100,7 +37584,7 @@ function(e, t, n) {
                         }
                     }
                 },
-                (0, b.default)("Regex Debugger"))), y.default.createElement(Y.default, {
+                (0, b.default)(LANG("Regex Debugger")))), y.default.createElement(Y.default, {
                     isForking: d,
                     onModalClose: this.onSaveModalClose,
                     isOpen: p
@@ -38708,7 +39192,7 @@ function(e, t, n) {
                     closeOnClick: !0
                 },
                 l), v.default.createElement(P.MenuHeader, {
-                    text: (0, E.default)("Delimiters")
+                    text: (0, E.default)(LANG("Delimiters"))
                 }), v.default.createElement(P.MenuDivider, null), r.map(function(t) {
                     return v.default.createElement(P.MenuItem, {
                         key: "delimiter-" + t,
@@ -38909,7 +39393,7 @@ function(e, t, n) {
                     target: n()
                 },
                 l), b.default.createElement(M.MenuHeader, {
-                    text: (0, T.default)("Regex Flags")
+                    text: (0, T.default)(LANG("Regex Flags"))
                 }), b.default.createElement(M.MenuDivider, null), u.map(function(t) {
                     var n = a.indexOf(t) !== -1;
                     return b.default.createElement(M.MenuItem, {
@@ -39144,7 +39628,7 @@ function(e, t, n) {
                     versions: null,
                     error: !1
                 }),
-                fetch("http://regex.zjmainstay.cn/api/regex/" + e, {
+                fetch(_HOST + "/api/regex/" + e, {
                     method: "GET",
                     credentials: "same-origin"
                 }).then(b.default).then(function(e) {
@@ -39207,7 +39691,7 @@ function(e, t, n) {
                     closeOnClick: !0
                 },
                 d.default.createElement(x.MenuHeader, {
-                    text: (0, m.default)("Regex Versions")
+                    text: (0, m.default)(LANG("Regex Versions"))
                 }), d.default.createElement(x.MenuDivider, null), s)
             }
         }]),
@@ -40185,11 +40669,9 @@ function(e, t, n) {
                     accessDenied: !1,
                     isForking: e.isForking
                 }), this.forkOrSaveRegex(e.isForking)), a && (n !== e.permalinkFragment || r !== e.version || o !== e.deleteCode)) {
-                    var i = location.protocol + "//" + location.hostname;
-                    if(i == 'file://') i = '';
                     this.setState({
-                        permalink: i + (0, _.createPermalinkUrl)(e.permalinkFragment, e.version),
-                        deletelink: e.deleteCode ? i + (0, _.createDeleteUrl)(e.deleteCode) : null
+                        permalink: _HOST + (0, _.createPermalinkUrl)(e.permalinkFragment, e.version),
+                        deletelink: e.deleteCode ? _HOST + (0, _.createDeleteUrl)(e.deleteCode) : null
                     })
                 }
             }
@@ -41187,7 +41669,7 @@ function(e, t, n) {
                 o = null;
                 return d.default.createElement(E.ContentWithHeader, {
                     header: d.default.createElement(E.Label, {
-                        text: (0, v.default)("Debug data")
+                        text: (0, v.default)(LANG("Debug data"))
                     }),
                     className: t
                 },
@@ -41625,7 +42107,7 @@ function(e, t, n) {
             value: function() {
                 return m.default.createElement(j.default, {
                     location: this.props.location,
-                    title: (0, _.default)("Regex Debugger"),
+                    title: (0, _.default)(LANG("Regex Debugger")),
                     alignment: A.alignments.LEFT
                 },
                 this.renderDebugResult())
@@ -41655,7 +42137,7 @@ function(e, t, n) {
                 m.default.createElement(M.ContentWithHeader, {
                     className: U.default.matchSelector,
                     header: m.default.createElement(M.Label, {
-                        text: (0, _.default)("Match")
+                        text: (0, _.default)(LANG("Match"))
                     })
                 },
                 m.default.createElement(P.default, null, o.map(function(t, n) {
@@ -41947,24 +42429,23 @@ function(e, t, n) {
                 l = void 0;
                 if (t) switch (i = w.default.error, t) {
                 case y.PATTERN_ERROR:
-                    l = (0, v.default)("Pattern Error");
+                    l = (0, v.default)(LANG("Pattern Error"));
                     break;
                 case y.TIMEOUT_ERROR:
-                    l = (0, v.default)("Timeout");
+                    l = (0, v.default)(LANG("Timeout"));
                     break;
                 case y.PCRE_ERROR_MATCHLIMIT:
-                    l = (0, v.default)("Catastrophic Backtracking");
+                    l = (0, v.default)(LANG("Catastrophic Backtracking"));
                     break;
                 default:
-                    l = (0, v.default)("Engine Error")
-                } else if (r) {
-                    i = w.default.noMatch,
-                     l = (0, v.default)("Processing...");
-                } else {
+                    l = (0, v.default)(LANG("Engine Error"))
+                } else if (r) i = w.default.noMatch,
+                l = (0, v.default)(LANG("Processing..."));
+                else {
                     var u = void 0;
-                    n ? (i = w.default.match, u = n > 1 ? (0, v.default)("{1} matches", n) : (0, v.default)("{1} match", n)) : (i = w.default.noMatch, u = (0, v.default)("No Match"));
+                    n ? (i = w.default.match, u = n > 1 ? (0, v.default)(LANG("{1} matches"), n) : (0, v.default)(LANG("{1} match"), n)) : (i = w.default.noMatch, u = (0, v.default)(LANG("No Match")));
                     var s = "";
-                    null != a && (s = ", " + (1 !== a ? (0, v.default)("{1} steps", a) : (0, v.default)("{1} step", a)));
+                    null != a && (s = ", " + (1 !== a ? (0, v.default)(LANG("{1} steps"), a) : (0, v.default)(LANG("{1} step"), a)));
                     var c = "";
                     null != o && (c = " (~" + this.getTimeString(o) + ")"),
                     l = u + s + c
@@ -42622,7 +43103,7 @@ function(e, t, n) {
                     className: C.default.title
                 },
                 r), g.default.createElement(_.Label, {
-                    text: (0, v.default)("Regular Expression"),
+                    text: (0, v.default)(LANG("Regular Expression")),
                     allowOverflow: !0
                 },
                 null != t && g.default.createElement(_.Tooltipped, {
@@ -42973,7 +43454,7 @@ function(e, t, n) {
                     lineNumbers: t,
                     mode: null,
                     autofocus: !0,
-                    placeholder: (0, O.default)("insert your regular expression here"),
+                    placeholder: (0, O.default)(LANG("insert your regular expression here")),
                     tabSize: 4,
                     lineWrapping: r,
                     tabindex: S.REGEX_INPUT,
@@ -43597,7 +44078,7 @@ function(e, t, n) {
                 },
                 g.default.createElement(x.CollapsableLabel, {
                     collapsed: !this.props.showSubstitution,
-                    text: (0, _.default)("Substitution"),
+                    text: (0, _.default)(LANG("Substitution")),
                     onClick: this.onToggleSubstitutionArea
                 }), this.props.showSubstitution && g.default.createElement(S.default, null))
             }
@@ -43877,7 +44358,7 @@ function(e, t, n) {
             value: function() {
                 return {
                     mode: null,
-                    placeholder: (0, T.default)("insert your replacement value here"),
+                    placeholder: (0, T.default)(LANG("insert your replacement value here")),
                     tabSize: 4,
                     tabindex: j.SUBSTITUTION_AREA,
                     extraKeys: {
@@ -44622,7 +45103,7 @@ function(e, t, n) {
                     lineNumbers: t,
                     mode: null,
                     autofocus: !1,
-                    placeholder: (0, k.default)("insert your test string here"),
+                    placeholder: (0, k.default)(LANG("insert your test string here")),
                     tabSize: 4,
                     lineWrapping: n,
                     tabindex: A.TEST_INPUT,
@@ -44671,7 +45152,7 @@ function(e, t, n) {
                     className: (0, w.default)(W.default.root, l && W.default.substitutionVisible)
                 },
                 v.default.createElement(L.MultiLabel, {
-                    text: (0, k.default)("Test String")
+                    text: (0, k.default)(LANG("Test String"))
                 },
                 v.default.createElement(_.Link, {
                     className: W.default.switchAreaLabel,
@@ -45882,7 +46363,7 @@ function(e, t, n) {
                         className: (0, _.default)(M.default.metaData, M.default.lastItemPadding)
                     },
                     "\u2014 ", null != t.steps && m.default.createElement("span", null, t.steps, " ", 1 === t.steps ? (0, w.default)("step"):
-                    (0, w.default)("steps")), " ", "(~", t.time, "ms)")), m.default.createElement("div", {
+                    (0, w.default)(LANG("steps"))), " ", "(~", t.time, "ms)")), m.default.createElement("div", {
                         className: M.default.tools
                     },
                     m.default.createElement(T.Icon, {
@@ -48296,7 +48777,7 @@ function(e, t, n) {
                     alternatives: T.default.alternatives
                 }):
                 m.default.createElement(S.default, {
-                    text: (0, E.default)("An explanation of your regex will be automatically generated as you type.")
+                    text: (0, E.default)(LANG("An explanation of your regex will be automatically generated as you type."))
                 })
             }
         }]),
@@ -48939,12 +49420,12 @@ function(e, t, n) {
                     matchError: r
                 });
                 if ((0, h.default)(i)) return "" === n ? m.default.createElement(C.default, {
-                    text: (0, _.default)("Detailed match information will be displayed here automatically.")
+                    text: (0, _.default)(LANG("Detailed match information will be displayed here automatically."))
                 }):
                 m.default.createElement("div", {
                     className: A.default.noMatch
                 },
-                (0, _.default)("Your regular expression does not match the subject string."));
+                (0, _.default)(LANG("Your regular expression does not match the subject string.")));
                 for (var l = this.state.maxItems,
                 u = !0,
                 s = [], c = 0, f = i.length; c < f && !(c > l); c++) {
@@ -49151,52 +49632,52 @@ function(e, t, n) {
             value: function(e) {
                 return [{
                     string: e ? (0, O.default)("Full Search Result"):
-                    (0, O.default)("All Tokens"),
+                    (0, O.default)(LANG("All Tokens")),
                     id: N.ALL_TOKENS,
                     icon: "fa-database"
                 },
                 {
-                    string: (0, O.default)("Common Tokens"),
+                    string: (0, O.default)(LANG("Common Tokens")),
                     id: N.COMMON_TOKENS,
                     icon: "fa-star"
                 },
                 {
-                    string: (0, O.default)("General Tokens"),
+                    string: (0, O.default)(LANG("General Tokens")),
                     id: N.GENERAL_TOKENS,
                     icon: "fa-dot-circle-o"
                 },
                 {
-                    string: (0, O.default)("Anchors"),
+                    string: (0, O.default)(LANG("Anchors")),
                     id: N.ANCHORS,
                     icon: "fa-anchor"
                 },
                 {
-                    string: (0, O.default)("Meta Sequences"),
+                    string: (0, O.default)(LANG("Meta Sequences")),
                     id: N.META_SEQUENCES,
                     icon: "fa-life-saver"
                 },
                 {
-                    string: (0, O.default)("Quantifiers"),
+                    string: (0, O.default)(LANG("Quantifiers")),
                     id: N.QUANTIFIERS,
                     icon: "fa-asterisk"
                 },
                 {
-                    string: (0, O.default)("Group Constructs"),
+                    string: (0, O.default)(LANG("Group Constructs")),
                     id: N.GROUP_CONSTRUCTS,
                     icon: "fa-dot-circle-o"
                 },
                 {
-                    string: (0, O.default)("Character Classes"),
+                    string: (0, O.default)(LANG("Character Classes")),
                     id: N.CHARACTER_CLASSES,
                     icon: "fa-th-large"
                 },
                 {
-                    string: (0, O.default)("Flags/Modifiers"),
+                    string: (0, O.default)(LANG("Flags/Modifiers")),
                     id: N.FLAGS_MODIFIERS,
                     icon: "fa-flag"
                 },
                 {
-                    string: (0, O.default)("Substitution"),
+                    string: (0, O.default)(LANG("Substitution")),
                     id: N.SUBSTITUTION,
                     icon: "fa-scissors"
                 }]
@@ -49255,7 +49736,7 @@ function(e, t, n) {
                 b.default.createElement(M.TextInput, {
                     type: "text",
                     wrappedClassName: F.default.search,
-                    placeholder: (0, O.default)("Search reference"),
+                    placeholder: (0, O.default)(LANG("Search reference")),
                     onChange: this.onSearch,
                     codeInput: !0
                 }), b.default.createElement(k.default, null, this.getCategories(i).filter(function(t) {
@@ -49342,23 +49823,23 @@ function(e, t, n) {
     w = (l = {},
     a(l, y.GENERAL_TOKENS, [{
         token: "\\n",
-        desc: (0, h.default)("Newline"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches a newline character")),
+        desc: (0, h.default)(LANG("Newline")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a newline character"))),
         example: p.default.createElement("div", null, "First line", p.default.createElement("br", null), p.default.createElement("span", null), p.default.createElement("br", null), "Third line", p.default.createElement("br", null)),
         keywords: ["enter", "new paragraph", "paragraph break", "line break"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\r",
-        desc: (0, h.default)("Carriage return"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches a carriage return character, unicode character 2185.")),
+        desc: (0, h.default)(LANG("Carriage return")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a carriage return character, unicode character 2185."))),
         keywords: ["13", "&carr;", "U+21B5", "u21B5"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\t",
-        desc: (0, h.default)("Tab"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches a tab character. Historically, tab stops happen every 8 characters.")),
+        desc: (0, h.default)(LANG("Tab")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a tab character. Historically, tab stops happen every 8 characters."))),
         example: p.default.createElement(b.THtml, {
             tag: "div",
             text: "Here comes a {1} tab character.",
@@ -49369,8 +49850,8 @@ function(e, t, n) {
     },
     {
         token: "\\0",
-        desc: (0, h.default)("Null character"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches a null character, most often visually represented in unicode using U+2400.")),
+        desc: (0, h.default)(LANG("Null character")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a null character, most often visually represented in unicode using U+2400."))),
         keywords: ["U+2400", "u2400", "U+0000", "u0000", "^@"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     }]), a(l, y.CHARACTER_CLASSES, [{
@@ -49593,49 +50074,49 @@ function(e, t, n) {
     }]), a(l, y.META_SEQUENCES, [{
         token: ".",
         basic: !0,
-        desc: (0, h.default)("Any single character"),
+        desc: (0, h.default)(LANG("Any single character")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a b c")),
         exampleRegex: ".+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any character other than newline (or including newline with the /s flag)")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any character other than newline (or including newline with the /s flag)"))),
         keywords: ["line", "dot"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\s",
         basic: !0,
-        desc: (0, h.default)("Any whitespace character"),
+        desc: (0, h.default)(LANG("Any whitespace character")),
         example: p.default.createElement("div", null, "any", p.default.createElement("span", null, " "), "whitespace", p.default.createElement("span", null, " "), "character"),
         exampleRegex: "\\s",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any space, tab or newline character.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any space, tab or newline character."))),
         keywords: ["space", "spacebar", "blank"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\S",
         basic: !0,
-        desc: (0, h.default)("Any non-whitespace character"),
+        desc: (0, h.default)(LANG("Any non-whitespace character")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "any"), " ", p.default.createElement("span", null, "non-whitespace")),
         exampleRegex: "\\S+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches anything other than a space, tab or newline.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches anything other than a space, tab or newline."))),
         keywords: ["no", "space", "spacebar", "tab", "newline", "new paragraph"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\d",
         basic: !0,
-        desc: (0, h.default)("Any digit"),
+        desc: (0, h.default)(LANG("Any digit")),
         example: p.default.createElement("div", null, "one: ", p.default.createElement("span", null, "1"), ", two: ", p.default.createElement("span", null, "2")),
         exampleRegex: "\\d",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any decimal digit. Equivalent to [0-9].")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any decimal digit. Equivalent to [0-9]."))),
         keywords: ["number", "numeric"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\D",
         basic: !0,
-        desc: (0, h.default)("Any non-digit"),
+        desc: (0, h.default)(LANG("Any non-digit")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "one: "), "1", p.default.createElement("span", null, ", two: "), "2"),
         exampleRegex: "\\D+",
         info: p.default.createElement("div", null, (0, h.default)("Matches anything other than a decimal digit.")),
@@ -49645,46 +50126,46 @@ function(e, t, n) {
     {
         token: "\\w",
         basic: !0,
-        desc: (0, h.default)("Any word character"),
+        desc: (0, h.default)(LANG("Any word character")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "any"), " ", p.default.createElement("span", null, "word"), " ", p.default.createElement("span", null, "character")),
         exampleRegex: "\\w+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any letter, digit or underscore. Equivalent to [a-zA-Z0-9_].")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any letter, digit or underscore. Equivalent to [a-zA-Z0-9_]."))),
         keywords: ["letter", "digit", "number", "underscore"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\W",
         basic: !0,
-        desc: (0, h.default)("Any non-word character"),
+        desc: (0, h.default)(LANG("Any non-word character")),
         example: p.default.createElement("div", null, "not", p.default.createElement("span", null, "."), "a", p.default.createElement("span", null, "@"), "word", p.default.createElement("span", null, "%"), "character"),
         exampleRegex: "\\W+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches anything other than a letter, digit or underscore.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches anything other than a letter, digit or underscore."))),
         keywords: ["space", "punctuation", "symbol", "tab"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\X",
-        desc: (0, h.default)("Any Unicode sequences, linebreaks included"),
+        desc: (0, h.default)(LANG("Any Unicode sequences, linebreaks included")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "\xe4ny \xfanic\xf8d3 character")),
         exampleRegex: "\\X+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any valid Unicode sequence, including line breaks.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any valid Unicode sequence, including line breaks."))),
         keywords: ["any", "character", "number", "digit", "symbol", "dos", "newline", "line break"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\C",
-        desc: (0, h.default)("Match one data unit"),
+        desc: (0, h.default)(LANG("Match one data unit")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "1"), " unit"),
         exampleRegex: "\\C",
-        info: p.default.createElement("div", null, (0, h.default)("Matches exactly one data unit of input. Can match individual bytes in UTF-8 mode, leading to undefined behaviour if a search starts inside a character.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches exactly one data unit of input. Can match individual bytes in UTF-8 mode, leading to undefined behaviour if a search starts inside a character."))),
         keywords: ["anything", "unicode", "ascii", "utf"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\R",
-        desc: (0, h.default)("Unicode newlines"),
+        desc: (0, h.default)(LANG("Unicode newlines")),
         example: p.default.createElement("div", null, p.default.createElement("span", null), p.default.createElement("br", null), "newline above captured"),
         exampleRegex: "(\\R)",
         info: p.default.createElement("div", null, (0, h.default)("Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n]."), ";"),
@@ -49693,16 +50174,16 @@ function(e, t, n) {
     },
     {
         token: "\\v",
-        desc: (0, h.default)("Vertical whitespace character"),
+        desc: (0, h.default)(LANG("Vertical whitespace character")),
         example: p.default.createElement("div", null, "line one", p.default.createElement("span", null, p.default.createElement("br", null), p.default.createElement("br", null)), "line two"),
         exampleRegex: "(\\v)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches newlines and vertical tabs. Works with Unicode. Vertical tabs can be inserted in some word processors using CMD/CTRL+ENTER.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches newlines and vertical tabs. Works with Unicode. Vertical tabs can be inserted in some word processors using CMD/CTRL+ENTER."))),
         keywords: ["newline", "VT", "new", "linefeed", "carriage", "return", "ascii", "11", "control+K", "^K", "U+000B", "U+240B"],
         flavors: [v.default.PCRE, v.default.JAVASCRIPT, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "\\V",
-        desc: (0, h.default)("Negation of \\v - anything except newlines and vertical tabs"),
+        desc: (0, h.default)(LANG("Negation of \\v - anything except newlines and vertical tabs")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "line one"), p.default.createElement("br", null), p.default.createElement("br", null), p.default.createElement("span", null, "line two")),
         exampleRegex: "(\\V+)",
         regexFlags: "g",
@@ -49712,7 +50193,7 @@ function(e, t, n) {
     },
     {
         token: "\\h",
-        desc: (0, h.default)("Horizontal whitespace character"),
+        desc: (0, h.default)(LANG("Horizontal whitespace character")),
         example: p.default.createElement("div", null, "a", p.default.createElement("span", null, " "), "b", p.default.createElement("span", null, " "), "c", p.default.createElement("span", null, "    "), "d"),
         exampleRegex: "\\h",
         regexFlags: "g",
@@ -49722,17 +50203,17 @@ function(e, t, n) {
     },
     {
         token: "\\H",
-        desc: (0, h.default)("Negation of \\h"),
+        desc: (0, h.default)(LANG("Negation of \\h")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), " ", p.default.createElement("span", null, "b"), " ", p.default.createElement("span", null, "c"), " ", p.default.createElement("span", null, "d")),
         exampleRegex: "\\H+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any character that is not horizontal whitespace (\\H).")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any character that is not horizontal whitespace (\\H)."))),
         keywords: ["not", "space", "blank", "spacebar", "tab"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\K",
-        desc: (0, h.default)("Reset match"),
+        desc: (0, h.default)(LANG("Reset match")),
         info: p.default.createElement("div", null, (0, h.default)('Sets the given position in the regex as the new "start" of the match. This means that nothing preceding the K will be captured in the overall match.')),
         example: p.default.createElement("div", null, "123", p.default.createElement("span", null, ",456,789")),
         exampleRegex: "[\\d]+\\K[\\d,]+",
@@ -49741,8 +50222,8 @@ function(e, t, n) {
     },
     {
         token: "\\n",
-        desc: (0, h.default)("Match nth subpattern"),
-        info: p.default.createElement("div", null, (0, h.default)("Usually referred to as a `backreference`, this will match a repeat of the text captured in a previous set of parentheses.")),
+        desc: (0, h.default)(LANG("Match nth subpattern")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Usually referred to as a `backreference`, this will match a repeat of the text captured in a previous set of parentheses."))),
         example: p.default.createElement("div", null, "Repeated le", p.default.createElement("span", null, "tt"), "ers"),
         exampleRegex: "(.)\\1",
         keywords: ["repeated", "duplicates", "same"],
@@ -49754,7 +50235,7 @@ function(e, t, n) {
         example: p.default.createElement("div", null, p.default.createElement("span", null, "\xa3"), " or ", p.default.createElement("span", null, "$"), " or even ", p.default.createElement("span", null, "\xae")),
         exampleRegex: "\\pS",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches a unicode character with the given property:"), " ", p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a unicode character with the given property:")), " ", p.default.createElement(b.Link, {
             target: "_blank",
             to: "//www.fileformat.info/info/unicode/category/index.htm"
         },
@@ -49764,10 +50245,10 @@ function(e, t, n) {
     },
     {
         token: "\\p{...}",
-        desc: (0, h.default)("Unicode property or script category"),
+        desc: (0, h.default)(LANG("Unicode property or script category")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "????????"), ' is the word "fun" in Armenian'),
         exampleRegex: "\\p{Armenian}+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches a unicode character with the given group of properties or categories:"), p.default.createElement("div", null, p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a unicode character with the given group of properties or categories:")), p.default.createElement("div", null, p.default.createElement(b.Link, {
             target: "_blank",
             to: "//www.fileformat.info/info/unicode/category/index.htm"
         },
@@ -49781,20 +50262,20 @@ function(e, t, n) {
     },
     {
         token: "\\PX",
-        desc: (0, h.default)("Negation of \\pX"),
+        desc: (0, h.default)(LANG("Negation of \\pX")),
         example: p.default.createElement("div", null, "\xa3", p.default.createElement("span", null, " or "), "$", p.default.createElement("span", null, " or even "), "\xae"),
         exampleRegex: "\\PS+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches a unicode character without the given property.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a unicode character without the given property."))),
         keywords: ["category", "latin", "uppercase", "lowercase", "language", "any", "alphabets", "symbols"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\P{...}",
-        desc: (0, h.default)("Negation of \\p"),
+        desc: (0, h.default)(LANG("Negation of \\p")),
         example: p.default.createElement("div", null, "????????", p.default.createElement("span", null, ' is the word "fun" in Armenian')),
         exampleRegex: "\\P{Armenian}+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches a unicode character that doesn't have any of the given properties.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches a unicode character that doesn't have any of the given properties."))),
         keywords: ["category", "latin", "uppercase", "lowercase", "language", "any", "alphabets", "foreign"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
@@ -49803,22 +50284,22 @@ function(e, t, n) {
         desc: (0, h.default)("Quote; treat as literals"),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "everything \\\\w is ^ literal")),
         exampleRegex: "\\Qeverything \\w is ^ literal\\E",
-        info: p.default.createElement("div", null, (0, h.default)("Any characters between \\Q and \\E, including metacharacters, will be treated as literals.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Any characters between \\Q and \\E, including metacharacters, will be treated as literals."))),
         keywords: ["escape", "meta", "match", "characters"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\k<name>",
-        desc: (0, h.default)("Match subpattern `name`"),
+        desc: (0, h.default)(LANG("Match subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "aaaa"), " and again ", p.default.createElement("span", null, "aaaa")),
         exampleRegex: "(?<first>a+) and again (\\k<first>)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the text matched by a previously named capture group.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the text matched by a previously named capture group."))),
         keywords: ["capture", "group", "by", "name", "recall", "match", "again"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\k'name'",
-        desc: (0, h.default)("Match subpattern `name`"),
+        desc: (0, h.default)(LANG("Match subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -49827,13 +50308,13 @@ function(e, t, n) {
         },
         "aaaa")),
         exampleRegex: "(?'first'a+) and again (\\k'first')",
-        info: p.default.createElement("div", null, (0, h.default)("This is an alternate syntax for \\k<name> or \\k{name}.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This is an alternate syntax for \\k<name> or \\k{name}."))),
         keywords: ["capture", "group", "by", "name", "recall", "match", "again"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\k{name}",
-        desc: (0, h.default)("Match subpattern `name`"),
+        desc: (0, h.default)(LANG("Match subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -49848,7 +50329,7 @@ function(e, t, n) {
     },
     {
         token: "\\gn",
-        desc: (0, h.default)("Match nth subpattern"),
+        desc: (0, h.default)(LANG("Match nth subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -49863,7 +50344,7 @@ function(e, t, n) {
     },
     {
         token: "\\g{n}",
-        desc: (0, h.default)("Match nth subpattern"),
+        desc: (0, h.default)(LANG("Match nth subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -49881,7 +50362,7 @@ function(e, t, n) {
     },
     {
         token: "\\g<n>",
-        desc: (0, h.default)("Match nth subpattern"),
+        desc: (0, h.default)(LANG("Match nth subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -49896,7 +50377,7 @@ function(e, t, n) {
     },
     {
         token: "\\g'n'",
-        desc: (0, h.default)("Match nth subpattern"),
+        desc: (0, h.default)(LANG("Match nth subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50315,7 +50796,7 @@ function(e, t, n) {
     },
     {
         token: "(?P=name)",
-        desc: (0, h.default)("Match subpattern `name`"),
+        desc: (0, h.default)(LANG("Match subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50672,79 +51153,79 @@ function(e, t, n) {
         flavors: [v.default.PCRE]
     }]), a(l, y.ANCHORS, [{
         token: "\\G",
-        desc: (0, h.default)("Start of match"),
+        desc: (0, h.default)(LANG("Start of match")),
         example: p.default.createElement("div", null, "Bob likes pie, George likes icecream"),
         exampleRegex: "(?:George|\\G) likes ([^ ]+)",
-        info: p.default.createElement("div", null, (0, h.default)("This will match only at the starting point of the search or the position the previous successful match ended. Useful with the /g flag, or when you are only trying to match after a certain point in a string.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will match only at the starting point of the search or the position the previous successful match ended. Useful with the /g flag, or when you are only trying to match after a certain point in a string."))),
         keywords: ["custom", "start", "after", "point", "specific"],
         flavors: [v.default.PCRE]
     },
     {
         token: "^",
         basic: !0,
-        desc: (0, h.default)("Start of string"),
+        desc: (0, h.default)(LANG("Start of string")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "start"), " of string"),
         exampleRegex: "^\\w+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the start of a string without consuming any characters. If multiline mode is used, this will also match immediately after a newline character.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the start of a string without consuming any characters. If multiline mode is used, this will also match immediately after a newline character."))),
         keywords: ["begining", "line", "start", "head", "string", "multi", "text"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "$",
         basic: !0,
-        desc: (0, h.default)("End of string"),
+        desc: (0, h.default)(LANG("End of string")),
         example: p.default.createElement("div", null, "end of ", p.default.createElement("span", null, "string")),
         exampleRegex: "\\w+$",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the end of a string without consuming any characters. If multiline mode is used, this will also match immediately before a newline character.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the end of a string without consuming any characters. If multiline mode is used, this will also match immediately before a newline character."))),
         keywords: ["last", "line", "tail", "very", "text"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\A",
-        desc: (0, h.default)("Start of string"),
+        desc: (0, h.default)(LANG("Start of string")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "start"), " of string"),
         exampleRegex: "\\A\\w+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the start of a string only. Unlike ^, this is not affected by multiline mode.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the start of a string only. Unlike ^, this is not affected by multiline mode."))),
         keywords: ["begining", "text", "start", "head", "string", "multi"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "\\Z",
-        desc: (0, h.default)("End of string"),
+        desc: (0, h.default)(LANG("End of string")),
         example: p.default.createElement("div", null, "end of ", p.default.createElement("span", null, "string")),
         exampleRegex: "\\w+\\Z",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the end of a string only. Unlike $, this is not affected by multiline mode.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the end of a string only. Unlike $, this is not affected by multiline mode."))),
         keywords: ["last", "line", "tail", "very", "text"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "\\z",
-        desc: (0, h.default)("Absolute end of string"),
+        desc: (0, h.default)(LANG("Absolute end of string")),
         example: p.default.createElement("div", null, "absolute end of ", p.default.createElement("span", null, "string")),
         exampleRegex: "\\w+\\z",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the end of a string only. Unlike $, this is not affected by multiline mode, and, in contrast to \\Z, will not match before a trailing newline at the end of a string.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the end of a string only. Unlike $, this is not affected by multiline mode, and, in contrast to \\Z, will not match before a trailing newline at the end of a string."))),
         keywords: ["last", "tail", "very", "text"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\b",
         basic: !0,
-        desc: (0, h.default)("A word boundary"),
+        desc: (0, h.default)(LANG("A word boundary")),
         example: p.default.createElement("div", null, "wor", p.default.createElement("span", null, "d"), " boundaries are od", p.default.createElement("span", null, "d")),
         exampleRegex: "d\\b",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches, without consuming any characters, immediately between a character matched by \\w and a character not matched by \\w (in either order). It cannot be used to separate non words from words.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches, without consuming any characters, immediately between a character matched by \\w and a character not matched by \\w (in either order). It cannot be used to separate non words from words."))),
         keywords: ["word", "real", "only", "start", "end"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "\\B",
         basic: !0,
-        desc: (0, h.default)("Non-word boundary"),
+        desc: (0, h.default)(LANG("Non-word boundary")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "r"), "egex is ", p.default.createElement("span", null, "r"), "eally cool"),
         exampleRegex: "r\\B",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches, without consuming any characters, at the position between two characters matched by \\w.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches, without consuming any characters, at the position between two characters matched by \\w."))),
         keywords: ["word", "part", "partially", "extract", "match", "only"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     }]), a(l, y.FLAGS_MODIFIERS, [{
@@ -50779,7 +51260,7 @@ function(e, t, n) {
     },
     {
         token: "x",
-        desc: (0, h.default)("Ignore whitespace"),
+        desc: (0, h.default)(LANG("Ignore Whitespace")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), "#comment here"),
         exampleRegex: "a#comment here",
         regexFlags: "x",
@@ -50971,21 +51452,21 @@ function(e, t, n) {
     },
     {
         token: "\\t",
-        desc: (0, h.default)("Tab"),
+        desc: (0, h.default)(LANG("Tab")),
         info: p.default.createElement("div", null, (0, h.default)("Insert a tab character.")),
         keywords: ["spaces", "four", "tab", "empty"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT, v.default.GOLANG]
     },
     {
         token: "\\r",
-        desc: (0, h.default)("Carriage return"),
+        desc: (0, h.default)(LANG("Carriage return")),
         info: p.default.createElement("div", null, (0, h.default)("Insert a carriage return character.")),
         keywords: ["enter", "newline", "new", "skip", "line"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT, v.default.GOLANG]
     },
     {
         token: "\\n",
-        desc: (0, h.default)("Newline"),
+        desc: (0, h.default)(LANG("Newline")),
         info: p.default.createElement("div", null, (0, h.default)("Insert a newline character.")),
         keywords: ["enter", "return", "newline", "new", "skip", "line"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT, v.default.GOLANG]
@@ -51419,16 +51900,16 @@ function(e, t, n) {
             key: "getSidebarContents",
             value: function() {
                 return [{
-                    tooltip: (0, y.default)("View Explanation"),
+                    tooltip: (0, y.default)(LANG("View Explanation")),
                     icon: "fa-sitemap",
-                    title: (0, y.default)("Explanation"),
+                    title: (0, y.default)(LANG("Explanation")),
                     element: v.default,
                     key: C.EXPLANATION
                 },
                 {
-                    tooltip: (0, y.default)("View Match Information"),
+                    tooltip: (0, y.default)(LANG("View Match Information")),
                     icon: "fa-list-ol",
-                    title: (0, y.default)("Match Information"),
+                    title: (0, y.default)(LANG("Match Information")),
                     element: _.default,
                     style: {
                         marginTop: "10px",
@@ -51437,9 +51918,9 @@ function(e, t, n) {
                     key: C.MATCH_INFO
                 },
                 {
-                    tooltip: (0, y.default)("View Regex Quick Reference"),
+                    tooltip: (0, y.default)(LANG("View Regex Quick Reference")),
                     icon: "fa-info-circle",
-                    title: (0, y.default)("Quick Reference"),
+                    title: (0, y.default)(LANG("Quick Reference")),
                     element: w.default,
                     key: C.QUICKREF
                 }]
@@ -51928,6 +52409,8 @@ function(e, t, n) {
                 b.default.createElement(D.default, null, (0, C.default)("Language"), b.default.createElement("select", {
                     defaultValue: c,
                     onChange: function(t) {
+                        globalSettings.language = t.target.value;
+                        setCookie("regex101_lang", globalSettings.language, 'd30');
                         return e.onSettingChange(t, "language")
                     }
                 },
@@ -55894,69 +56377,69 @@ function(e, t, n) {
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "g"), "lobal", i.default.createElement("div", null, (0, c.default)("Don't return after first match")));
+            i.default.createElement("strong", null, "g"), "lobal", i.default.createElement("div", null, (0, c.default)(LANG("Don't return after first match"))));
         case "i":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "i"), "nsensitive", i.default.createElement("div", null, (0, c.default)("Case insensitive match")));
+            i.default.createElement("strong", null, "i"), "nsensitive", i.default.createElement("div", null, (0, c.default)(LANG("Case insensitive match"))));
         case "m":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "m"), "ulti line", i.default.createElement("div", null, (0, c.default)("^ and $ match start/end of line")));
+            i.default.createElement("strong", null, "m"), "ulti line", i.default.createElement("div", null, (0, c.default)(LANG("^ and $ match start/end of line"))));
         case "s":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "s"), "ingle line", i.default.createElement("div", null, (0, c.default)("Dot matches newline")));
+            i.default.createElement("strong", null, "s"), "ingle line", i.default.createElement("div", null, (0, c.default)(LANG("Dot matches newline"))));
         case "S":
             return null;
         case "x":
             return i.default.createElement("div", {
                 className: t
             },
-            "e", i.default.createElement("strong", null, "x"), "tended", i.default.createElement("div", null, (0, c.default)("Ignore whitespace")));
+            "e", i.default.createElement("strong", null, "x"), "tended", i.default.createElement("div", null, (0, c.default)(LANG("Ignore whitespace"))));
         case "J":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "J"), "changed", i.default.createElement("div", null, (0, c.default)("Allow duplicate subpattern names")));
+            i.default.createElement("strong", null, "J"), "changed", i.default.createElement("div", null, (0, c.default)(LANG("Allow duplicate subpattern names"))));
         case "u":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "u"), "nicode", i.default.createElement("div", null, (0, c.default)("Match with full unicode")));
+            i.default.createElement("strong", null, "u"), "nicode", i.default.createElement("div", null, (0, c.default)(LANG("Match with full unicode"))));
         case "U":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "U"), "ngreedy", i.default.createElement("div", null, (0, c.default)("Make quantifiers lazy")));
+            i.default.createElement("strong", null, "U"), "ngreedy", i.default.createElement("div", null, (0, c.default)(LANG("Make quantifiers lazy"))));
         case "X":
             return i.default.createElement("div", {
                 className: t
             },
-            "e", i.default.createElement("strong", null, "X"), "tra", i.default.createElement("div", null, (0, c.default)("Disallow meaningless escapes")));
+            "e", i.default.createElement("strong", null, "X"), "tra", i.default.createElement("div", null, (0, c.default)(LANG("Disallow meaningless escapes"))));
         case "A":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "A"), "nchored", i.default.createElement("div", null, (0, c.default)("Anchor to start of pattern")));
+            i.default.createElement("strong", null, "A"), "nchored", i.default.createElement("div", null, (0, c.default)(LANG("Anchor to start of pattern"))));
         case "D":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "D"), "ollar end only", i.default.createElement("div", null, (0, c.default)("$ matches only end of pattern")));
+            i.default.createElement("strong", null, "D"), "ollar end only", i.default.createElement("div", null, (0, c.default)(LANG("$ matches only end of pattern"))));
         case "a":
             return i.default.createElement("div", {
                 className: t
             },
-            i.default.createElement("strong", null, "a"), "scii", i.default.createElement("div", null, (0, c.default)("Make escape sequences perform ASCII-only matching")));
+            i.default.createElement("strong", null, "a"), "scii", i.default.createElement("div", null, (0, c.default)(LANG("Make escape sequences perform ASCII-only matching"))));
         case "y":
             return i.default.createElement("div", {
                 className: t
             },
-            "stick", i.default.createElement("strong", null, "y"), i.default.createElement("div", null, (0, c.default)("Proceed matching from where previous match ended only")));
+            "stick", i.default.createElement("strong", null, "y"), i.default.createElement("div", null, (0, c.default)(LANG("Proceed matching from where previous match ended only"))));
         default:
             return u.default.error(new Error("Unknown flag '" + e + "'")),
             null
@@ -61557,7 +62040,7 @@ function(e, t, n) {
         c.default.info("App initialized");
         var e = void 0;
         try {
-            e = JSON.parse(decodeURIComponent(window.__INITIAL_STATE__))
+            e = JSON.parse(decodeURIComponent(window.__INITIAL_STATE__));
         } catch(t) {
             return void c.default.error(new Error("Unable to parse initial state from server"), {
                 state: window.__INITIAL_STATE__
@@ -84354,3 +84837,16 @@ function(e, t, n, r, o) {
     })
 }]));
 //# sourceMappingURL=main.js.map
+intervalTimer = setInterval(function(){
+    if(!document.getElementById('home')) {
+        return false;
+    }
+
+    clearInterval(intervalTimer);
+    document.getElementById('home').onclick = function () {
+        this.href=_HOST + '/?t=' + Math.random();
+    }
+    document.getElementById('qq-group').onclick = function (event) {
+        event.stopPropagation();
+    }
+}, 1000);
