@@ -6,13 +6,19 @@ if(_HOST == 'file://') {
 var langMap = {
     
     "Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript" : {
-        "zh": "在线正则表达式测试与调试工具：PHP, PCRE, Python, Golang and JavaScript"
+        "zh": "正则表达式测试工具在线调试与分享：PHP, PCRE, Python, Golang and JavaScript"
     },
     "Save & Share" : {
         "zh": "保存与分享"
     },
     "Save Regex" : {
         "zh": "保存正则表达式"
+    },
+    "Update Regex" : {
+        "zh": "更新正则表达式"
+    },
+    "Fork Regex" : {
+        "zh": "拷贝创建新分支"
     },
     "Flavor" : {
         "zh": "语言风格"
@@ -24,7 +30,7 @@ var langMap = {
         "zh": "正则编辑器"
     },
     "Live Help (IRC, opens new window)" : {
-        "zh": "在线帮助（IRC，新窗口打开）"
+        "zh": "国外在线帮助IRC"
     },
     "Tools" : {
         "zh": "工具"
@@ -34,6 +40,27 @@ var langMap = {
     },
     "Regex Debugger" : {
         "zh": "正则执行步骤"
+    },
+    "Website Info" : {
+        "zh": "网站信息：本站由作者 @Zjmainstay 基于regex101.com汉化而来，支持中英切换，感谢 @修奇·尼德法 提供的汉化翻译支持"
+    },
+    "Website Usage" : {
+        "zh": "工具使用图解"
+    },
+    "QQ Group" : {
+        "zh": "QQ群-专精正则表达式（434252251）"
+    },
+    "Regular" : {
+        "zh": "正则"
+    },
+    "Expressions" : {
+        "zh": "表达式"
+    },
+    "Regex Manual" : {
+        "zh": "正则手册教程"
+    },
+    "Consider a donation" : {
+        "zh": "捐赠"
     },
     "Regular Expression" : {
         "zh": "正则表达式"
@@ -50,7 +77,7 @@ var langMap = {
     "Test String" : {
         "zh": "测试文本"
     },
-    "Substitution" : {
+    "//Substitution" : {
         "zh": "替换"
     },
     "Delimiters" : {
@@ -106,6 +133,12 @@ var langMap = {
     },
     "For a full regex reference for {1}, please visit:" : {
         "zh": "完整{1}正则表达式参考，请访问："
+    },
+    "Copy" : {
+        "zh": "复制"
+    },
+    "Copied" : {
+        "zh": "已复制"
     },
     "Regex Flags" : {
         "zh": "正则模式修正符"
@@ -182,8 +215,161 @@ var langMap = {
     "Settings" : {
         "zh": "配置"
     },
-    "Ignore Whitespace" : {
+    "matches the character {1} with index {2} ({3} or {4}) literally ({5})" : {
+        "zh": "匹配字符 {1} 基于 {2} ({3} or {4}) "
+    },
+    "case insensitive" : {
+        "zh": "不区分大小写"
+    },
+    "case sensitive" : {
+        "zh": "区分大小写"
+    },
+    "{1} Capturing Group" : {
+        "zh": "{1} 捕获组"
+    },
+    "{1} Alternative" : {
+        "zh": "{1} 选择"
+    },
+    "matches the {1} {2} literally {3}" : {
+        "zh": "按字面匹配 {1} {2}"
+    },
+    "matches a single character in the list {1} {2}" : {
+        "zh": "从列表 {1} {2} 中匹配一个单字符"
+    },
+    "matches the negation of {1}" : {
+        "zh": "匹配不是{1}"
+    },
+    "equal to {1}" : {
+        "zh": "等于{1}"
+    },
+    "\\p{InBasicLatin}" : {
+        "zh": "\\p{InBasicLatin} U+0000-U+007F"
+    },
+    "matches a character with {1} value {2} through {3}" : {
+        "zh": "从 {2} 至 {3} 中匹配一个字符 {1}"
+    },
+    "matches a alphanumeric character {1}" : {
+        "zh": "匹配一个字母或数字 {1}"
+    },
+    "matches a alphanumeric character or {1} {2} (also written as {3})" : {
+        "zh": "匹配一个字母或数字或 {1} {2}（也写成 {3}）"
+    },
+    "matches a alphabetic character {1}" : {
+        "zh": "匹配一个字母 {1}"
+    },
+    "matches a whitespace character, including a line break {1} (also written as {2})" : {
+        "zh": "匹配一个空白字符，包含换行 {1}（也写成 {2}）"
+    },
+    "matches a control character {1}" : {
+        "zh": "匹配一个控制字符 {1}"
+    },
+    "matches a digit {1} (also written as {2})" : {
+        "zh": "匹配一个数字 {1}（也写成 {2}）"
+    },
+    "matches a visible character {1}" : {
+        "zh": "匹配一个可见字符 {1}"
+    },
+    "matches a lowercase letter {1}" : {
+        "zh": "匹配一个小写字母 {1}"
+    },
+    "matches a visible character or the space character {1}" : {
+        "zh": "匹配一个可见字符或空格符"
+    },
+    "matches a punctuation character {1}" : {
+        "zh": "匹配一个标点符号"
+    },
+    "matches a uppercase letter {1}" : {
+        "zh": "匹配一个大写字母 {1}"
+    },
+    "matches a hexadecimal digit {1}" : {
+        "zh": "匹配一个十六进制数值 {1}"
+    },
+    "Match a single character not present in the set" : {
+        "zh": "匹配不在集合中的一个单字符"
+    },
+    "Match a single character not present in the list below" : {
+        "zh": "匹配不在下列列表中的一个单字符"
+    },
+    "Match a single character present in the set" : {
+        "zh": "匹配集合中的一个单字符"
+    },
+    "Match a single character present in the list below" : {
+        "zh": "匹配下列列表中的一个单字符"
+    },
+    "a single character in the range between {1} {2} and {3} {4} ({5})" : {
+        "zh": "单字符在{1} {2} 至 {3} {4} 区间"
+    },
+    "Full match" : {
+        "zh": "完整匹配"
+    },
+    "Group {1}" : {
+        "zh": "分组 {1}"
+    },
+    "group did not participate in match" : {
+        "zh": "分组没有参与匹配"
+    },
+    "Substitution result" : {
+        "zh": "替换结果"
+    },
+    "A repeated capturing group will only capture the last iteration. Put a capturing group around the repeated group to capture all iterations or use a non-capturing group instead if you're not interested in the data" : {
+        "zh": "循环捕获组只捕获最后一次匹配。在循环捕获组外层加一个括号以获取所有结果，或使用非捕获组如果你对捕获数据不感兴趣的话。"
+    },
+    "meaningless quantifier" : {
+        "zh": "没意义的量词"
+    },
+    "causes token to be ignored" : {
+        "zh": "导致元字符被忽略"
+    },
+    "{1} \u2014 Matches exactly {2} {3} {4}" : {
+        "zh": "{1} \u2014 实际匹配 {2} {3}"
+    },
+    "Quantifier" : {
+        "zh": "量词"
+    },
+    "times" : {
+        "zh": "次"
+    },
+    "time" : {
+        "zh": "次"
+    },
+    "as many times as possible, without giving back" : {
+        "zh": "尽可能多匹配，不回溯"
+    },
+    "possessive" : {
+        "zh": "占用模式"
+    },
+    "as few times as possible, expanding as needed" : {
+        "zh": "尽可能少匹配，如果有必要，回溯匹配更多内容"
+    },
+    "lazy" : {
+        "zh": "懒惰模式"
+    },
+    "as many times as possible, giving back as needed" : {
+        "zh": "尽可能多匹配，如果有必要，回溯匹配更少内容"
+    },
+    "greedy" : {
+        "zh": "贪婪模式"
+    },
+    "{1} \u2014 Matches between {2} and {3} times, {4} {5}" : {
+        "zh": "{1} \u2014 匹配 {2} 至 {3} 次"
+    },
+    "zero" : {
+        "zh": "0"
+    },
+    "one" : {
+        "zh": "1"
+    },
+    "unlimited" : {
+        "zh": "无穷"
+    },
+    "//Ignore Whitespace" : {
         "zh": "忽略空白字符"
+    },
+    "character" : {
+        "zh": "字符"
+    },
+    "characters" : {
+        "zh": "字符"
     },
     "All Tokens" : {
         "zh": "全部"
@@ -204,13 +390,13 @@ var langMap = {
         "zh": "重复"
     },
     "Group Constructs" : {
-        "zh": "组结构"
+        "zh": "子组结构"
     },
     "Character Classes" : {
         "zh": "字符类别"
     },
     "Flags/Modifiers" : {
-        "zh": "模式标记"
+        "zh": "修饰符"
     },
     "Substitution" : {
         "zh": "替换"
@@ -219,7 +405,7 @@ var langMap = {
         "zh": "换行符"
     },
     "Matches a newline character" : {
-        "zh": "匹配一个换行符\\x0A。"
+        "zh": "匹配一个换行符\x0A。"
     },
     "Carriage return" : {
         "zh": "回车符"
@@ -270,13 +456,13 @@ var langMap = {
         "zh": "仅匹配文本末尾的位置（不占用字符），不受多行模式和分页符\\Z影响。"
     },
     "A word boundary" : {
-        "zh": "\\w字符边界"
+        "zh": "\w字符边界"
     },
     "Matches, without consuming any characters, immediately between a character matched by \\w and a character not matched by \\w (in either order). It cannot be used to separate non words from words." : {
         "zh": "匹配一边是\\w字符（英文字母、数字和下划线），另一边不是\\w字符的位置（不占用字符）。"
     },
     "Non-word boundary" : {
-        "zh": "非\\w字符边界"
+        "zh": "非\w字符边界"
     },
     "Matches, without consuming any characters, at the position between two characters matched by \\w." : {
         "zh": "匹配两个\\w字符（英文字母、数字和下划线）之间的位置（不占用字符）。"
@@ -308,7 +494,7 @@ var langMap = {
     "Any non-digit" : {
         "zh": "非阿拉伯数字字符"
     },
-    "Matches any decimal digit. Equivalent to [0-9]." : {
+    "Matches anything other than a decimal digit." : {
         "zh": "匹配除0到9以外的字符，等价于[^0-9]。"
     },
     "Any word character" : {
@@ -338,7 +524,7 @@ var langMap = {
     "Unicode newlines" : {
         "zh": "Unicode换行符"
     },
-    "Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n].;" : {
+    "Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n]." : {
         "zh": "匹配Unicode下的换行符：<CR>（等价于\\r），<LF>（等价于\\n）。"
     },
     "Vertical whitespace character" : {
@@ -350,13 +536,13 @@ var langMap = {
     "Negation of \\v - anything except newlines and vertical tabs" : {
         "zh": "非纵向空白字符的字符"
     },
-    "Matches anything not matched by  (newlines and vertical tabs)" : {
+    "Matches anything not matched by \x0B (newlines and vertical tabs)" : {
         "zh": "匹配除换行符和纵向制表符以外的字符。"
     },
     "Horizontal whitespace character" : {
         "zh": "横向空白字符"
     },
-    "Matches spaces and horizontal tabs. Works with Unicode. Equivalent to [ s]." : {
+    "Matches spaces and horizontal tabs. Works with Unicode. Equivalent to [\ts]." : {
         "zh": "匹配空格和制表符，不匹配换行符，通用于Unicode环境。"
     },
     "Negation of \\h" : {
@@ -372,19 +558,19 @@ var langMap = {
         "zh": "将正则表达式中指定的位置设为新的捕获起点。在\\K之前的匹配内容将不会被捕获。"
     },
     "Match nth subpattern" : {
-        "zh": "匹配第n个子表达式/分组。"
+        "zh": "匹配第n个子表达式/分组的捕获结果"
     },
     "Usually referred to as a `backreference`, this will match a repeat of the text captured in a previous set of parentheses." : {
         "zh": "后向引用，匹配此前子表达式成功捕获的相同文本。"
     },
-    "Unicode property x" : {
-        "zh": "Unicode对应属性字符"
+    "Unicode property X" : {
+        "zh": "含对应字母属性的Unicode字符"
     },
     "Matches a unicode character with the given property:" : {
         "zh": "匹配属性含后续字母的Unicode字符，参考："
     },
     "Unicode property or script category" : {
-        "zh": "Unicode对应组别字符"
+        "zh": "对应组别的Unicode字符"
     },
     "Matches a unicode character with the given group of properties or categories:" : {
         "zh": "匹配对应组别的Unicode字符，参考："
@@ -401,8 +587,11 @@ var langMap = {
     "Matches a unicode character that doesn't have any of the given properties." : {
         "zh": "匹配不含该属性的Unicode字符。"
     },
+    "Quote; treat as literals" : {
+        "zh": "引用，视为纯文本进行匹配"
+    },
     "Any characters between \\Q and \\E, including metacharacters, will be treated as literals." : {
-        "zh": "\\Q和\\E直接的字符，其中的元字符将失去正则功能，仅作为文本处理。"
+        "zh": "\\Q和\\E直接的字符，其中的元字符将失去正则功能，仅作为文本进行匹配。"
     },
     "Match subpattern `name`" : {
         "zh": "匹配'name'子表达式的捕获结果"
@@ -412,11 +601,641 @@ var langMap = {
     },
     "This is an alternate syntax for \\k<name> or \\k{name}." : {
         "zh": "\\k<name>或\\k{name}外的另一种写法。"
+    },
+    "This is an alternate syntax for \\k<name> or \\k'name' and it is valid for .NET. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE" : {
+        "zh": "\\k<name>或\\k'name'外的另一种写法，适用于.NET环境。注意，在PCRE正则里不能用(?{name}a+)的方式命名捕获组。"
+    },
+    "Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters." : {
+        "zh": "匹配第n个子表达式成功捕获的相同文本，n可多于1位。能避免和Oct字符混淆。"
+    },
+    "Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters. This is an alternate syntax for \\gn. It can be useful in a situation where a literal number needs to be matched immediately after a \\g{n} in the regex." : {
+        "zh": "匹配第n个子表达式成功捕获的相同文本，n可多于1位。能避免和Oct字符混淆。\\gn的另一种写法，可用于需在\\g{n}后立刻匹配指定数字的情况。"
+    },
+    "Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g{n}" : {
+        "zh": "匹配第n个子表达式成功捕获的相同文本，n可多于1位。\\g{n}的另一种写法。"
+    },
+    "Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g<n>" : {
+        "zh": "匹配第n个子表达式成功捕获的相同文本，n可多于1位。\\g{n}的另一种写法。"
+    },
+    "Match nth relative previous subpattern" : {
+        "zh": "匹配向前第n个子表达式的捕获结果"
+    },
+    "Recurses nth capture group prior to the current position of \\g{-n}. \\g{-1} would be the last capture group before \\g. \\g{-2} would be the capture group before the last, and so on." : {
+        "zh": "匹配\\g{-n}前面第n个子表达式的捕获结果。\\g{-1}对应\\g前一个，\\g{-2}对应再上一个，如此类推。"
+    },
+    "Recurse nth relative upcoming subpattern" : {
+        "zh": "递归匹配向后第n个子表达式的捕获结果"
+    },
+    "Recurses nth capture group ahead of the current position of \\g<+n>. \\g<+2> is the second capture group after \\g." : {
+        "zh": "递归匹配\\g<+n>后面第n个子表达式的捕获结果。\\g<+2>对应\\g后第二个子表达式，依次类推。"
+    },
+    "Match nth relative upcoming subpattern" : {
+        "zh": "递归匹配向后第n个子表达式的捕获结果"
+    },
+    "Recurses nth capture group ahead of the current position of \\g'+n'. \\g'+2' is the second capture group after \\g." : {
+        "zh": "递归匹配\\g'+n'后面第n个子表达式的捕获结果。\\g'+2'对应\\g后第二个子表达式。"
+    },
+    "Match previously-named capture group `name`" : {
+        "zh": "匹配此前被命名为`name`子表达式的捕获结果"
+    },
+    "Matches the capture group called `name`. Capture group has to be named before \\g is called." : {
+        "zh": "匹配组名为`name`的子表达式成功捕获的相同文本，该命名必须在被\\g引用前完成。"
+    },
+    "Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g<name>. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE" : {
+        "zh": "匹配组名为\"name\"的子表达式成功捕获的相同文本，该命名必须在被\\g引用前完成。\\g'name'或\\g<name>的另一种写法。注意，在PCRE正则里不能用(?{name}a+)的方式命名捕获组。"
+    },
+    "Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g{name}" : {
+        "zh": "匹配组名为\"name\"的子表达式成功捕获的相同文本，该命名必须在被\\g引用前完成。\\g'name'或\\g{name}的另一种写法。"
+    },
+    "Hex character YY" : {
+        "zh": "YY对应Hex字符"
+    },
+    "Matches the 8-bit character with the given hex value." : {
+        "zh": "匹配给出Hex值对应的八位字符。"
+    },
+    "Hex character YYYY" : {
+        "zh": "YYYY对应Hex字符"
+    },
+    "Matches the 16-bit character with the given hex value." : {
+        "zh": "匹配给出Hex值对应的十六位字符。"
+    },
+    "Octal character ddd" : {
+        "zh": "ddd对应Oct字符"
+    },
+    "Matches the 8-bit character with the given octal value." : {
+        "zh": "匹配给出Oct值对应的八位字符。"
+    },
+    "Control character Y" : {
+        "zh": "Y对应Ctrl字符"
+    },
+    "Matches ASCII characters typically associated with Control+A through Control+Z: \\x01 through \\x1A." : {
+        "zh": "匹配ASCII码中对应Ctrl+A到Ctrl+Z的字符，等于\\x01到\\x1A。"
+    },
+    "Backspace character" : {
+        "zh": "退格符"
+    },
+    "Matches the backspace control character." : {
+        "zh": "匹配退格符。"
+    },
+    "Makes any character literal" : {
+        "zh": "按文本形式处理字符"
+    },
+    "This may be used to match the literal value of any metacharacter, or the / delimiter." : {
+        "zh": "匹配时按文本形式来识别其后的任何元字符或/分隔符。"
+    },
+    "Zero or one of a" : {
+        "zh": "零或一个a"
+    },
+    "Matches an `a` character or nothing." : {
+        "zh": "匹配零或一个\"a\"字符。"
+    },
+    "Zero or more of a" : {
+        "zh": "零个a以上"
+    },
+    "Matches zero or more consecutive `a` characters." : {
+        "zh": "匹配零个以上连续的\"a\"字符。"
+    },
+    "One or more of a" : {
+        "zh": "一个a以上"
+    },
+    "Matches one or more consecutive `a` characters." : {
+        "zh": "匹配一个以上连续的\"a\"字符。"
+    },
+    "Exactly 3 of a" : {
+        "zh": "三个a"
+    },
+    "Matches exactly 3 consecutive `a` characters." : {
+        "zh": "匹配三个连续的\"a\"字符。"
+    },
+    "3 or more of a" : {
+        "zh": "三个a以上"
+    },
+    "Matches at least 3 consecutive `a` characters." : {
+        "zh": "匹配三个以上连续的\"a\"字符。"
+    },
+    "Between 3 and 6 of a" : {
+        "zh": "3到6个a"
+    },
+    "Matches between 3 and 6 (inclusive) consecutive `a` characters." : {
+        "zh": "匹配三到六个连续的\"a\"字符。"
+    },
+    "Greedy quantifier" : {
+        "zh": "贪婪模式"
+    },
+    "Matches as many characters as possible." : {
+        "zh": "尽可能多地匹配相符内容。"
+    },
+    "Lazy quantifier" : {
+        "zh": "懒惰模式"
+    },
+    "Matches as few characters as possible." : {
+        "zh": "仅匹配最少量的必要相符内容。"
+    },
+    "Possessive quantifier" : {
+        "zh": "侵占模式"
+    },
+    "Matches as many characters as possible; backtracking can't reduce the number of characters matched. Because it is greedy, it will match all the way to the last digit, leaving nothing else for the {1} to match. Without backtracking, this regex fails to produce a match." : {
+        "zh": "尽可能多地匹配相符内容，并禁止随后的匹配项进行回溯匹配。范例中，\d++匹配占用了所有数字，没为.留下任何可匹配字符，故整条匹配式匹配失败。"
+    },
+    "Capture everything enclosed" : {
+        "zh": "捕获封闭内容"
+    },
+    "Parts of the regex enclosed in parentheses may be referred to later in the expression or extracted from the results of a successful match." : {
+        "zh": "将该部分从母表达式封闭成子表达式并分组，留待后续引用，在整式成功匹配后另行捕获。"
+    },
+    "Match either a or b" : {
+        "zh": "匹配a或b"
+    },
+    "Matches the a or the b part of the subexpression." : {
+        "zh": "匹配子表达式中的a或b分支。分支数不限。"
+    },
+    "Match everything enclosed" : {
+        "zh": "匹配封闭内容"
+    },
+    "This construct is similar to (...), but won't create a capture group." : {
+        "zh": "和(...)类似，但不予分组或捕获。"
+    },
+    "Atomic group (non-capturing)" : {
+        "zh": "固化分组(不捕获)"
+    },
+    "Matches the longest possible substring in the group and doesn't allow later backtracking to reevaluate the group. It is not a capturing group." : {
+        "zh": "占用相应匹配内容，禁止随后的匹配项进行回溯匹配。非捕获组。"
+    },
+    "Branch reset group" : {
+        "zh": "组分支"
+    },
+    "Any subpatterns in (...) in such a group share the same number." : {
+        "zh": "该组内所有子表达式共享同一个组序号。"
+    },
+    "Comment" : {
+        "zh": "备注"
+    },
+    "Any text appearing in this group is ignored in the regex. Another option is enabling the x flag to allow #comments. This flag will also cause regex to ignore spaces." : {
+        "zh": "该组内文字不视为表达式内容。也能用/x标记来允许#备注，该标记亦将排除空白字符。"
+    },
+    "Named Capturing Group" : {
+        "zh": "命名捕获组"
+    },
+    "This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?P<name>...)." : {
+        "zh": "该捕获组将可以设定的名称被引用。"
+    },
+    "This capturing group can be referred to using the given name instead of a number. Alternative notation for (?'name'...) and (?P<name>...)." : {
+        "zh": "该捕获组将可以设定的名称被引用。(?'name'...)的另一种写法。"
+    },
+    "This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?'name'...) when using a PCRE flavor." : {
+        "zh": "该捕获组将可以设定的名称被引用。PCRE规则下的另一个可用写法。"
+    },
+    "Inline modifiers" : {
+        "zh": "内标记"
+    },
+    "These enable setting regex flags within the expression itself. You can also unset flags using a minus sign: (?-i)" : {
+        "zh": "为随后的表达式部分应用模式标记。用减号（如(?-i)）则可去除相应标记。"
+    },
+    "Conditional statement" : {
+        "zh": "条件语句"
+    },
+    "If capturing group 1 was matched so far, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. A group name, or a relative position (-1) in PCRE, can be used. Global flag breaks conditionals." : {
+        "zh": "若成功匹配分组1，则匹配竖线前的子表达式，否则匹配后者。在PCRE规则下可以被命名组或相对组(±n)作为判断条件。"
+    },
+    "If recursion of the whole pattern is successful, do something | otherwise do this." : {
+        "zh": "以整个表达式匹配成功与否作为内部递归判断条件。成功则匹配前一个子表达式，否则匹配后者。"
+    },
+    "Recursive Conditional statement" : {
+        "zh": "递归条件语句"
+    },
+    "`(?R1)` checks if a call to capture group 1 was made, which will return false the first time it is encountered because the regex engine is simply parsing capture group one." : {
+        "zh": "`(?R1)`将检查分组1是否成功捕获。一开始正则引擎正在分析捕获组1，故返回false()，匹配竖线后子表达式。"
+    },
+    "Once `(?1)` is called, `(?(R1)true|false)` will return true since capture group 1 was called, and will match `ction`" : {
+        "zh": "当以`(?1)`进行调用，因分组1已捕获，`(?(R1)true|false)`判断返回true，匹配竖线前子表达式。"
+    },
+    "In this case `(?(R&sub1)...|...)` checks if a call to `sub1` has been made. The first time the recursive conditional is parsed, the engine is in the process of matching what `sub1` requires, but it isn't because of a callback to `sub1`." : {
+        "zh": "该情况下“(?(R&sub1)...|...)”降检查“sub1”组是否被创建。首次解析时，引擎正在匹配“sub1”的条件，却因对自身的递归而返回“否”。"
+    },
+    "Once we actually call `sub1` the conditional will return true, at which point `ction` matches." : {
+        "zh": "当后面正式引用“sub1”时将返回“是”，从而匹配“ction”。"
+    },
+    "Lookahead conditional" : {
+        "zh": "顺序环视条件语句"
+    },
+    "If the lookahead succeeds, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag breaks conditionals." : {
+        "zh": "若顺序环视匹配成功，匹配竖线前子表达式，否则匹配后者。可以是否定型环视。“全局”标记将打破该条件结构。"
+    },
+    "Lookbehind conditional" : {
+        "zh": "逆序环视条件语句"
+    },
+    "If the lookbehind succeeds, match the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag, 'g', breaks conditionals." : {
+        "zh": "若逆序环视匹配成功，匹配竖线前子表达式，否则匹配后者。可以是否定型环视。“全局”标记将打破该条件结构。"
+    },
+    "Recurse entire pattern" : {
+        "zh": "递归表达式"
+    },
+    "Recursively match the entire expression. (?0) and \\g<0> are synonymous. This is useful for balanced tags." : {
+        "zh": "递归引用整个表达式，等价于(?0)和\\g<0>。可用于标签的配对匹配。"
+    },
+    "Recurse first subpattern" : {
+        "zh": "递归第1个子表达式"
+    },
+    "Recursively match the first capture group." : {
+        "zh": "递归引用第1个已捕获子表达式。"
+    },
+    "Recurse first relative subpattern" : {
+        "zh": "递归引用后1个子表达式"
+    },
+    "Match the first capture group following the current position in the expression. (?+2) is the second one, (?-1) is before current position." : {
+        "zh": "递归引用此位置后的第1个已捕获子表达式。(?+2)引用后面第2个，(?-1)引用前1个。"
+    },
+    "Recurse subpattern `name`" : {
+        "zh": "递归“name”子表达式"
+    },
+    "Recursively matches the given named capture group. Python supports (?P=named_group), but 'named group' has to be previously defined." : {
+        "zh": "递归引用对应名字的已捕获子表达式。Python支持(?P=named_group)的形式，但必须先定义“named group”。"
+    },
+    "Matches the text matched by a previously named capture group. This is the python specific notation." : {
+        "zh": "递归引用对应名字的已捕获子表达式。Python专用。"
+    },
+    "Recursively matches the given named subpattern or capture group." : {
+        "zh": "递归引用对应名字，已或未捕获的子表达式。"
+    },
+    "Pre-define patterns before using them" : {
+        "zh": "预定义表达式"
+    },
+    "The DEFINE group is completely ignored by regex. It gets treated as a var name=\"value\", whereas you can recall the specific pattern for use via its name. Multiple patterns can be defined in the same DEFINE group." : {
+        "zh": "DEFINE(定义)组内容不会进行匹配，而是为特定组名定义对应的子表达式，供随后调用。可在一个定义组内定义多条子表达式。"
+    },
+    "Positive lookahead" : {
+        "zh": "肯定型顺序环视"
+    },
+    "Asserts that the given subpattern can be matched here, without consuming characters" : {
+        "zh": "子表达式可在此后成功匹配的位置，不占用字符。"
+    },
+    "Negative Lookahead" : {
+        "zh": "否定型顺序环视"
+    },
+    "Starting at the current position in the expression, ensures that the given pattern will not match. Does not consume characters." : {
+        "zh": "子表达式不可在此后成功匹配的位置，不占用字符。"
+    },
+    "Positive Lookbehind" : {
+        "zh": "肯定型逆序环视"
+    },
+    "Ensures that the given pattern will match, ending at the current position in the expression. The pattern must have a fixed width. Does not consume any characters." : {
+        "zh": "定长子表达式可在此前成功匹配的位置，不占用字符。"
+    },
+    "Negative Lookbehind" : {
+        "zh": "否定型逆序环视"
+    },
+    "Ensures that the given pattern would not match and end at the current position in the expression. The pattern must have a fixed width. Does not consume characters." : {
+        "zh": "定长子表达式不可在此前成功匹配的位置，不占用字符。"
+    },
+    "Control verb" : {
+        "zh": "控制动作标记"
+    },
+    "This causes the regex to end successfully, skipping the rest of the pattern." : {
+        "zh": "匹配至此后判断为成功并结束，跳过剩余的表达式。"
+    },
+    "If this token is inside a capturing group, only that capturing group is ended successfully at that particular location, while the parent pattern continues to execute." : {
+        "zh": "当它出现在捕获组内，则组内捕获至该处为止，其余表达式继续匹配。"
+    },
+    "(*FAIL) or (*F) is a synonym for (?!), and it allows you to force a matching failure at a specific point in the regex." : {
+        "zh": "类似于(?!)，(*FAIL)或(*F)让正则匹配到该位置时判断为失败。"
+    },
+    "(*MARK:NAME) or (*:NAME) is used to track how a match was arrived at. Name is always required, but it doesn't need to be unique. When used in conjunction with the /K modifier, pcretest can return the mark together with a successful match." : {
+        "zh": "(*MARK:NAME)或(*:NAME)被用于标记匹配过程。必须赋名，名称不必是唯一的。和/K联用时，正则测试器将随有效匹配一起返回这些标记。"
+    },
+    "This verb does not allow regex to continue parsing after a matching failure, even if there are other matching strings ahead, and regardless of how many successful matches are before the failure." : {
+        "zh": "一旦匹配失败，该标记将终止整个匹配流程，即使之后仍有可成功匹配的文本。"
+    },
+    "(*PRUNE) or (*PRUNE:NAME) will cause the regex to exit if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex. The example above would normally match both terms but due to (*PRUNE) the second alternative is not acted on." : {
+        "zh": "当正则引擎从(*PRUNE)或(*PRUNE:NAME)处进行回溯，匹配将终止。可用于想在回溯到某点时进行切断。例子中本应匹配双方，但因为有(*PRUNE)，就不会回溯并进行后一个分支的匹配了。"
+    },
+    "(*SKIP) or (*SKIP:NAME) will cause the regex to give up on the current match if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex." : {
+        "zh": "当该(*SKIP)或(*SKIP:NAME)处被回溯，放弃本次匹配。"
+    },
+    "(*THEN) or (*THEN:NAME) allows one to cut down on backtracking within an alternation. It won't allow regex to backtrack past its position, and it will give up matching the current alternation." : {
+        "zh": "当该(*THEN)或(*THEN:NAME)处被回溯，不继续匹配当前分支。"
+    },
+    "Pattern modifier" : {
+        "zh": "编码模式标记"
+    },
+    "This allows regex to treat the string as UTF, be it 8, 16, or 32." : {
+        "zh": "令正则引擎视文本编码为8/16/32位UTF。"
+    },
+    "This allows regex to treat the string as UTF-8, specifically." : {
+        "zh": "令正则引擎视文本编码为8位UTF。"
+    },
+    "This allows regex to treat the string as UTF-16, specifically." : {
+        "zh": "令正则引擎视文本编码为16位UTF。"
+    },
+    "This allows regex to treat the string as UTF-32, specifically." : {
+        "zh": "令正则引擎视文本编码为32位UTF。"
+    },
+    "UCP (Unicode Character Properties) allows regex to treat the string as unicode, which means that \\d and \\w are extended to match other unicode characters than [0-9] and [a-zA-Z0-9_]." : {
+        "zh": "令正则引擎视文本编码为Unicode，\\d和\\w将匹配更多的Unicode相关字符，而不限于[0-9]和[a-zA-Z0-9_]。"
+    },
+    "Line break modifier" : {
+        "zh": "换行模式标记"
+    },
+    "(*CR) makes it so that only a carriage return character is considered a line break." : {
+        "zh": "在(*CR)作用下，只有回车符会被视为一次换行。"
+    },
+    "(*LF) makes it so that only a line feed character is considered a line break. Common in UNIX documents." : {
+        "zh": "在(*LF)作用下，只有换行符会被视为一次换行。常见于UNIX文档。"
+    },
+    "(*CRLF) makes it so that only a carriage return character followed by a line feed character is considered a line break. Common in Windows documents." : {
+        "zh": "在(*CRLF)作用下，只有回车符后接换行符，才会被视为一次换行。常见于Windows文档。"
+    },
+    "(*ANYCRLF) makes it so that either a carriage return character or a line feed character, or the two in sequence are considered a line break." : {
+        "zh": "(*ANYCRLF)令回车、换行符或两者连续，三种情况均视为一次换行。"
+    },
+    "(*ANY) makes it so that any unicode newline character or sequence thereof counts as a line break." : {
+        "zh": "(*ANY)令任意Unicode换行字符和组合均被视为一次换行。"
+    },
+    "This metacharacter matches any unicode newline character or sequence thereof. Its behavior can be controlled by (*UTF) pattern modifiers. In (*UTF8) mode, '\\R' will match the line separator, paragraph separator, carriage return, carriage return & newline sequence, line feed, vertical tab, form feed, and next line. When outside (*UTF8) mode, line and paragraph separators are not matched. Newline conventions can also be specified via (*BSR_ANYCRLF) and (*BSR_UNICODE)" : {
+        "zh": "匹配所有Unicode换行字符和组合。其受Unicode编码模式标记影响，在(*UTF8)下，可匹配行分隔符、段分隔符、回车、回车+换行符组合、换页符、纵向制表符等。没有(*UTF8)，则行、页分隔符不被匹配。此外，(*BSR_ANYCRLF)和(*BSR_UNICODE)亦会影响其匹配行为。"
+    },
+    "This sets the convention for newline matching to '\\r\\n','\\r', or '\\n' for things like the '\\R' metacharacter." : {
+        "zh": "令回车、换行符或两者连续，三种情况均能被“\\R”这类元字符匹配。"
+    },
+    "This sets the convention for newline matching to any unicode newline character or sequence thereof, for things like the '\\R' metacharacter." : {
+        "zh": "令任意Unicode换行字符和组合均能被“\\R”这类元字符匹配。"
+    },
+    "Regex engine modifier" : {
+        "zh": "正则引擎模式标记"
+    },
+    "(*LIMIT_MATCH=x) where x is the number of times the regex engine is allowed to call match(). This user set limit cannot be increased past the compile time value or the default, however it can be restricted." : {
+        "zh": "(*LIMIT_MATCH=x)中的x代表正则引擎总共可进行的match次数。只可向下限制，而无法以此超过编译时间或默认上限。"
+    },
+    "(*LIMIT_RECURSION=d) at the start of a pattern will limit the regex engine to 'd' number of recursions when matching. This user set limit cannot be increased past the compile time value or the default, however it can be restricted." : {
+        "zh": "在表达式开头使用(*LIMIT_RECURSION=d)，可将递归次数限制在d以内。只可向下限制，而无法以此超过编译时间或默认上限。"
+    },
+    "The PCRE regex engine automatically applies some internal optimizations to regexes to avoid unnecessary backtracking. This modifier will disable that behavior, and thus the engine will backtrack until the previously matching instruction fails to do so." : {
+        "zh": "PCRE的正则引擎会自动进行内部优化，避免不必要的回溯，而本标记将禁止该功能，让引擎回溯到上一个匹配指令失败为止。"
+    },
+    "Before even attempting a match, the regex engine makes some checks, such as the length of the string. If it is not long enough to fit the pattern, it will automatically return a no match. This optimization can be disabled by using this modifier." : {
+        "zh": "在开始匹配前，正则引擎会检查一些参数，如文本长度，若不足，则直接返回“无匹配结果”。本标签将禁止该功能。"
+    },
+    "A single character of: a, b or c" : {
+        "zh": "单个a或b或c字符"
+    },
+    "Matches either an a, b or c character" : {
+        "zh": "匹配为a、b或c的字符。"
+    },
+    "A character except: a, b or c" : {
+        "zh": "非a或b或c的字符"
+    },
+    "Matches any character except for an a, b or c" : {
+        "zh": "匹配除a、b和c以外的任意字符。"
+    },
+    "A character in the range: a-z" : {
+        "zh": "在a到z范围内的小写英语字母字符"
+    },
+    "Matches any characters between a and z, including a and z." : {
+        "zh": "匹配a与z之间的字符，包括a和z。"
+    },
+    "A character not in the range: a-z" : {
+        "zh": "在a到z范围外的字符"
+    },
+    "Matches any characters except those in the range a-z." : {
+        "zh": "匹配不在a到z范围内的任意字符。"
+    },
+    "A character in the range: a-z or A-Z" : {
+        "zh": "在a到z或A到Z范围内的大小写英语字母字符"
+    },
+    "Matches any characters between a-z or A-Z. You can combine as much as you please." : {
+        "zh": "匹配a到z及A到Z以内字符，可继续增加定义其它字符范围。"
+    },
+    "Letters and digits" : {
+        "zh": "字母与数字"
+    },
+    "An alternate way to match any letter or digit. Equivalent to [A-Za-z0-9]. [[:alnum:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配数字和英文字母，类似[A-Za-z0-9]。必须位于字符类标记内。"
+    },
+    "Letters" : {
+        "zh": "字母"
+    },
+    "An alternate way to match alphabet letters. Equivalent to [A-Za-z]. [[:alpha:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配英文字母，类似[A-Za-z]。必须位于字符类标记内。"
+    },
+    "ASCII codes 0-127" : {
+        "zh": "ASCII编码0-127号字符"
+    },
+    "Matches any character in the valid ASCII range. Equivalent to [\0-\x7f]. [[:ascii:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配有效ASCII字符，类似[\0-\x7f]。必须位于字符类标记内。"
+    },
+    "Space or tab only" : {
+        "zh": "空格或制表符"
+    },
+    "Matches spaces and tabs (but not newlines). Equivalent to [ \t]. [[:blank:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配空格和制表符，类似[ \t]。必须位于字符类标记内。"
+    },
+    "Control characters" : {
+        "zh": "控制符"
+    },
+    "Matches characters that are often used to control text presentation, including newlines, null characters, tabs and the escape character. Equivalent to [\\x00-\\x1F\\x7F]. [[:cntrl:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配控制文本表达的符号，包括换行符、空白字符、制表符及转义字符，类似[\x00-\x1F\x7F]。必须位于字符类标记内。"
+    },
+    "Decimal digits" : {
+        "zh": "十进制数字"
+    },
+    "Matches decimal digits. Equivalent to [0-9]. [[:digit:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配十进制阿拉伯数字字符，类似[0-9]。必须位于字符类标记内。"
+    },
+    "Visible characters" : {
+        "zh": "可见字符"
+    },
+    "Matches printable characters, part of the basic latin set, such as letters and spaces, without including control characters. [[:print:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配含字母、空白字符在内的基本拉丁字符表，但不包括控制符。必须位于字符类标记内。"
+    },
+    "Visible characters (not space)" : {
+        "zh": "可见字符(不含空白字符)"
+    },
+    "Matches printable, non-whitespace, non-control characters only. Equivalent to [!-~]. [[:graph:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配非空白字符、非控制字符的可印刷符号，类似[!-~]。必须位于字符类标记内。"
+    },
+    "Visible punctuation characters" : {
+        "zh": "可见标点字符"
+    },
+    "Matches characters that are not whitespace, letters or numbers. [[:punct:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配空白字符、字母和数字以外的字符。必须位于字符类标记内。"
+    },
+    "Whitespace" : {
+        "zh": "空白字符"
+    },
+    "Matches whitespace characters. Equivalent to \\s. [[:space:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配空白字符，类似\\s。必须位于字符类标记内。"
+    },
+    "Uppercase letters" : {
+        "zh": "大写字母"
+    },
+    "Matches uppercase letters. Equivalent to [A-Z]. [[:upper:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配大写英文字母，类似[A-Z]。必须位于字符类标记内。"
+    },
+    "Lowercase letters" : {
+        "zh": "小写字母"
+    },
+    "Matches lowercase letters. Equivalent to [a-z]. [[:lower:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配小写英文字母，类似[a-z]。必须位于字符类标记内。"
+    },
+    "Word characters" : {
+        "zh": "单词字符"
+    },
+    "Matches letters, numbers and underscores. Equivalent to \\w or [a-zA-Z0-9_]. [[:word:]] is a POSIX notation and it needs to be inside a [character class] notation." : {
+        "zh": "POSIX下匹配数字、英文字母和下划线，类似[A-Za-z0-9_]。必须位于字符类标记内。"
+    },
+    "Hexadecimal digits" : {
+        "zh": "十六进制数字"
+    },
+    "Matches hexadecimal digits, case insensitive. Equivalent to [0-9a-fA-F]." : {
+        "zh": "匹配十六进制阿拉伯数字字符，类似[0-9a-fA-F]。"
+    },
+    "Start of word" : {
+        "zh": "单词首"
+    },
+    "This POSIX equivalent of the `\\\\b` word boundary is interpreted as {1}" : {
+        "zh": "POSIX下类似于`\\\\b`的词汇前分界，更具体地阐释为"
+    },
+    "End of word" : {
+        "zh": "单词尾"
+    },
+    "This POSIX equivalent of the \"\\b\" word boundary is interpreted as" : {
+        "zh": "POSIX下类似于\"\\b\"的词汇后分界，更具体地阐释为"
+    },
+    "Global" : {
+        "zh": "全局模式"
+    },
+    "Tells the engine not to stop after the first match has been found, but rather to continue until no more matches can be found." : {
+        "zh": "让正则引擎在没有可匹配项剩余之前保持检索。"
+    },
+    "Multiline" : {
+        "zh": "多行模式"
+    },
+    "The ^ and $ anchors now match at the beginning/end of each line respectively, instead of beginning/end of the entire string." : {
+        "zh": "^和$不仅匹配整个字符串的始末，还将匹配每行的开头与末尾。"
+    },
+    "Case insensitive" : {
+        "zh": "不区分大小写"
+    },
+    "A case insensitive match is performed, meaning capital letters will be matched by non-capital letters and vice versa." : {
+        "zh": "大小写字母的表达式将相互匹配。"
+    },
+    "Ignore Whitespace" : {
+        "zh": "忽略空白字符"
+    },
+    "This flag tells the engine to ignore all whitespace and allow for comments in the regex. Comments are indicated by a starting \"#\"-character. If you need to include a space character in your regex, it must now be escaped '\\ '." : {
+        "zh": "让正则引擎忽略所有空白字符并允许以#添加备注。若要在表达式中包含空白字符，必须以'\\ '进行转义。"
+    },
+    "Single line" : {
+        "zh": "单行模式"
+    },
+    "This enables the dot (.) metacharacter to also match new lines. The string could be visualised as a single line input." : {
+        "zh": "将字符串视为单一行，元字符(.)可匹配换行符。"
+    },
+    "Unicode" : {
+        "zh": "Unicode模式"
+    },
+    "Pattern strings will be treated as UTF-16, which means that unicode characters will also be included in [a-z] ranges, and in escape sequences." : {
+        "zh": "将字符串编码视为UTF-16，unicode字符将被包含到[a-z]等范围及转义内。"
+    },
+    "eXtended" : {
+        "zh": "扩展模式"
+    },
+    "Any character following a \\ that is not a valid meta sequence will be faulted and raise an error. For example, escaping a (.) meta character will cause an error, and it will not match." : {
+        "zh": "在\\后衔接任何不能形成有效元字符的内容（例如\\.），都将被视为错误，不予匹配。"
+    },
+    "Ungreedy" : {
+        "zh": "懒惰模式"
+    },
+    "The engine will per default do lazy matching, instead of greedy. This means that a ? following a quantifier instead makes it greedy." : {
+        "zh": "默认进行懒惰匹配。量词后接?将使之变为贪婪匹配。"
+    },
+    "Anchor" : {
+        "zh": "锚定模式"
+    },
+    "The pattern is forced to become anchored, equal to a ^." : {
+        "zh": "表达式被强制锚定，相当于在式子开头加上^。"
+    },
+    "Duplicate group names" : {
+        "zh": "重复组名模式"
+    },
+    "This allows regex to accept duplicate pattern names, however each capture group still has its own ID. Thus the two capture groups produce their own match instead of a single combined one." : {
+        "zh": "捕获的子表达式可使用相同组名，但仍被分配独立的ID号。"
+    },
+    "Sticky - searches in strings only from the index of the last match" : {
+        "zh": "粘连模式"
+    },
+    "Regex will continue parsing the string keeping in mind the last match location. If the next match is not located directly after the last, this next match is discarded." : {
+        "zh": "从上次匹配成功的下个位置开始后续匹配。若下个相符内容不紧接在后，则不继续匹配。"
+    },
+    "In the example below, the first alternate matched \"a\", and the second one matched \"bc\", however once it bumped into \"X\" none of the alternatives resulted in a match. Therefore the engine cannot return the next \"a\" as a match because \"X\" is not the last location where a match occurred." : {
+        "zh": "范例中，相邻的a和bc分别被匹配，但因有X相隔，下一个a及其后内容不被匹配。"
+    },
+    "Enable unicode support" : {
+        "zh": "开启Unicode支持"
+    },
+    "Allows regex to match unicode characters via dotall and unicode escape sequences, as well as ES6 unicode code point escapes such as \\u{1D306}." : {
+        "zh": "让正则引擎可通过Unicode、ES6等转义办法匹配Unicode字符。"
+    },
+    "Keep in mind that Python 3 is going to treat your whole script as unicode by default, therefore using this flag would be redundant. See the \"a\" flag to limit matches to ASCII characters only. Python 2 requires this flag to turn on unicode support." : {
+        "zh": "Python 3默认视被匹配文本编码为Unicode，只有默认为ASCII编码的Python 2需要使用此修饰符。"
+    },
+    "Restrict matches to ASCII only" : {
+        "zh": "仅匹配ASCII"
+    },
+    "Make regex perform ASCII-only matching instead of full Unicode matching. Applies to [a-z] ranges and escape sequences." : {
+        "zh": "令正则引擎只匹配ASCII字符（而不是所有Unicode字符），影响[a-z]等范围元字符和转义组合。"
+    },
+    "This flag does not exist in Python2, as by default your script is parsed in ascii mode. In Python3 this will behave as described." : {
+        "zh": "Python 2不支持本修饰符，默认为ASCII。"
+    },
+    "Complete match contents" : {
+        "zh": "完整匹配内容"
+    },
+    "This will return a string with the complete match result from the regex." : {
+        "zh": "返回主表达式匹配捕获的字符串内容。"
+    },
+    "Contents in capture group 1" : {
+        "zh": "捕获组1内容"
+    },
+    "This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group." : {
+        "zh": "返回首个捕获组的字符串内容。只要能对应有效的捕获组，组号码大小不限。"
+    },
+    "Contents before match" : {
+        "zh": "匹配前内容"
+    },
+    "This will return a portion of the source string that precedes the match." : {
+        "zh": "返回被匹配字符串前的字符串内容。"
+    },
+    "Contents after match" : {
+        "zh": "匹配后内容"
+    },
+    "This will return a portion of the source string that follows the match." : {
+        "zh": "返回被匹配字符串后的字符串内容。"
+    },
+    "Contents in capture group `foo`" : {
+        "zh": "捕获组`foo`内容"
+    },
+    "This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. This syntax is made up and specific to only Regex101. If the J-flag is specified, content will be taken from the first capture group with the same name." : {
+        "zh": "返回被命名为foo的捕获组的字符串内容。若使用了修饰符J，将引用首个同名捕获组的内容。Regex101特有语法。"
+    },
+    "This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. If the J-flag is specified, content will be taken from the first capture group with the same name." : {
+        "zh": "返回被命名为foo的捕获组的字符串内容。若使用了修饰符J，将引用首个同名捕获组的内容。"
+    },
+    "Hexadecimal replacement values" : {
+        "zh": "HEX替换值"
+    },
+    "You can use hexadecimals to insert any character into the replacement string using the standard syntax." : {
+        "zh": "可以HEX码在替换文本中插入任意字符。"
+    },
+    "Form-feed" : {
+        "zh": "换页符"
+    },
+    "Insert a form-feed character." : {
+        "zh": "插入一个换页符。"
     }
 };;
 //语言翻译函数
 function LANG(str) {
-    if(!!langMap[str][globalSettings.language]) {
+    if(typeof langMap[str] != 'undefined' && typeof langMap[str][globalSettings.language] != 'undefined') {
         return langMap[str][globalSettings.language];
     }
     return str;
@@ -6211,35 +7030,16 @@ function(e, t, n) {
                     to: "/",
                     absolute: !0,
                     id: 'home'
-                },
-                f.default.createElement("span", {
+                },f.default.createElement("span", {
                     className: v.default.regular
                 },
                 f.default.createElement("span", {
                     className: v.default.wide
                 },
-                "Regular"), f.default.createElement("span", {
-                    className: v.default.narrow
-                },
-                "Reg")), f.default.createElement("span", {
-                    className: v.default.expressions
-                },
-                f.default.createElement("span", {
-                    className: v.default.wide
-                },
-                "Expressions"), f.default.createElement("span", {
-                    className: v.default.narrow
-                },
-                "Ex")), f.default.createElement("span", {
+                LANG("Regular Expression"))), f.default.createElement("span", {
                     className: v.default.suffix
                 },
-                "101"), f.default.createElement("a", {
-                     className: v.default.qq,
-                     href: "http://shang.qq.com/wpa/qunwpa?idkey=aee4a3be2fc73fb1121f4544a8d469fd0d24937e0b06a583e7ef82c910806c0b",
-                     target:"_blank",
-                     id: "qq-group"
-                },
-                 "  【点击加入Q群：专精正则表达式（434252251）】"))
+                "101"))
             }
         }]),
         t
@@ -9483,7 +10283,7 @@ function(e, t, n) {
                 text: "{1}. Case sensitive match",
                 ph1: "-<strong>i</strong>nsensitive"
             }) : "J" === e ? o = r ? u.default.createElement(g.THtml, {
-                text: "Allow duplicate subpattern names"
+                text: LANG("Allow duplicate subpattern names")
             }) : u.default.createElement(g.THtml, {
                 text: "Disallow duplicate subpattern names"
             }) : "s" === e ? o = r ? u.default.createElement(g.THtml, {
@@ -21056,59 +21856,134 @@ function(e, t, n) {
                 t = e.permalinkFragment,
                 n = e.version;
                 return d.default.createElement("div", {
-                    className: T.default.root
-                },
-                d.default.createElement(w.Link, {
-                    to: null != t ? (0, b.createPermalinkUrl)(t, n) : "/",
-                    className: T.default.link,
-                    activeClassName: T.default.active,
-                    noTheme: !0
-                },
-                d.default.createElement(w.IconButton, {
-                    size: k,
-                    tooltip: (0, v.default)(LANG("Regex Editor")),
-                    tooltipDirection: O.directions.E,
-                    icon: "fa-code",
-                    themeClass: T.default.iconButton
-                })), d.default.createElement(w.Link, {
-                    to: "/library",
-                    className: T.default.link,
-                    activeClassName: T.default.active,
-                    noTheme: !0
-                },
-                d.default.createElement(w.IconButton, {
-                    size: k,
-                    tooltip: (0, v.default)(LANG("Regex Library")),
-                    tooltipDirection: O.directions.E,
-                    icon: "fa-book",
-                    themeClass: T.default.iconButton
-                })), d.default.createElement(w.Link, {
-                    to: E.WEBCHAT_LINK + this.state.nickname,
-                    target: "_blank",
-                    className: T.default.link,
-                    noTheme: !0,
-                    absolute: !0
-                },
-                d.default.createElement(w.IconButton, {
-                    size: k,
-                    tooltip: (0, v.default)(LANG("Live Help (IRC, opens new window)")),
-                    tooltipDirection: O.directions.E,
-                    icon: "fa-comments",
-                    themeClass: T.default.iconButton
-                })), d.default.createElement(w.Link, {
-                    target: "_blank",
-                    to: E.DONATION_LINK,
-                    className: (0, y.default)(T.default.link, T.default.donationButton),
-                    noTheme: !0,
-                    absolute: !0
-                },
-                d.default.createElement(w.IconButton, {
-                    size: k,
-                    tooltip: (0, v.default)("Consider a donation"),
-                    tooltipDirection: O.directions.NE,
-                    icon: "fa-dollar",
-                    themeClass: T.default.iconButton
-                })))
+                        className: T.default.root
+                    },
+
+                    //正则编辑器
+                    d.default.createElement(w.Link, {
+                        to: null != t ? (0, b.createPermalinkUrl)(t, n) : "/",
+                        className: T.default.link,
+                        activeClassName: T.default.active,
+                        noTheme: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Regex Editor")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-code",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //工具使用教程
+                    d.default.createElement(w.Link, {
+                        to: "http://qiniu-img.zjmainstay.cn/regex.zjmainstay.cn.jpg",
+                        target: "_blank",
+                        className: T.default.link,
+                        noTheme: !0,
+                        absolute: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Website Usage")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-question",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //手册教程
+                    d.default.createElement(w.Link, {
+                        to: "http://www.zjmainstay.cn/regexp-one",
+                        target: "_blank",
+                        className: T.default.link,
+                        noTheme: !0,
+                        absolute: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Regex Manual")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-university",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //qq群
+                    d.default.createElement(w.Link, {
+                        to: "http://shang.qq.com/wpa/qunwpa?idkey=aee4a3be2fc73fb1121f4544a8d469fd0d24937e0b06a583e7ef82c910806c0b",
+                        target: "_blank",
+                        className: T.default.link,
+                        noTheme: !0,
+                        absolute: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("QQ Group")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-qq",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //正则库
+                    d.default.createElement(w.Link, {
+                        to: "/library",
+                        className: T.default.link,
+                        activeClassName: T.default.active,
+                        noTheme: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Regex Library")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-book",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //网站信息
+                    d.default.createElement(w.Link, {
+                        to: "/info",
+                        className: T.default.link,
+                        activeClassName: T.default.active,
+                        noTheme: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Website Info")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-info",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //在线交流
+                    d.default.createElement(w.Link, {
+                        to: E.WEBCHAT_LINK + this.state.nickname,
+                        target: "_blank",
+                        className: T.default.link,
+                        noTheme: !0,
+                        absolute: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Live Help (IRC, opens new window)")),
+                        tooltipDirection: O.directions.E,
+                        icon: "fa-comments",
+                        themeClass: T.default.iconButton
+                    })),
+
+                    //捐赠
+                    d.default.createElement(w.Link, {
+                        target: "_blank",
+                        to: E.DONATION_LINK,
+                        className: (0, y.default)(T.default.link, T.default.donationButton),
+                        noTheme: !0,
+                        absolute: !0
+                    },
+                    d.default.createElement(w.IconButton, {
+                        size: k,
+                        tooltip: (0, v.default)(LANG("Consider a donation")),
+                        tooltipDirection: O.directions.NE,
+                        icon: "fa-dollar",
+                        themeClass: T.default.iconButton
+                    }))
+                )
             }
         }]),
         t
@@ -22984,7 +23859,7 @@ function(e, t, n) {
     }
     function u(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-        if (e.type === v.LINE_COMMENT || e.type === v.GROUP_COMMENT) return c.default.createElement("div", null, (0, y.default)("Comment"));
+        if (e.type === v.LINE_COMMENT || e.type === v.GROUP_COMMENT) return c.default.createElement("div", null, (0, y.default)(LANG("Comment")));
         if (e.error) return (0, se.explainError)(e.error);
         var n = e.tooltipToken,
         r = e.string;
@@ -28740,19 +29615,6 @@ function(e, t, n) {
     f = {
         initialize: function(e, t) {
             return void i("no google");
-            return e ? (t && (t.debug && t.debug === !0 && (u = !0), t.titleCase === !1 && (s = !1)),
-            function(e, t, n, r, o, a, i) {
-                e.GoogleAnalyticsObject = o,
-                e[o] = e[o] ||
-                function() { (e[o].q = e[o].q || []).push(arguments)
-                },
-                e[o].l = 1 * new Date,
-                a = t.createElement(n),
-                i = t.getElementsByTagName(n)[0],
-                a.async = 1,
-                a.src = r,
-                i.parentNode.insertBefore(a, i)
-            } (window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"), void(t && t.gaOptions ? ga("create", e, t.gaOptions) : ga("create", e, "auto"))) : void i("gaTrackingID is required in initialize()")
         },
         ga: function() {
             return arguments.length > 0 ? (ga.apply(this, arguments), void(u && (l("called ga('arguments');"), l("with arguments: " + JSON.stringify([].slice.apply(arguments)))))) : ga
@@ -35365,7 +36227,7 @@ function(e, t, n) {
                 "" === u ? l.append("final Pattern pattern = Pattern.compile(regex);") : l.append("final Pattern pattern = Pattern.compile(regex, " + u + ");"),
                 l.append("final Matcher matcher = pattern.matcher(string);"),
                 l.append(""),
-                o ? (l.append("// " + (0, d.default)("The substituted value will be contained in the result variable")), i ? l.append("final String result = matcher.replaceAll(subst);") : l.append("final String result = matcher.replaceFirst(subst);"), l.append(""), l.append('System.out.println("' + (0, d.default)("Substitution result") + ': " + result);')) : (i ? l.append("while (matcher.find()) {", 4) : l.append("if (matcher.find()) {", 4), l.append('System.out.println("' + (0, d.default)("Full match") + ': " + matcher.group(0));'), l.append("for (int i = 1; i <= matcher.groupCount(); i++) {", 8), l.append('System.out.println("' + (0, d.default)("Group") + ' " + i + ": " + matcher.group(i));', 4), l.append("}", 0), l.append("}")),
+                o ? (l.append("// " + (0, d.default)("The substituted value will be contained in the result variable")), i ? l.append("final String result = matcher.replaceAll(subst);") : l.append("final String result = matcher.replaceFirst(subst);"), l.append(""), l.append('System.out.println("' + (0, d.default)(LANG("Substitution result")) + ': " + result);')) : (i ? l.append("while (matcher.find()) {", 4) : l.append("if (matcher.find()) {", 4), l.append('System.out.println("' + (0, d.default)(LANG("Full match")) + ': " + matcher.group(0));'), l.append("for (int i = 1; i <= matcher.groupCount(); i++) {", 8), l.append('System.out.println("' + (0, d.default)("Group") + ' " + i + ": " + matcher.group(i));', 4), l.append("}", 0), l.append("}")),
                 l.toString()
             }
         }]),
@@ -36317,7 +37179,7 @@ function(e, t, n) {
             value: function() {
                 return d.default.createElement("div", {
                     ref: "menuButton"
-                },
+                }/*,
                 d.default.createElement(b.IconButton, {
                     tooltip: (0, g.default)("Account"),
                     onClick: this.onMenuClick,
@@ -36329,7 +37191,7 @@ function(e, t, n) {
                     isOpen: this.state.showMenu,
                     getMenuTarget: this.getMenuTarget,
                     onMenuClose: this.onMenuClose
-                }))
+                })*/)
             }
         }]),
         t
@@ -37472,7 +38334,7 @@ function(e, t, n) {
             key: "getSaveButtonString",
             value: function() {
                 return this.props.isLibraryEntry ? (0, b.default)("Update Library Entry"):
-                null != this.props.permalinkFragment ? (0, b.default)("Update Regex"):
+                null != this.props.permalinkFragment ? (0, b.default)(LANG("Update Regex")):
                 (0, b.default)(LANG("Save Regex"))
             }
         },
@@ -37510,7 +38372,7 @@ function(e, t, n) {
                     icon: "fa-code-fork",
                     onClick: this.onForkRegexClick
                 },
-                (0, b.default)("Fork Regex")), null != a && y.default.createElement(F.default, {
+                (0, b.default)(LANG("Fork Regex"))), null != a && y.default.createElement(F.default, {
                     isDisabled: "" === n || l === P.PATTERN_ERROR,
                     icon: "fa-upload",
                     onClick: this.onShowLibraryModalClick
@@ -40761,7 +41623,7 @@ function(e, t, n) {
                 },
                 (0, v.default)("If you want to use this regex and data in your own experiments, click the `Fork Regex` button below instead."), " ", (0, v.default)("The `Fork Regex` button will create a copy of this document, but one that you may modify, without altering this entry.")), g.default.createElement(w.Button, {
                     onClick: this.onForkRegexClick,
-                    text: (0, v.default)("Fork Regex")
+                    text: (0, v.default)(LANG("Fork Regex"))
                 })):
                 r ? g.default.createElement("div", {
                     className: N.default.centered
@@ -43044,8 +43906,10 @@ function(e, t, n) {
     E = n(526),
     w = r(E),
     O = n(944),
+    N = n(780),
     C = r(O),
     T = (u = (0, y.connect)(function(e, t) {
+        globalSettings.regexEditor = e.regexEditor;
         return {
             version: e.general.version,
             permalinkFragment: e.general.permalinkFragment,
@@ -43123,7 +43987,37 @@ function(e, t, n) {
                     permalinkFragment: t,
                     version: n,
                     getMenuTarget: this.getMenuTarget
-                }), o))
+                }), g.default.createElement('button', {
+                    className: 'copy-regexp',
+                    id: 'copy-regexp',
+                    onClick: function(){
+                        var regex = globalSettings.regexEditor.regex;
+                        var _clipboard = new N("#copy-regexp", {
+                            text: function(e) {
+                                return regex;
+                            }
+                        });
+                        _clipboard.on("success", function(e) {
+                            e.clearSelection();
+                            _clipboard.destroy();
+                        });
+                        _clipboard.on("error", function(e) {
+                            console.log('copy error');
+                            _clipboard.destroy();
+                        });
+                        var that = document.getElementById('copy-regexp');
+                        if(-1 != that.className.indexOf('clicked')) {
+                            that.className = that.className.replace(/ clicked/, '');
+                            that.innerHTML = (0, v.default)(LANG("Copied"));
+                            setTimeout(function(){
+                                document.getElementById('copy-regexp').innerHTML = (0, v.default)(LANG("Copy"));
+                            }, 800);
+                        } else {    //首次点击
+                            that.className += ' clicked';
+                            that.click();    //模拟重复点击
+                        }
+                    }
+                },(0, v.default)(LANG("Copy"))), o))
             }
         }]),
         t
@@ -44977,6 +45871,7 @@ function(e, t, n) {
     G = r(q),
     z = n(951),
     W = r(z),
+    Cp = n(780),
     V = (u = (0, b.connect)(function(e, t) {
         return {
             showSubstitution: e.regexEditor.showSubstitution,
@@ -45153,7 +46048,37 @@ function(e, t, n) {
                 },
                 v.default.createElement(L.MultiLabel, {
                     text: (0, k.default)(LANG("Test String"))
-                },
+                }, v.default.createElement('button', {
+                    className: 'copy-teststring',
+                    id: 'copy-teststring',
+                    onClick: function(){
+                        var testString = globalSettings.regexEditor.testString;
+                        var _clipboard = new Cp("#copy-teststring", {
+                            text: function(e) {
+                                return testString;
+                            }
+                        });
+                        _clipboard.on("success", function(e) {
+                            e.clearSelection();
+                            _clipboard.destroy();
+                        });
+                        _clipboard.on("error", function(e) {
+                            console.log('copy error');
+                            _clipboard.destroy();
+                        });
+                        var that = document.getElementById('copy-teststring');
+                        if(-1 != that.className.indexOf('clicked')) {
+                            that.className = that.className.replace(/ clicked/, '');
+                            that.innerHTML = (0, k.default)(LANG("Copied"));
+                            setTimeout(function(){
+                                document.getElementById('copy-teststring').innerHTML = (0, k.default)(LANG("Copy"));
+                            }, 800);
+                        } else {    //首次点击
+                            that.className += ' clicked';
+                            that.click();    //模拟重复点击
+                        }
+                    }
+                },(0, k.default)(LANG("Copy"))),
                 v.default.createElement(_.Link, {
                     className: W.default.switchAreaLabel,
                     to: (0, R.default)(f, "tests")
@@ -49147,10 +50072,10 @@ function(e, t, n) {
                 }
                 var a = [],
                 i = void 0;
-                if (0 === t.groupNum) i = (0, d.default)("Full match");
+                if (0 === t.groupNum) i = (0, d.default)(LANG("Full match"));
                 else {
                     var l = t.groupName || T.default.captureGroupMap[t.groupNum];
-                    i = (0, d.default)("Group {1}", isNaN(l) ? "`" + l + "`": l + ".")
+                    i = (0, d.default)(LANG("Group {1}"), isNaN(l) ? "`" + l + "`": l + ".")
                 }
                 a.push(f.default.createElement("td", {
                     className: x.default.groupNum,
@@ -49172,7 +50097,7 @@ function(e, t, n) {
                     className: x.default.matchData,
                     key: n + "-matchData"
                 },
-                o ? (0, d.default)("group did not participate in match"):
+                o ? (0, d.default)(LANG("group did not participate in match")):
                 "`" + t.content + "`")),
                 f.default.createElement("tr", {
                     className: (0, g.default)(o && x.default.didNotParticipate)
@@ -49857,82 +50782,82 @@ function(e, t, n) {
     }]), a(l, y.CHARACTER_CLASSES, [{
         token: "[abc]",
         basic: !0,
-        desc: (0, h.default)("A single character of: a, b or c"),
+        desc: (0, h.default)(LANG("A single character of: a, b or c")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), " ", p.default.createElement("span", null, "bb"), " ", p.default.createElement("span", null, "ccc")),
         exampleRegex: "[abc]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches either an a, b or c character")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches either an a, b or c character"))),
         keywords: ["specific", "letters", "alphabet"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[^abc]",
         basic: !0,
-        desc: (0, h.default)("A character except: a, b or c"),
+        desc: (0, h.default)(LANG("A character except: a, b or c")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "Anything "), "b", p.default.createElement("span", null, "ut "), "abc", p.default.createElement("span", null, ".")),
         exampleRegex: "[^abc]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any character except for an a, b or c")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any character except for an a, b or c"))),
         keywords: ["anything except", "anything but", "letter range", "letters", "alphabet"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[a-z]",
         basic: !0,
-        desc: (0, h.default)("A character in the range: a-z"),
+        desc: (0, h.default)(LANG("A character in the range: a-z")),
         example: p.default.createElement("div", null, "O", p.default.createElement("span", null, "nly"), " ", p.default.createElement("span", null, "a"), "-", p.default.createElement("span", null, "z")),
         exampleRegex: "[a-z]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any characters between a and z, including a and z.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any characters between a and z, including a and z."))),
         keywords: ["letter range", "letters", "alphabet"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[^a-z]",
         basic: !0,
-        desc: (0, h.default)("A character not in the range: a-z"),
+        desc: (0, h.default)(LANG("A character not in the range: a-z")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "A"), "nything", p.default.createElement("span", null, " "), "but", p.default.createElement("span", null, " "), "a", p.default.createElement("span", null, "-"), "z", p.default.createElement("span", null, ".")),
         exampleRegex: "[^a-z]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any characters except those in the range a-z.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any characters except those in the range a-z."))),
         keywords: ["letter range", "letters", "alphabet"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[a-zA-Z]",
         basic: !0,
-        desc: (0, h.default)("A character in the range: a-z or A-Z"),
+        desc: (0, h.default)(LANG("A character in the range: a-z or A-Z")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "abc"), "123", p.default.createElement("span", null, "DEF")),
         exampleRegex: "[a-zA-Z]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any characters between a-z or A-Z. You can combine as much as you please.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any characters between a-z or A-Z. You can combine as much as you please."))),
         keywords: ["letter range", "letters", "alphabet", "uppercase", "lowercase"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:alnum:]]",
-        desc: (0, h.default)("Letters and digits"),
+        desc: (0, h.default)(LANG("Letters and digits")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "1st"), ", ", p.default.createElement("span", null, "2nd"), ", ", p.default.createElement("span", null, "and"), " ", p.default.createElement("span", null, "3rd"), "."),
         exampleRegex: "[[:alnum:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("An alternate way to match any letter or digit. Equivalent to [A-Za-z0-9]. [[:alnum:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("An alternate way to match any letter or digit. Equivalent to [A-Za-z0-9]. [[:alnum:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "numbers", "digits", "letter range", "letters", "alphabet", "uppercase", "lowercase"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:alpha:]]",
-        desc: (0, h.default)("Letters"),
+        desc: (0, h.default)(LANG("Letters")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "hello"), ", ", p.default.createElement("span", null, "there"), "!"),
         exampleRegex: "[[:alpha:]]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("An alternate way to match alphabet letters. Equivalent to [A-Za-z]. [[:alpha:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("An alternate way to match alphabet letters. Equivalent to [A-Za-z]. [[:alpha:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "letter range", "letters", "alphabet", "uppercase", "lowercase"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:ascii:]]",
-        desc: (0, h.default)("ASCII codes 0-127"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches any character in the valid ASCII range. Equivalent to [\0-\x7f]. [[:ascii:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        desc: (0, h.default)(LANG("ASCII codes 0-127")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any character in the valid ASCII range. Equivalent to [\0-\x7f]. [[:ascii:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "Any basic latin character. "), "\xe9", p.default.createElement("span", null, " is not one of them.")),
         exampleRegex: "[[:ascii:]]+",
         regexFlags: "g",
@@ -49941,35 +50866,35 @@ function(e, t, n) {
     },
     {
         token: "[[:blank:]]",
-        desc: (0, h.default)("Space or tab only"),
+        desc: (0, h.default)(LANG("Space or tab only")),
         example: p.default.createElement("div", null, "a", p.default.createElement("span", null, " "), "b", p.default.createElement("span", null, " "), "c"),
         exampleRegex: "[[:blank:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches spaces and tabs (but not newlines). Equivalent to [ \t]. [[:blank:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches spaces and tabs (but not newlines). Equivalent to [ \t]. [[:blank:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "spaces", "tabs"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:cntrl:]]",
-        desc: (0, h.default)("Control characters"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches characters that are often used to control text presentation, including newlines, null characters, tabs and the escape character. Equivalent to [\\x00-\\x1F\\x7F]. [[:cntrl:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        desc: (0, h.default)(LANG("Control characters")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches characters that are often used to control text presentation, including newlines, null characters, tabs and the escape character. Equivalent to [\\x00-\\x1F\\x7F]. [[:cntrl:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "\\t", "\\n", "newlines", "tabs", "escape", "esc", "sequence"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:digit:]]",
-        desc: (0, h.default)("Decimal digits"),
+        desc: (0, h.default)(LANG("Decimal digits")),
         example: p.default.createElement("div", null, "one: ", p.default.createElement("span", null, "1"), ", two: ", p.default.createElement("span", null, "2")),
         exampleRegex: "[[:digit:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches decimal digits. Equivalent to [0-9]. [[:digit:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches decimal digits. Equivalent to [0-9]. [[:digit:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "numbers", "digits", "numeric"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:graph:]]",
-        desc: (0, h.default)("Visible characters (not space)"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches printable, non-whitespace, non-control characters only. Equivalent to [!-~]. [[:graph:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        desc: (0, h.default)(LANG("Visible characters (not space)")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches printable, non-whitespace, non-control characters only. Equivalent to [!-~]. [[:graph:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "A|m0st"), " \xe9", p.default.createElement("span", null, "verything"), " ", p.default.createElement("span", null, "goes.")),
         exampleRegex: "[[:graph:]]+",
         regexFlags: "g",
@@ -49978,18 +50903,18 @@ function(e, t, n) {
     },
     {
         token: "[[:lower:]]",
-        desc: (0, h.default)("Lowercase letters"),
+        desc: (0, h.default)(LANG("Lowercase letters")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "abc"), "DEF", p.default.createElement("span", null, "ghi")),
         exampleRegex: "[[:lower:]]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches lowercase letters. Equivalent to [a-z]. [[:lower:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches lowercase letters. Equivalent to [a-z]. [[:lower:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "alphabet", "small", "non-capitals"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:print:]]",
-        desc: (0, h.default)("Visible characters"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches printable characters, part of the basic latin set, such as letters and spaces, without including control characters. [[:print:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        desc: (0, h.default)(LANG("Visible characters")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches printable characters, part of the basic latin set, such as letters and spaces, without including control characters. [[:print:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "A|m0st "), "\xe9", p.default.createElement("span", null, "verything goes.")),
         exampleRegex: "[[:print:]]+",
         regexFlags: "g",
@@ -49998,62 +50923,62 @@ function(e, t, n) {
     },
     {
         token: "[[:punct:]]",
-        desc: (0, h.default)("Visible punctuation characters"),
+        desc: (0, h.default)(LANG("Visible punctuation characters")),
         example: p.default.createElement("div", null, "hello", p.default.createElement("span", null, ","), " regex user", p.default.createElement("span", null, "!")),
         exampleRegex: "[[:punct:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches characters that are not whitespace, letters or numbers. [[:punct:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches characters that are not whitespace, letters or numbers. [[:punct:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "punctuation", "period", "fullstop"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:space:]]",
-        desc: (0, h.default)("Whitespace"),
+        desc: (0, h.default)(LANG("Whitespace")),
         example: p.default.createElement("div", null, "any", p.default.createElement("span", null, " "), "whitespace", p.default.createElement("span", null, " "), "character"),
         exampleRegex: "[[:space:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches whitespace characters. Equivalent to \\s. [[:space:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches whitespace characters. Equivalent to \\s. [[:space:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "space", "spacebar", "blank"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:upper:]]",
-        desc: (0, h.default)("Uppercase letters"),
+        desc: (0, h.default)(LANG("Uppercase letters")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "ABC"), "abc", p.default.createElement("span", null, "DEF")),
         exampleRegex: "[[:upper:]]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches uppercase letters. Equivalent to [A-Z]. [[:upper:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches uppercase letters. Equivalent to [A-Z]. [[:upper:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "capitals"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:word:]]",
-        desc: (0, h.default)("Word characters"),
+        desc: (0, h.default)(LANG("Word characters")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "any"), " ", p.default.createElement("span", null, "word_"), " ", p.default.createElement("span", null, "character")),
         exampleRegex: "[[:word:]]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches letters, numbers and underscores. Equivalent to \\w or [a-zA-Z0-9_]. [[:word:]] is a POSIX notation and it needs to be inside a [character class] notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches letters, numbers and underscores. Equivalent to \\w or [a-zA-Z0-9_]. [[:word:]] is a POSIX notation and it needs to be inside a [character class] notation."))),
         keywords: ["posix", "letters", "numbers", "underscore"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:xdigit:]]",
-        desc: (0, h.default)("Hexadecimal digits"),
+        desc: (0, h.default)(LANG("Hexadecimal digits")),
         example: p.default.createElement("div", null, "h", p.default.createElement("span", null, "e"), "x ", p.default.createElement("span", null, "123"), "! n", p.default.createElement("span", null, "a"), "vy ", p.default.createElement("span", null, "b"), "lue ", p.default.createElement("span", null, "f"), "or ", p.default.createElement("span", null, "c"), "ss: #", p.default.createElement("span", null, "0A0AB5")),
         exampleRegex: "[[:xdigit:]]+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches hexadecimal digits, case insensitive. Equivalent to [0-9a-fA-F].")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches hexadecimal digits, case insensitive. Equivalent to [0-9a-fA-F]."))),
         keywords: ["posix", "numbers", "css", "color"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "[[:<:]]",
-        desc: (0, h.default)("Start of word"),
+        desc: (0, h.default)(LANG("Start of word")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "d"), "ot end"),
         exampleRegex: "[[:<:]]d",
         info: p.default.createElement(b.THtml, {
             tag: "div",
-            text: "This POSIX equivalent of the `\\\\b` word boundary is interpreted as {1}",
+            text: LANG("This POSIX equivalent of the `\\\\b` word boundary is interpreted as {1}"),
             ph1: '<span class="' + E.default.tokenSample + '">\\b(?=\\w)</span>'
         }),
         keywords: ["posix", "word", "boundary", "beginning"],
@@ -50061,11 +50986,11 @@ function(e, t, n) {
     },
     {
         token: "[[:>:]]",
-        desc: (0, h.default)("End of word"),
+        desc: (0, h.default)(LANG("End of word")),
         example: p.default.createElement("div", null, "dot en", p.default.createElement("span", null, "d")),
         exampleRegex: "d[[:>:]]",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)('This POSIX equivalent of the "\\b" word boundary is interpreted as'), " ", p.default.createElement("span", {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This POSIX equivalent of the \"\\b\" word boundary is interpreted as")), " ", p.default.createElement("span", {
             className: E.default.tokenSample
         },
         "\\\\b(?<=\\\\w)")),
@@ -50119,7 +51044,7 @@ function(e, t, n) {
         desc: (0, h.default)(LANG("Any non-digit")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "one: "), "1", p.default.createElement("span", null, ", two: "), "2"),
         exampleRegex: "\\D+",
-        info: p.default.createElement("div", null, (0, h.default)("Matches anything other than a decimal digit.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches anything other than a decimal digit."))),
         keywords: ["no", "number", "except"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
@@ -50168,7 +51093,7 @@ function(e, t, n) {
         desc: (0, h.default)(LANG("Unicode newlines")),
         example: p.default.createElement("div", null, p.default.createElement("span", null), p.default.createElement("br", null), "newline above captured"),
         exampleRegex: "(\\R)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n]."), ";"),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches any Unicode newline character: <CR>, <LF>;, <CR><LF>. Equivalent to [\\r\\n].")), null),
         keywords: ["newline", "new", "linefeed", "carriage", "return"],
         flavors: [v.default.PCRE]
     },
@@ -50187,7 +51112,7 @@ function(e, t, n) {
         example: p.default.createElement("div", null, p.default.createElement("span", null, "line one"), p.default.createElement("br", null), p.default.createElement("br", null), p.default.createElement("span", null, "line two")),
         exampleRegex: "(\\V+)",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches anything not matched by \x0B (newlines and vertical tabs)")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches anything not matched by \x0B (newlines and vertical tabs)"))),
         keywords: ["not", "VT", "newline", "new", "linefeed", "carriage", "return", "ascii", "11", "control+K", "^K", "U+000B", "U+240B"],
         flavors: [v.default.PCRE]
     },
@@ -50197,7 +51122,7 @@ function(e, t, n) {
         example: p.default.createElement("div", null, "a", p.default.createElement("span", null, " "), "b", p.default.createElement("span", null, " "), "c", p.default.createElement("span", null, "    "), "d"),
         exampleRegex: "\\h",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches spaces and horizontal tabs. Works with Unicode. Equivalent to [\ts].")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches spaces and horizontal tabs. Works with Unicode. Equivalent to [\ts]."))),
         keywords: ["space", "blank", "spacebar", "tab"],
         flavors: [v.default.PCRE]
     },
@@ -50214,7 +51139,7 @@ function(e, t, n) {
     {
         token: "\\K",
         desc: (0, h.default)(LANG("Reset match")),
-        info: p.default.createElement("div", null, (0, h.default)('Sets the given position in the regex as the new "start" of the match. This means that nothing preceding the K will be captured in the overall match.')),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Sets the given position in the regex as the new \"start\" of the match. This means that nothing preceding the K will be captured in the overall match."))),
         example: p.default.createElement("div", null, "123", p.default.createElement("span", null, ",456,789")),
         exampleRegex: "[\\d]+\\K[\\d,]+",
         keywords: ["match", "position", "ignore", "start", "point"],
@@ -50231,7 +51156,7 @@ function(e, t, n) {
     },
     {
         token: "\\pX",
-        desc: (0, h.default)("Unicode property X"),
+        desc: (0, h.default)(LANG("Unicode property X")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "\xa3"), " or ", p.default.createElement("span", null, "$"), " or even ", p.default.createElement("span", null, "\xae")),
         exampleRegex: "\\pS",
         regexFlags: "g",
@@ -50281,7 +51206,7 @@ function(e, t, n) {
     },
     {
         token: "\\Q...\\E",
-        desc: (0, h.default)("Quote; treat as literals"),
+        desc: (0, h.default)(LANG("Quote; treat as literals")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "everything \\\\w is ^ literal")),
         exampleRegex: "\\Qeverything \\w is ^ literal\\E",
         info: p.default.createElement("div", null, (0, h.default)(LANG("Any characters between \\Q and \\E, including metacharacters, will be treated as literals."))),
@@ -50323,7 +51248,7 @@ function(e, t, n) {
         },
         "aaaa")),
         exampleRegex: "(?'first'a+) and again (\\k{first})",
-        info: p.default.createElement("div", null, (0, h.default)("This is an alternate syntax for \\k<name> or \\k'name' and it is valid for .NET. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This is an alternate syntax for \\k<name> or \\k'name' and it is valid for .NET. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE"))),
         keywords: ["capture", "group", "by", "name", "recall", "match", "again"],
         flavors: [v.default.PCRE]
     },
@@ -50338,7 +51263,7 @@ function(e, t, n) {
         },
         "aaaa"), "3"),
         exampleRegex: "(a+) and (\\g1)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters."))),
         keywords: ["capture", "group", "by", "number", "recall", "match", "again", "repeat"],
         flavors: [v.default.PCRE]
     },
@@ -50356,7 +51281,7 @@ function(e, t, n) {
         },
         "and13")),
         exampleRegex: "(a+) (and1) aaaa (\\g{2}3)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters. This is an alternate syntax for \\gn. It can be useful in a situation where a literal number needs to be matched immediately after a \\g{n} in the regex.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the text captured by the nth group. n can contain more than one digit, if necessary. This may be useful in order to avoid ambiguity with octal characters. This is an alternate syntax for \\gn. It can be useful in a situation where a literal number needs to be matched immediately after a \\g{n} in the regex."))),
         keywords: ["capture", "group", "by", "name", "recall", "match", "again", "repeat"],
         flavors: [v.default.PCRE]
     },
@@ -50371,7 +51296,7 @@ function(e, t, n) {
         },
         "aaaa"), "3"),
         exampleRegex: "(a+) and (\\g<1>)",
-        info: p.default.createElement("div", null, (0, h.default)("Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g{n}")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g{n}"))),
         keywords: ["capture", "group", "by", "number", "recall", "match", "again", "repeat"],
         flavors: [v.default.PCRE]
     },
@@ -50386,13 +51311,13 @@ function(e, t, n) {
         },
         "aaaa"), "3"),
         exampleRegex: "(a+) and (\\g'1')",
-        info: p.default.createElement("div", null, (0, h.default)("Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g<n>")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recurses nth capture group. n can contain more than one digit, if necessary. Alternate syntax for \\g<n>"))),
         keywords: ["capture", "reference", "group", "by", "number", "recall", "match", "again", "repeat", "previous"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g{-n}",
-        desc: (0, h.default)("Match nth relative previous subpattern"),
+        desc: (0, h.default)(LANG("Match nth relative previous subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "bbbb"), p.default.createElement("span", {
             className: "group-1"
         },
@@ -50401,37 +51326,37 @@ function(e, t, n) {
         },
         "aaaa"), "3"),
         exampleRegex: "b+(a+).*(\\g{-1})",
-        info: p.default.createElement("div", null, (0, h.default)("Recurses nth capture group prior to the current position of \\g{-n}. \\g{-1} would be the last capture group before \\g. \\g{-2} would be the capture group before the last, and so on.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recurses nth capture group prior to the current position of \\g{-n}. \\g{-1} would be the last capture group before \\g. \\g{-2} would be the capture group before the last, and so on."))),
         keywords: ["capture", "reference", "group", "by", "number", "recall", "match", "again", "repeat", "previous"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g<+n>",
-        desc: (0, h.default)("Recurse nth relative upcoming subpattern"),
+        desc: (0, h.default)(LANG("Recurse nth relative upcoming subpattern")),
         example: p.default.createElement("div", null, "extra ", p.default.createElement("span", null, "b and "), p.default.createElement("span", {
             className: "group-1"
         },
         "b"), " stuff"),
         exampleRegex: "\\g<+1> and (b)",
-        info: p.default.createElement("div", null, (0, h.default)("Recurses nth capture group ahead of the current position of \\g<+n>. \\g<+2> is the second capture group after \\g.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recurses nth capture group ahead of the current position of \\g<+n>. \\g<+2> is the second capture group after \\g."))),
         keywords: ["capture", "reference", "group", "by", "number", "next", "match", "again", "predict", "after"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g'+n'",
-        desc: (0, h.default)("Match nth relative upcoming subpattern"),
+        desc: (0, h.default)(LANG("Match nth relative upcoming subpattern")),
         example: p.default.createElement("div", null, "extra ", p.default.createElement("span", null, "b and "), p.default.createElement("span", {
             className: "group-1"
         },
         "b"), " stuff"),
         exampleRegex: "g'+1' and (b)",
-        info: p.default.createElement("div", null, (0, h.default)("Recurses nth capture group ahead of the current position of \\g'+n'. \\g'+2' is the second capture group after \\g.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recurses nth capture group ahead of the current position of \\g'+n'. \\g'+2' is the second capture group after \\g."))),
         keywords: ["capture", "reference", "group", "by", "number", "next", "match", "again", "predict", "after"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g'name'",
-        desc: (0, h.default)("Match previously-named capture group `name`"),
+        desc: (0, h.default)(LANG("Match previously-named capture group `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50440,13 +51365,13 @@ function(e, t, n) {
         },
         "a")),
         exampleRegex: "(?'letter'a).*(\\g'letter')",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the capture group called `name`. Capture group has to be named before \\g is called.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the capture group called `name`. Capture group has to be named before \\g is called."))),
         keywords: ["capture", "reference", "group", "by", "name", "recall", "match", "previous", "before"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g{name}",
-        desc: (0, h.default)("Match previously-named capture group `name`"),
+        desc: (0, h.default)(LANG("Match previously-named capture group `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50455,13 +51380,13 @@ function(e, t, n) {
         },
         "a")),
         exampleRegex: "(?'letter'a).*(\\g{letter})",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g<name>. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g<name>. Note that you cannot use curly brackets (?{name}a+) to name a capture group in PCRE"))),
         keywords: ["capture", "reference", "group", "by", "name", "recall", "match", "previous", "before"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\g<name>",
-        desc: (0, h.default)("Match previously-named capture group `name`"),
+        desc: (0, h.default)(LANG("Match previously-named capture group `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50470,13 +51395,13 @@ function(e, t, n) {
         },
         "a")),
         exampleRegex: "(?<letter>a).*(\\g<letter>)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g{name}")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the capture group called \"name\". Capture group has to be named before \\g is called. This is an alternative notation for \\g'name' or \\g{name}"))),
         keywords: ["capture", "reference", "group", "by", "name", "recall", "match", "previous", "before"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\uYYYY",
-        desc: (0, h.default)("Hex character YYYY"),
+        desc: (0, h.default)(LANG("Hex character YYYY")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "%")),
         exampleRegex: "\\u0025",
         info: p.default.createElement("div", null, (0, h.default)("Matches the unicode character with the given hex value."), " ", p.default.createElement(b.Link, {
@@ -50489,11 +51414,11 @@ function(e, t, n) {
     },
     {
         token: "\\xYY",
-        desc: (0, h.default)("Hex character YY"),
+        desc: (0, h.default)(LANG("Hex character YY")),
         example: p.default.createElement("div", null, "match", p.default.createElement("span", null, " "), "all", p.default.createElement("span", null, " "), "spaces"),
         exampleRegex: "\\x20",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the 8-bit character with the given hex value."), " ", p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the 8-bit character with the given hex value.")), " ", p.default.createElement(b.Link, {
             target: "_blank",
             to: "http://unicode-table.com/en/"
         },
@@ -50503,10 +51428,10 @@ function(e, t, n) {
     },
     {
         token: "\\x{YYYY}",
-        desc: (0, h.default)("Hex character YYYY"),
+        desc: (0, h.default)(LANG("Hex character YYYY")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "%")),
         exampleRegex: "\\x{0025}",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the 16-bit character with the given hex value."), " ", p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the 16-bit character with the given hex value.")), " ", p.default.createElement(b.Link, {
             target: "_blank",
             to: "http://unicode-table.com/en/"
         },
@@ -50516,10 +51441,10 @@ function(e, t, n) {
     },
     {
         token: "\\ddd",
-        desc: (0, h.default)("Octal character ddd"),
+        desc: (0, h.default)(LANG("Octal character ddd")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "%")),
         exampleRegex: "\\045",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the 8-bit character with the given octal value."), " ", p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the 8-bit character with the given octal value.")), " ", p.default.createElement(b.Link, {
             target: "_blank",
             to: "http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=oct"
         },
@@ -50529,10 +51454,10 @@ function(e, t, n) {
     },
     {
         token: "\\cY",
-        desc: (0, h.default)("Control character Y"),
+        desc: (0, h.default)(LANG("Control character Y")),
         example: p.default.createElement("div", null, "vertical", p.default.createElement("span", null, "        "), "tab"),
         exampleRegex: "cI",
-        info: p.default.createElement("div", null, (0, h.default)("Matches ASCII characters typically associated with Control+A through Control+Z: \\x01 through \\x1A."), " ", p.default.createElement(b.Link, {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches ASCII characters typically associated with Control+A through Control+Z: \\x01 through \\x1A.")), " ", p.default.createElement(b.Link, {
             target: "_blank",
             to: "https://www.cs.tut.fi/~jkorpela/chars/c0.html"
         },
@@ -50542,34 +51467,34 @@ function(e, t, n) {
     },
     {
         token: "[\\b]",
-        desc: (0, h.default)("Backspace character"),
-        info: p.default.createElement("div", null, (0, h.default)("Matches the backspace control character.")),
+        desc: (0, h.default)(LANG("Backspace character")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the backspace control character."))),
         keywords: ["CTRL+H", "^H"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE]
     },
     {
         token: "\\",
-        desc: (0, h.default)("Makes any character literal"),
+        desc: (0, h.default)(LANG("Makes any character literal")),
         example: p.default.createElement("div", null, "match ", p.default.createElement("span", null, "\\\\w"), " literally"),
         exampleRegex: "\\\\w",
-        info: p.default.createElement("div", null, (0, h.default)("This may be used to match the literal value of any metacharacter, or the / delimiter.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This may be used to match the literal value of any metacharacter, or the / delimiter."))),
         keywords: ["literal", "escape", "special", "disable"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     }]), a(l, y.GROUP_CONSTRUCTS, [{
         token: "(...)",
         basic: !0,
-        desc: (0, h.default)("Capture everything enclosed"),
+        desc: (0, h.default)(LANG("Capture everything enclosed")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "hehe"), "h ", p.default.createElement("span", null, "he"), " ", p.default.createElement("span", null, "he"), "h"),
         exampleRegex: "(he)+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Parts of the regex enclosed in parentheses may be referred to later in the expression or extracted from the results of a successful match.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Parts of the regex enclosed in parentheses may be referred to later in the expression or extracted from the results of a successful match."))),
         keywords: ["capture", "group"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "(a|b)",
         basic: !0,
-        desc: (0, h.default)("Match either a or b"),
+        desc: (0, h.default)(LANG("Match either a or b")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50579,32 +51504,32 @@ function(e, t, n) {
         "a"), "ch"),
         exampleRegex: "(a|b)",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the a or the b part of the subexpression.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the a or the b part of the subexpression."))),
         keywords: ["either", "or", "alternatively"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "(?:...)",
-        desc: (0, h.default)("Match everything enclosed"),
+        desc: (0, h.default)(LANG("Match everything enclosed")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "hehe"), "h ", p.default.createElement("span", null, "he"), " ", p.default.createElement("span", null, "he"), "h"),
         exampleRegex: "(?:he)+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("This construct is similar to (...), but won't create a capture group.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This construct is similar to (...), but won't create a capture group."))),
         keywords: ["match", "group", "non", "capturing"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "(?>...)",
-        desc: (0, h.default)("Atomic group (non-capturing)"),
+        desc: (0, h.default)(LANG("Atomic group (non-capturing)")),
         example: p.default.createElement("div", null, "this line is matched/consumed to the end by .+ and is not allowed to backtrack to find @"),
         exampleRegex: "(?>.+)@",
         keywords: ["match", "most", "backtracking", "no", "back", "tracking"],
-        info: p.default.createElement("div", null, (0, h.default)("Matches the longest possible substring in the group and doesn't allow later backtracking to reevaluate the group. It is not a capturing group.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the longest possible substring in the group and doesn't allow later backtracking to reevaluate the group. It is not a capturing group."))),
         flavors: [v.default.PCRE]
     },
     {
         token: "(?|...)",
-        desc: (0, h.default)("Branch reset group"),
+        desc: (0, h.default)(LANG("Branch reset group")),
         example: p.default.createElement("div", null, "A ", p.default.createElement("span", {
             className: "group-1"
         },
@@ -50617,147 +51542,147 @@ function(e, t, n) {
         "berry"), " is delicious."),
         exampleRegex: "(?|(candy)|(kiss)|(berry))",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Any subpatterns in (...) in such a group share the same number.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Any subpatterns in (...) in such a group share the same number."))),
         keywords: ["pattern", "same", "digit", "id", "order", "reset"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?#...)",
-        desc: (0, h.default)("Comment"),
+        desc: (0, h.default)(LANG("Comment")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "Not"), "hing else matches."),
         exampleRegex: "Not(?# .* <-- that should match all)",
-        info: p.default.createElement("div", null, (0, h.default)("Any text appearing in this group is ignored in the regex. Another option is enabling the x flag to allow #comments. This flag will also cause regex to ignore spaces.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Any text appearing in this group is ignored in the regex. Another option is enabling the x flag to allow #comments. This flag will also cause regex to ignore spaces."))),
         keywords: ["note", "ignore", "explain", "explanatory"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(?'name'...)",
-        desc: (0, h.default)("Named Capturing Group"),
+        desc: (0, h.default)(LANG("Named Capturing Group")),
         example: p.default.createElement("div", null, "Call me ", p.default.createElement("span", {
             className: "group-1"
         },
         "Sally"), "."),
         exampleRegex: "(?'name'Sally)",
-        info: p.default.createElement("div", null, (0, h.default)("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?P<name>...).")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?P<name>...)."))),
         keywords: ["recall", "by", "name", "tag", "label", "target"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?<name>...)",
-        desc: (0, h.default)("Named Capturing Group"),
+        desc: (0, h.default)(LANG("Named Capturing Group")),
         example: p.default.createElement("div", null, "Call me ", p.default.createElement("span", {
             className: "group-1"
         },
         "Sally"), "."),
         exampleRegex: "(?<name>Sally)",
-        info: p.default.createElement("div", null, (0, h.default)("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?'name'...) and (?P<name>...).")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?'name'...) and (?P<name>...)."))),
         keywords: ["recall", "by", "name", "tag", "label", "target"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?P<name>...)",
-        desc: (0, h.default)("Named Capturing Group"),
+        desc: (0, h.default)(LANG("Named Capturing Group")),
         example: p.default.createElement("div", null, "Call me ", p.default.createElement("span", {
             className: "group-1"
         },
         "Sally"), "."),
         exampleRegex: "(?P<name>Sally)",
-        info: p.default.createElement("div", null, (0, h.default)("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?'name'...) when using a PCRE flavor.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This capturing group can be referred to using the given name instead of a number. Alternative notation for (?<name>...) and (?'name'...) when using a PCRE flavor."))),
         keywords: ["recall", "by", "name", "tag", "label", "target"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "(?imsxXU)",
-        desc: (0, h.default)("Inline modifiers"),
+        desc: (0, h.default)(LANG("Inline modifiers")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "aA"), " Aa ", p.default.createElement("span", null, "aa"), " AA"),
         exampleRegex: "a(?i)a",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("These enable setting regex flags within the expression itself. You can also unset flags using a minus sign: (?-i)")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("These enable setting regex flags within the expression itself. You can also unset flags using a minus sign: (?-i)"))),
         keywords: ["fly", "the", "flags", "partially", "apply", "isolate"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(?(1)yes|no)",
-        desc: (0, h.default)("Conditional statement"),
+        desc: (0, h.default)(LANG("Conditional statement")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
         "A candy"), p.default.createElement("span", null, " is true"), " is false."),
         exampleRegex: "(A candy)?(?(1) is true| is false)",
-        info: p.default.createElement("div", null, (0, h.default)("If capturing group 1 was matched so far, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. A group name, or a relative position (-1) in PCRE, can be used. Global flag breaks conditionals.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("If capturing group 1 was matched so far, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. A group name, or a relative position (-1) in PCRE, can be used. Global flag breaks conditionals."))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(?(R)yes|no)",
-        desc: (0, h.default)("Conditional statement"),
+        desc: (0, h.default)(LANG("Conditional statement")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, '<tag allows="for nested" <tag> />')),
         exampleRegex: "<(?:(?(R)\\w++|[^<>]*+)|(?R))*>",
-        info: p.default.createElement("div", null, (0, h.default)("If recursion of the whole pattern is successful, do something | otherwise do this.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("If recursion of the whole pattern is successful, do something | otherwise do this."))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?(R#)yes|no)",
-        desc: (0, h.default)("Recursive Conditional statement"),
+        desc: (0, h.default)(LANG("Recursive Conditional statement")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, p.default.createElement("span", {
             className: "group-1"
         },
         "funky"), " function")),
         exampleRegex: "( *fun(?(R1)ction|ky))(?1)",
-        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)("`(?R1)` checks if a call to capture group 1 was made, which will return false the first time it is encountered because the regex engine is simply parsing capture group one.")), p.default.createElement("div", null, (0, h.default)("Once `(?1)` is called, `(?(R1)true|false)` will return true since capture group 1 was called, and will match `ction`"))),
+        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)(LANG("`(?R1)` checks if a call to capture group 1 was made, which will return false the first time it is encountered because the regex engine is simply parsing capture group one."))), p.default.createElement("div", null, (0, h.default)(LANG("Once `(?1)` is called, `(?(R1)true|false)` will return true since capture group 1 was called, and will match `ction`")))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?(R&name)yes|no)",
-        desc: (0, h.default)("Conditional statement"),
+        desc: (0, h.default)(LANG("Conditional statement")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, p.default.createElement("span", {
             className: "group-1"
         },
         "funky"), " function")),
         exampleRegex: "(?<sub1> *fun(?(R&sub1)ction|ky))(?&sub1)",
-        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)("In this case `(?(R&sub1)...|...)` checks if a call to `sub1` has been made. The first time the recursive conditional is parsed, the engine is in the process of matching what `sub1` requires, but it isn't because of a callback to `sub1`.")), p.default.createElement("div", null, (0, h.default)("Once we actually call `sub1` the conditional will return true, at which point `ction` matches."))),
+        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)(LANG("In this case `(?(R&sub1)...|...)` checks if a call to `sub1` has been made. The first time the recursive conditional is parsed, the engine is in the process of matching what `sub1` requires, but it isn't because of a callback to `sub1`."))), p.default.createElement("div", null, (0, h.default)(LANG("Once we actually call `sub1` the conditional will return true, at which point `ction` matches.")))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?(?=...)yes|no)",
-        desc: (0, h.default)("Lookahead conditional"),
+        desc: (0, h.default)(LANG("Lookahead conditional")),
         example: p.default.createElement("div", null, "Candy ", p.default.createElement("span", {
             className: "group-1"
         },
         "is delicious"), " or disgusting."),
         exampleRegex: "(?(?=is)(is delicious)|(disgusting))",
-        info: p.default.createElement("div", null, (0, h.default)("If the lookahead succeeds, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag breaks conditionals.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("If the lookahead succeeds, matches the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag breaks conditionals."))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?(?<=...)yes|no)",
-        desc: (0, h.default)("Lookbehind conditional"),
+        desc: (0, h.default)(LANG("Lookbehind conditional")),
         example: p.default.createElement("div", null, "Is candy ", p.default.createElement("span", {
             className: "group-1"
         },
         "delish"), " or ew?"),
         exampleRegex: "(?(?<=\\s)(delish)|(ew))",
-        info: p.default.createElement("div", null, (0, h.default)("If the lookbehind succeeds, match the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag, 'g', breaks conditionals.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("If the lookbehind succeeds, match the pattern before the vertical bar. Otherwise, matches the pattern after the vertical bar. The lookaround can be negative. Global flag, 'g', breaks conditionals."))),
         keywords: ["if", "else", "true", "false", "match", "no", "then"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?R)",
-        desc: (0, h.default)("Recurse entire pattern"),
+        desc: (0, h.default)(LANG("Recurse entire pattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, '[shortcode title="Title Here"]'), "Some content here", p.default.createElement("span", null, "[/shortcode]")),
         exampleRegex: '\\[(?:[\\w\\/ ="-]|(?R))*]',
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Recursively match the entire expression. (?0) and \\g<0> are synonymous. This is useful for balanced tags.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recursively match the entire expression. (?0) and \\g<0> are synonymous. This is useful for balanced tags."))),
         keywords: ["repeat", "match", "again", "multiple", "nth", "n", "times"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?1)",
-        desc: (0, h.default)("Recurse first subpattern"),
+        desc: (0, h.default)(LANG("Recurse first subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50766,31 +51691,31 @@ function(e, t, n) {
         },
         "capture"), " again"),
         exampleRegex: "(capture).+((?1))",
-        info: p.default.createElement("div", null, (0, h.default)("Recursively match the first capture group.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recursively match the first capture group."))),
         keywords: ["repeat", "match", "again", "multiple", "nth", "n", "times", "capture", "group"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?+1)",
-        desc: (0, h.default)("Recurse first relative subpattern"),
+        desc: (0, h.default)(LANG("Recurse first relative subpattern")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "match if I start with "), p.default.createElement("span", {
             className: "group-2"
         },
         "match")),
         exampleRegex: "(?+1).+(match)",
-        info: p.default.createElement("div", null, (0, h.default)("Match the first capture group following the current position in the expression. (?+2) is the second one, (?-1) is before current position.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Match the first capture group following the current position in the expression. (?+2) is the second one, (?-1) is before current position."))),
         keywords: ["repeat", "match", "again", "multiple", "nth", "n", "times", "capture", "group", "by", "id"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?&name)",
-        desc: (0, h.default)("Recurse subpattern `name`"),
+        desc: (0, h.default)(LANG("Recurse subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "boys like "), p.default.createElement("span", {
             className: "group-1"
         },
         "toys"), "."),
         exampleRegex: "(?&named_group)[a-z ]+(?'named_group'[tb]oys)",
-        info: p.default.createElement("div", null, (0, h.default)("Recursively matches the given named capture group. Python supports (?P=named_group), but 'named group' has to be previously defined.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recursively matches the given named capture group. Python supports (?P=named_group), but 'named group' has to be previously defined."))),
         keywords: ["repeat", "match", "again", "multiple", "named", "times", "capture", "group", "by"],
         flavors: [v.default.PCRE]
     },
@@ -50802,13 +51727,13 @@ function(e, t, n) {
         },
         "cool"), p.default.createElement("span", null, " is cool")),
         exampleRegex: "(?P<named_group>cool)[a-z ]+(?P=named_group)",
-        info: p.default.createElement("div", null, (0, h.default)("Matches the text matched by a previously named capture group. This is the python specific notation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches the text matched by a previously named capture group. This is the python specific notation."))),
         keywords: ["repeat", "match", "again", "multiple", "named", "times", "capture", "group", "by"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(?P>name)",
-        desc: (0, h.default)("Recurse subpattern `name`"),
+        desc: (0, h.default)(LANG("Recurse subpattern `name`")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -50817,16 +51742,16 @@ function(e, t, n) {
         },
         "one"), " pie"),
         exampleRegex: "((?P>who))[a-z ]+(?P<who>one)",
-        info: p.default.createElement("div", null, (0, h.default)("Recursively matches the given named subpattern or capture group.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Recursively matches the given named subpattern or capture group."))),
         keywords: ["repeat", "match", "again", "multiple", "named", "times", "capture", "group", "by"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(?(DEFINE)...)",
-        desc: (0, h.default)("Pre-define patterns before using them"),
+        desc: (0, h.default)(LANG("Pre-define patterns before using them")),
         example: p.default.createElement("div", null, "123 ", p.default.createElement("span", null, "letters"), " 123"),
         exampleRegex: "(?(DEFINE)(?'letters'[a-z]+))(?P>letters)",
-        info: p.default.createElement("div", null, (0, h.default)('The DEFINE group is completely ignored by regex. It gets treated as a var name="value", whereas you can recall the specific pattern for use via its name. Multiple patterns can be defined in the same DEFINE group.'), p.default.createElement("div", {
+        info: p.default.createElement("div", null, (0, h.default)(LANG("The DEFINE group is completely ignored by regex. It gets treated as a var name=\"value\", whereas you can recall the specific pattern for use via its name. Multiple patterns can be defined in the same DEFINE group.")), p.default.createElement("div", {
             className: E.default.tokenSample
         },
         "(?(DEFINE)(?\\'numbers\\'\\d+)(?\\'lowercase\\'[a-z]+)(?\\'uppercase\\'[A-Z]+))")),
@@ -50835,62 +51760,62 @@ function(e, t, n) {
     },
     {
         token: "(?=...)",
-        desc: (0, h.default)("Positive lookahead"),
+        desc: (0, h.default)(LANG("Positive lookahead")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "foo"), "bar foobaz"),
         exampleRegex: "foo(?=bar)",
-        info: p.default.createElement("div", null, (0, h.default)("Asserts that the given subpattern can be matched here, without consuming characters")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Asserts that the given subpattern can be matched here, without consuming characters"))),
         keywords: ["match", "only", "if", "exists", "string", "word", "character", "next", "coming", "up"],
         flavors: [v.default.PCRE, v.default.JAVASCRIPT, v.default.PYTHON]
     },
     {
         token: "(?!...)",
-        desc: (0, h.default)("Negative Lookahead"),
+        desc: (0, h.default)(LANG("Negative Lookahead")),
         example: p.default.createElement("div", null, "foobar ", p.default.createElement("span", null, "foo"), "baz"),
         exampleRegex: "foo(?!bar)",
-        info: p.default.createElement("div", null, (0, h.default)("Starting at the current position in the expression, ensures that the given pattern will not match. Does not consume characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Starting at the current position in the expression, ensures that the given pattern will not match. Does not consume characters."))),
         keywords: ["match", "only", "if", "not", "is", "exists", "string", "word", "character", "next", "coming", "up"],
         flavors: [v.default.PCRE, v.default.JAVASCRIPT, v.default.PYTHON]
     },
     {
         token: "(?<=...)",
-        desc: (0, h.default)("Positive Lookbehind"),
+        desc: (0, h.default)(LANG("Positive Lookbehind")),
         example: p.default.createElement("div", null, "foo", p.default.createElement("span", null, "bar"), " fuubar"),
         exampleRegex: "(?<=foo)bar",
-        info: p.default.createElement("div", null, (0, h.default)("Ensures that the given pattern will match, ending at the current position in the expression. The pattern must have a fixed width. Does not consume any characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Ensures that the given pattern will match, ending at the current position in the expression. The pattern must have a fixed width. Does not consume any characters."))),
         keywords: ["match", "only", "if", "is", "exists", "string", "word", "character", "previously", "past", "before"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(?<!...)",
-        desc: (0, h.default)("Negative Lookbehind"),
+        desc: (0, h.default)(LANG("Negative Lookbehind")),
         example: p.default.createElement("div", null, "not foo but ", p.default.createElement("span", null, "foo")),
         exampleRegex: "(?<!not )foo",
-        info: p.default.createElement("div", null, (0, h.default)("Ensures that the given pattern would not match and end at the current position in the expression. The pattern must have a fixed width. Does not consume characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Ensures that the given pattern would not match and end at the current position in the expression. The pattern must have a fixed width. Does not consume characters."))),
         keywords: ["match", "only", "if", "not", "is", "exists", "string", "word", "character", "previously", "past", "before"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "(*ACCEPT)",
-        desc: (0, h.default)("Control verb"),
+        desc: (0, h.default)(LANG("Control verb")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "Candy tastes great"), " but is bad for your teeth."),
         exampleRegex: "Candy.+?great(*ACCEPT).+bad",
-        info: p.default.createElement("div", null, p.default.createElement("p", null, (0, h.default)("This causes the regex to end successfully, skipping the rest of the pattern.")), p.default.createElement("p", null, (0, h.default)("If this token is inside a capturing group, only that capturing group is ended successfully at that particular location, while the parent pattern continues to execute."))),
+        info: p.default.createElement("div", null, p.default.createElement("p", null, (0, h.default)(LANG("This causes the regex to end successfully, skipping the rest of the pattern."))), p.default.createElement("p", null, (0, h.default)(LANG("If this token is inside a capturing group, only that capturing group is ended successfully at that particular location, while the parent pattern continues to execute.")))),
         keywords: ["end", "accept", "recursion", "early", "capture", "stop", "partly", "pattern"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*FAIL)",
-        desc: (0, h.default)("Control verb"),
+        desc: (0, h.default)(LANG("Control verb")),
         example: p.default.createElement("div", null, "Candy is bad", p.default.createElement("br", null), p.default.createElement("span", null, "Candy is good")),
         exampleRegex: "Candy.+?(?:bad(*FAIL)|good)",
-        info: p.default.createElement("div", null, (0, h.default)("(*FAIL) or (*F) is a synonym for (?!), and it allows you to force a matching failure at a specific point in the regex.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*FAIL) or (*F) is a synonym for (?!), and it allows you to force a matching failure at a specific point in the regex."))),
         keywords: ["end", "reject", "recursion", "early", "capture", "stop", "partly", "pattern"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*MARK:NAME)",
-        desc: (0, h.default)("Control verb"),
-        info: p.default.createElement("div", null, (0, h.default)("(*MARK:NAME) or (*:NAME) is used to track how a match was arrived at. Name is always required, but it doesn't need to be unique. When used in conjunction with the /K modifier, pcretest can return the mark together with a successful match."), p.default.createElement("div", {
+        desc: (0, h.default)(LANG("Control verb")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*MARK:NAME) or (*:NAME) is used to track how a match was arrived at. Name is always required, but it doesn't need to be unique. When used in conjunction with the /K modifier, pcretest can return the mark together with a successful match.")), p.default.createElement("div", {
             className: E.default.tokenSample
         },
         p.default.createElement("div", null, "re> /X(*MARK:A)Y|X(*MARK:B)Z/K"), p.default.createElement("div", null, "data> XY"), p.default.createElement("div", null, "0: XY"), p.default.createElement("div", null, "MK: A"), p.default.createElement("div", null, "XZ"), p.default.createElement("div", null, "0: XZ"), p.default.createElement("div", null, "MK: B"))),
@@ -50899,254 +51824,254 @@ function(e, t, n) {
     },
     {
         token: "(*COMMIT)",
-        desc: (0, h.default)("Control verb"),
+        desc: (0, h.default)(LANG("Control verb")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "woow"), " ", p.default.createElement("span", null, "woow"), " woot woow"),
         exampleRegex: "wo+(*COMMIT)w",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("This verb does not allow regex to continue parsing after a matching failure, even if there are other matching strings ahead, and regardless of how many successful matches are before the failure.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This verb does not allow regex to continue parsing after a matching failure, even if there are other matching strings ahead, and regardless of how many successful matches are before the failure."))),
         keywords: ["no", "backtracking", "recursion", "deny", "stop", "matching", "failure", "after"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*PRUNE)",
-        desc: (0, h.default)("Control verb"),
+        desc: (0, h.default)(LANG("Control verb")),
         example: p.default.createElement("div", null, "marketing dynamics, ", p.default.createElement("span", null, "marketing strategy")),
         exampleRegex: "(*PRUNE)\\w{4,9} strategy|\\w{4,9} dynamics",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("(*PRUNE) or (*PRUNE:NAME) will cause the regex to exit if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex. The example above would normally match both terms but due to (*PRUNE) the second alternative is not acted on.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*PRUNE) or (*PRUNE:NAME) will cause the regex to exit if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex. The example above would normally match both terms but due to (*PRUNE) the second alternative is not acted on."))),
         keywords: ["no", "backtracking", "recursion", "deny", "stop", "matching", "failure", "after"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*SKIP)",
-        desc: (0, h.default)("Control verb"),
+        desc: (0, h.default)(LANG("Control verb")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "aaardvark"), " aaaardvark aa", p.default.createElement("span", null, "aaardvark"), " aaaaaardvark aaaa", p.default.createElement("span", null, "aaardvark")),
         exampleRegex: "aa(*SKIP)ard\\w+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("(*SKIP) or (*SKIP:NAME) will cause the regex to give up on the current match if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*SKIP) or (*SKIP:NAME) will cause the regex to give up on the current match if it tries to backtrack past its position. This is useful when looking to cut down on backtracking at specific points in the regex."))),
         keywords: ["no", "backtracking", "recursion", "deny", "stop", "matching", "failure", "after", "give", "up"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*THEN)",
-        desc: (0, h.default)("Control verb"),
-        example: p.default.createElement("div", null, p.default.createElement("span", null, "aaardvark"), " aaaardvark aa", p.default.createElement("span", null, "aaardvark"), " aaaaaardvark aaaa", p.default.createElement("span", null, "aaardvark")),
-        exampleRegex: "aa(*SKIP)ard\\w+",
+        desc: (0, h.default)(LANG("Control verb")),
+        example: p.default.createElement("div", null, p.default.createElement("span", null, "aaardvark"), " a", p.default.createElement("span", null, "aaardvark"), " aa", p.default.createElement("span", null, "aaardvark"), " aaa", p.default.createElement("span", null, "aaardvark"), " aaaa", p.default.createElement("span", null, "aaardvark")),
+        exampleRegex: "aa(*THEN)ard\\w+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("(*THEN) or (*THEN:NAME) allows one to cut down on backtracking within an alternation. It won't allow regex to backtrack past its position, and it will give up matching the current alternation.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*THEN) or (*THEN:NAME) allows one to cut down on backtracking within an alternation. It won't allow regex to backtrack past its position, and it will give up matching the current alternation."))),
         keywords: ["no", "backtracking", "recursion", "deny", "stop", "matching", "failure", "after", "give", "up"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*UTF)",
-        desc: (0, h.default)("Pattern modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This allows regex to treat the string as UTF, be it 8, 16, or 32.")),
+        desc: (0, h.default)(LANG("Pattern modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This allows regex to treat the string as UTF, be it 8, 16, or 32."))),
         keywords: ["utf", "string", "unicode", "\\x", "\\u"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*UTF8)",
-        desc: (0, h.default)("Pattern modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This allows regex to treat the string as UTF-8, specifically.")),
+        desc: (0, h.default)(LANG("Pattern modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This allows regex to treat the string as UTF-8, specifically."))),
         keywords: ["utf", "string", "unicode", "\\x", "\\u"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*UTF16)",
-        desc: (0, h.default)("Pattern modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This allows regex to treat the string as UTF-16, specifically.")),
+        desc: (0, h.default)(LANG("Pattern modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This allows regex to treat the string as UTF-16, specifically."))),
         keywords: ["utf", "string", "unicode", "\\x", "\\u"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*UTF32)",
-        desc: (0, h.default)("Pattern modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This allows regex to treat the string as UTF-32, specifically.")),
+        desc: (0, h.default)(LANG("Pattern modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This allows regex to treat the string as UTF-32, specifically."))),
         keywords: ["utf", "string", "unicode", "\\x", "\\u"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*UCP)",
-        desc: (0, h.default)("Pattern modifier"),
+        desc: (0, h.default)(LANG("Pattern modifier")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "0\u06601\u06612\u06623\u06634\u06645\u06656\u06667\u0668\u06689\u0669h\u0629")),
         exampleRegex: "(*UCP)\\d+\\w",
-        info: p.default.createElement("div", null, (0, h.default)("UCP (Unicode Character Properties) allows regex to treat the string as unicode, which means that \\d and \\w are extended to match other unicode characters than [0-9] and [a-zA-Z0-9_].")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("UCP (Unicode Character Properties) allows regex to treat the string as unicode, which means that \\d and \\w are extended to match other unicode characters than [0-9] and [a-zA-Z0-9_]."))),
         keywords: ["utf", "string", "unicode", "\\x", "\\u"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*CR)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*CR) makes it so that only a carriage return character is considered a line break.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*CR) makes it so that only a carriage return character is considered a line break."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*LF)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*LF) makes it so that only a line feed character is considered a line break. Common in UNIX documents.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*LF) makes it so that only a line feed character is considered a line break. Common in UNIX documents."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*CRLF)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*CRLF) makes it so that only a carriage return character followed by a line feed character is considered a line break. Common in Windows documents.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*CRLF) makes it so that only a carriage return character followed by a line feed character is considered a line break. Common in Windows documents."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*ANYCRLF)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*ANYCRLF) makes it so that either a carriage return character or a line feed character, or the two in sequence are considered a line break.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*ANYCRLF) makes it so that either a carriage return character or a line feed character, or the two in sequence are considered a line break."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*ANY)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*ANY) makes it so that any unicode newline character or sequence thereof counts as a line break.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*ANY) makes it so that any unicode newline character or sequence thereof counts as a line break."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed", "unicode"],
         flavors: [v.default.PCRE]
     },
     {
         token: "\\R",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This metacharacter matches any unicode newline character or sequence thereof. Its behavior can be controlled by (*UTF) pattern modifiers. In (*UTF8) mode, '\\R' will match the line separator, paragraph separator, carriage return, carriage return & newline sequence, line feed, vertical tab, form feed, and next line. When outside (*UTF8) mode, line and paragraph separators are not matched. Newline conventions can also be specified via (*BSR_ANYCRLF) and (*BSR_UNICODE)")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This metacharacter matches any unicode newline character or sequence thereof. Its behavior can be controlled by (*UTF) pattern modifiers. In (*UTF8) mode, '\\R' will match the line separator, paragraph separator, carriage return, carriage return & newline sequence, line feed, vertical tab, form feed, and next line. When outside (*UTF8) mode, line and paragraph separators are not matched. Newline conventions can also be specified via (*BSR_ANYCRLF) and (*BSR_UNICODE)"))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed", "unicode"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*BSR_ANYCRLF)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This sets the convention for newline matching to '\\r\\n','\\r', or '\\n' for things like the '\\R' metacharacter.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This sets the convention for newline matching to '\\r\\n','\\r', or '\\n' for things like the '\\R' metacharacter."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed", "unicode"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*BSR_UNICODE)",
-        desc: (0, h.default)("Line break modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("This sets the convention for newline matching to any unicode newline character or sequence thereof, for things like the '\\R' metacharacter.")),
+        desc: (0, h.default)(LANG("Line break modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This sets the convention for newline matching to any unicode newline character or sequence thereof, for things like the '\\R' metacharacter."))),
         keywords: ["specific", "return", "carriage", "newline", "line", "break", "feed", "unicode"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*LIMIT_MATCH=x)",
-        desc: (0, h.default)("Regex engine modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*LIMIT_MATCH=x) where x is the number of times the regex engine is allowed to call match(). This user set limit cannot be increased past the compile time value or the default, however it can be restricted.")),
+        desc: (0, h.default)(LANG("Regex engine modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*LIMIT_MATCH=x) where x is the number of times the regex engine is allowed to call match(). This user set limit cannot be increased past the compile time value or the default, however it can be restricted."))),
         keywords: ["engine", "optimization", "specific", "match", "limits"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*LIMIT_RECURSION=d)",
-        desc: (0, h.default)("Regex engine modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("(*LIMIT_RECURSION=d) at the start of a pattern will limit the regex engine to 'd' number of recursions when matching. This user set limit cannot be increased past the compile time value or the default, however it can be restricted.")),
+        desc: (0, h.default)(LANG("Regex engine modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("(*LIMIT_RECURSION=d) at the start of a pattern will limit the regex engine to 'd' number of recursions when matching. This user set limit cannot be increased past the compile time value or the default, however it can be restricted."))),
         keywords: ["engine", "optimization", "specific", "match", "limits"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*NO_AUTO_POSSESS)",
-        desc: (0, h.default)("Regex engine modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("The PCRE regex engine automatically applies some internal optimizations to regexes to avoid unnecessary backtracking. This modifier will disable that behavior, and thus the engine will backtrack until the previously matching instruction fails to do so.")),
+        desc: (0, h.default)(LANG("Regex engine modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("The PCRE regex engine automatically applies some internal optimizations to regexes to avoid unnecessary backtracking. This modifier will disable that behavior, and thus the engine will backtrack until the previously matching instruction fails to do so."))),
         keywords: ["engine", "optimization", "specific", "match", "limits"],
         flavors: [v.default.PCRE]
     },
     {
         token: "(*NO_START_OPT)",
-        desc: (0, h.default)("Regex engine modifier"),
-        info: p.default.createElement("div", null, (0, h.default)("Before even attempting a match, the regex engine makes some checks, such as the length of the string. If it is not long enough to fit the pattern, it will automatically return a no match. This optimization can be disabled by using this modifier.")),
+        desc: (0, h.default)(LANG("Regex engine modifier")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Before even attempting a match, the regex engine makes some checks, such as the length of the string. If it is not long enough to fit the pattern, it will automatically return a no match. This optimization can be disabled by using this modifier."))),
         keywords: ["engine", "optimization", "specific", "match", "limits"],
         flavors: [v.default.PCRE]
     }]), a(l, y.QUANTIFIERS, [{
         token: "a?",
         basic: !0,
-        desc: (0, h.default)("Zero or one of a"),
+        desc: (0, h.default)(LANG("Zero or one of a")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "ba"), " ", p.default.createElement("span", null, "b"), " a"),
         exampleRegex: "ba?",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches an `a` character or nothing.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches an `a` character or nothing."))),
         keywords: ["optional", "one", "once"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a*",
         basic: !0,
-        desc: (0, h.default)("Zero or more of a"),
+        desc: (0, h.default)(LANG("Zero or more of a")),
         example: p.default.createElement("div", null, "a ", p.default.createElement("span", null, "ba"), " ", p.default.createElement("span", null, "baa"), " aaa ", p.default.createElement("span", null, "ba"), " ", p.default.createElement("span", null, "b")),
         exampleRegex: "ba*",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches zero or more consecutive `a` characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches zero or more consecutive `a` characters."))),
         keywords: ["zero", "optional", "none", "infinity"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a+",
         basic: !0,
-        desc: (0, h.default)("One or more of a"),
+        desc: (0, h.default)(LANG("One or more of a")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), " ", p.default.createElement("span", null, "aa"), " ", p.default.createElement("span", null, "aaa"), " ", p.default.createElement("span", null, "aaaa"), " b", p.default.createElement("span", null, "a"), "b b", p.default.createElement("span", null, "aa"), "b"),
         exampleRegex: "a+",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches one or more consecutive `a` characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches one or more consecutive `a` characters."))),
         keywords: ["one", "more", "optional", "than", "infinity"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a{3}",
         basic: !0,
-        desc: (0, h.default)("Exactly 3 of a"),
+        desc: (0, h.default)(LANG("Exactly 3 of a")),
         example: p.default.createElement("div", null, "a aa ", p.default.createElement("span", null, "aaa"), " ", p.default.createElement("span", null, "aaa"), "a"),
         exampleRegex: "a{3}",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Matches exactly 3 consecutive `a` characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches exactly 3 consecutive `a` characters."))),
         keywords: ["specific", "number", "amount", "times", "only"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a{3,}",
         basic: !0,
-        desc: (0, h.default)("3 or more of a"),
+        desc: (0, h.default)(LANG("3 or more of a")),
         example: p.default.createElement("div", null, "a aa ", p.default.createElement("span", null, "aaa"), " ", p.default.createElement("span", null, "aaaa"), " ", p.default.createElement("span", null, "aaaaaa")),
         exampleRegex: "a{3,}",
-        info: p.default.createElement("div", null, (0, h.default)("Matches at least 3 consecutive `a` characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches at least 3 consecutive `a` characters."))),
         keywords: ["at", "least", "minimum", "specific", "exactly", "infinity", "many"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE]
     },
     {
         token: "a{3,6}",
         basic: !0,
-        desc: (0, h.default)("Between 3 and 6 of a"),
+        desc: (0, h.default)(LANG("Between 3 and 6 of a")),
         example: p.default.createElement("div", null, "a aa ", p.default.createElement("span", null, "aaa"), " ", p.default.createElement("span", null, "aaaa"), " ", p.default.createElement("span", null, "aaaaaa"), "aaaa"),
         exampleRegex: "a{3,6}",
-        info: p.default.createElement("div", null, (0, h.default)("Matches between 3 and 6 (inclusive) consecutive `a` characters.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches between 3 and 6 (inclusive) consecutive `a` characters."))),
         keywords: ["specific", "number", "amount", ""],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a*",
-        desc: (0, h.default)("Greedy quantifier"),
+        desc: (0, h.default)(LANG("Greedy quantifier")),
         example: p.default.createElement("div", null, "greedy c", p.default.createElement("span", null, "an be dangerous a"), "t times"),
         exampleRegex: "a.*a",
-        info: p.default.createElement("div", null, (0, h.default)("Matches as many characters as possible.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches as many characters as possible."))),
         keywords: ["zero", "more", "infinity", "many"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "a*?",
-        desc: (0, h.default)("Lazy quantifier"),
+        desc: (0, h.default)(LANG("Lazy quantifier")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "r"), " ", p.default.createElement("span", null, "r"), "e ", p.default.createElement("span", null, "r"), "egex"),
         exampleRegex: "r\\w*?",
-        info: p.default.createElement("div", null, (0, h.default)("Matches as few characters as possible.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Matches as few characters as possible."))),
         keywords: ["zero", "fewer", "first", "occurence", "least", "less"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE]
     },
     {
         token: "a*+",
-        desc: (0, h.default)("Possessive quantifier"),
+        desc: (0, h.default)(LANG("Possessive quantifier")),
         example: p.default.createElement("div", null, "123"),
         exampleRegex: "\\d++.",
         info: p.default.createElement(b.THtml, {
             tag: "div",
-            text: "Matches as many characters as possible; backtracking can't reduce the number of characters matched. Because it is greedy, it will match all the way to the last digit, leaving nothing else for the {1} to match. Without backtracking, this regex fails to produce a match.",
+            text: LANG("Matches as many characters as possible; backtracking can't reduce the number of characters matched. Because it is greedy, it will match all the way to the last digit, leaving nothing else for the {1} to match. Without backtracking, this regex fails to produce a match."),
             ph1: "<span>.</span>"
         }),
         keywords: ["no", "backtracking", "maximum", "most", "prevent"],
@@ -51230,31 +52155,31 @@ function(e, t, n) {
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     }]), a(l, y.FLAGS_MODIFIERS, [{
         token: "g",
-        desc: (0, h.default)("Global"),
+        desc: (0, h.default)(LANG("Global")),
         example: p.default.createElement("div", null, "match ", p.default.createElement("span", null, "this"), " and again ", p.default.createElement("span", null, "this")),
         exampleRegex: "this",
         regexFlags: "g",
-        info: p.default.createElement("div", null, (0, h.default)("Tells the engine not to stop after the first match has been found, but rather to continue until no more matches can be found.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Tells the engine not to stop after the first match has been found, but rather to continue until no more matches can be found."))),
         keywords: ["more", "multiple", "stop", "match", "continue"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "m",
-        desc: (0, h.default)("Multiline"),
+        desc: (0, h.default)(LANG("Multiline")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "digits coming up 443")),
         exampleRegex: "^d.+\\d{3}$",
         regexFlags: "m",
-        info: p.default.createElement("div", null, (0, h.default)("The ^ and $ anchors now match at the beginning/end of each line respectively, instead of beginning/end of the entire string.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("The ^ and $ anchors now match at the beginning/end of each line respectively, instead of beginning/end of the entire string."))),
         keywords: ["anchor", "start", "string", "line", "input", "end", "last", "head", "tail"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "i",
-        desc: (0, h.default)("Case insensitive"),
+        desc: (0, h.default)(LANG("Case insensitive")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "A"), " or ", p.default.createElement("span", null, "a")),
         exampleRegex: "a",
         regexFlags: "gi",
-        info: p.default.createElement("div", null, (0, h.default)("A case insensitive match is performed, meaning capital letters will be matched by non-capital letters and vice versa.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("A case insensitive match is performed, meaning capital letters will be matched by non-capital letters and vice versa."))),
         keywords: ["upper", "lower", "regardless", "case", "letters"],
         flavors: [v.default.JAVASCRIPT, v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
@@ -51264,63 +52189,63 @@ function(e, t, n) {
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), "#comment here"),
         exampleRegex: "a#comment here",
         regexFlags: "x",
-        info: p.default.createElement("div", null, (0, h.default)("This flag tells the engine to ignore all whitespace and allow for comments in the regex. Comments are indicated by a starting \"#\"-character. If you need to include a space character in your regex, it must now be escaped '\\ '.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This flag tells the engine to ignore all whitespace and allow for comments in the regex. Comments are indicated by a starting \"#\"-character. If you need to include a space character in your regex, it must now be escaped '\\ '."))),
         keywords: ["comments", "instructions", "text", "pattern", "notes", "extra", "information", "include"],
         flavors: [v.default.PYTHON, v.default.PCRE]
     },
     {
         token: "s",
-        desc: (0, h.default)("Single line"),
+        desc: (0, h.default)(LANG("Single line")),
         example: p.default.createElement("div", null, "on", p.default.createElement("span", null, "e", p.default.createElement("br", null), "two", p.default.createElement("br", null), "thr"), "ee"),
         exampleRegex: "e.*r",
         regexFlags: "s",
-        info: p.default.createElement("div", null, (0, h.default)("This enables the dot (.) metacharacter to also match new lines. The string could be visualised as a single line input.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This enables the dot (.) metacharacter to also match new lines. The string could be visualised as a single line input."))),
         keywords: ["dotall", "dot", "newline", "\\n", "line", "single", "paragraph"],
         flavors: [v.default.PYTHON, v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "u",
-        desc: (0, h.default)("Unicode"),
+        desc: (0, h.default)(LANG("Unicode")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "\xe7a"), " va?"),
         exampleRegex: "\\wa",
         regexFlags: "u",
-        info: p.default.createElement("div", null, (0, h.default)("Pattern strings will be treated as UTF-16, which means that unicode characters will also be included in [a-z] ranges, and in escape sequences.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Pattern strings will be treated as UTF-16, which means that unicode characters will also be included in [a-z] ranges, and in escape sequences."))),
         keywords: ["unicode", "\\x", "\\u", "alphabet", "foreign", "characters"],
         flavors: [v.default.PCRE]
     },
     {
         token: "X",
-        desc: (0, h.default)("eXtended"),
+        desc: (0, h.default)(LANG("eXtended")),
         example: p.default.createElement("div", null, "Boo."),
         exampleRegex: "\\x42oo\\.",
         regexFlags: "X",
-        info: p.default.createElement("div", null, (0, h.default)("Any character following a \\ that is not a valid meta sequence will be faulted and raise an error. For example, escaping a (.) meta character will cause an error, and it will not match.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Any character following a \\ that is not a valid meta sequence will be faulted and raise an error. For example, escaping a (.) meta character will cause an error, and it will not match."))),
         keywords: ["meta", "only", "sequence", "no", "escaping"],
         flavors: [v.default.PCRE]
     },
     {
         token: "U",
-        desc: (0, h.default)("Ungreedy"),
+        desc: (0, h.default)(LANG("Ungreedy")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), "aaa"),
         exampleRegex: "a+",
         regexFlags: "U",
-        info: p.default.createElement("div", null, (0, h.default)("The engine will per default do lazy matching, instead of greedy. This means that a ? following a quantifier instead makes it greedy.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("The engine will per default do lazy matching, instead of greedy. This means that a ? following a quantifier instead makes it greedy."))),
         keywords: ["lazy", "non", "greedy", "swap", "default"],
         flavors: [v.default.PCRE, v.default.GOLANG]
     },
     {
         token: "A",
-        desc: (0, h.default)("Anchor"),
+        desc: (0, h.default)(LANG("Anchor")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "aaaa"), " aaaa"),
         exampleRegex: "a+",
         regexFlags: "gA",
-        info: p.default.createElement("div", null, (0, h.default)("The pattern is forced to become anchored, equal to a ^.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("The pattern is forced to become anchored, equal to a ^."))),
         keywords: ["begining", "text", "start", "head", "string", "multi"],
         flavors: [v.default.PCRE]
     },
     {
         token: "J",
-        desc: (0, h.default)("Duplicate group names"),
+        desc: (0, h.default)(LANG("Duplicate group names")),
         example: p.default.createElement("div", null, p.default.createElement("span", {
             className: "group-1"
         },
@@ -51330,123 +52255,123 @@ function(e, t, n) {
         "b")),
         exampleRegex: "(?<letter>a)(?<letter>b)",
         regexFlags: "J",
-        info: p.default.createElement("div", null, (0, h.default)("This allows regex to accept duplicate pattern names, however each capture group still has its own ID. Thus the two capture groups produce their own match instead of a single combined one.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This allows regex to accept duplicate pattern names, however each capture group still has its own ID. Thus the two capture groups produce their own match instead of a single combined one."))),
         keywords: ["begining", "text", "start", "head", "string", "multi"],
         flavors: [v.default.PCRE]
     },
     {
         token: "y",
-        desc: (0, h.default)("Sticky - searches in strings only from the index of the last match"),
+        desc: (0, h.default)(LANG("Sticky - searches in strings only from the index of the last match")),
         example: p.default.createElement("div", null, p.default.createElement("span", null, "a"), p.default.createElement("span", null, "bc"), "Xabc"),
         exampleRegex: "a|bc",
         regexFlags: "gy",
-        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)("Regex will continue parsing the string keeping in mind the last match location. If the next match is not located directly after the last, this next match is discarded.")), p.default.createElement("div", null, (0, h.default)('In the example below, the first alternate matched "a", and the second one matched "bc", however once it bumped into "X" none of the alternatives resulted in a match. Therefore the engine cannot return the next "a" as a match because "X" is not the last location where a match occurred.'))),
+        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)(LANG("Regex will continue parsing the string keeping in mind the last match location. If the next match is not located directly after the last, this next match is discarded."))), p.default.createElement("div", null, (0, h.default)(LANG("In the example below, the first alternate matched \"a\", and the second one matched \"bc\", however once it bumped into \"X\" none of the alternatives resulted in a match. Therefore the engine cannot return the next \"a\" as a match because \"X\" is not the last location where a match occurred.")))),
         keywords: ["sticky", "match", "first", "point", "forward", "after", "only"],
         flavors: [v.default.JAVASCRIPT]
     },
     {
         token: "u",
-        desc: (0, h.default)("Enable unicode support"),
+        desc: (0, h.default)(LANG("Enable unicode support")),
         example: p.default.createElement("div", null, "a", p.default.createElement("span", null, "\ud834\udf06"), "b"),
         exampleRegex: "\ud834\udf06",
         regexFlags: "u",
-        info: p.default.createElement("div", null, (0, h.default)("Allows regex to match unicode characters via dotall and unicode escape sequences, as well as ES6 unicode code point escapes such as \\u{1D306}.")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Allows regex to match unicode characters via dotall and unicode escape sequences, as well as ES6 unicode code point escapes such as \\u{1D306}."))),
         keywords: ["unicode", "special", "alphabet", "characters", "foreign", "symbols", "strings"],
         flavors: [v.default.JAVASCRIPT]
     },
     {
         token: "u",
-        desc: (0, h.default)("Enable unicode support"),
+        desc: (0, h.default)(LANG("Enable unicode support")),
         example: p.default.createElement("div", null, "a", p.default.createElement("span", null, "\u03b1"), "beta"),
         exampleRegex: "\u03b1",
         regexFlags: "u",
-        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)("Pattern strings will be treated as UTF-16, which means that unicode characters will also be included in [a-z] ranges, and in escape sequences.")), p.default.createElement("div", null, (0, h.default)('Keep in mind that Python 3 is going to treat your whole script as unicode by default, therefore using this flag would be redundant. See the "a" flag to limit matches to ASCII characters only. Python 2 requires this flag to turn on unicode support.'))),
+        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)(LANG("Pattern strings will be treated as UTF-16, which means that unicode characters will also be included in [a-z] ranges, and in escape sequences."))), p.default.createElement("div", null, (0, h.default)(LANG("Keep in mind that Python 3 is going to treat your whole script as unicode by default, therefore using this flag would be redundant. See the \"a\" flag to limit matches to ASCII characters only. Python 2 requires this flag to turn on unicode support.")))),
         keywords: ["unicode", "special", "alphabet", "characters", "foreign", "symbols", "strings"],
         flavors: [v.default.PYTHON]
     },
     {
         token: "a",
-        desc: (0, h.default)("Restrict matches to ASCII only"),
+        desc: (0, h.default)(LANG("Restrict matches to ASCII only")),
         example: p.default.createElement("div", null, "\u03b1", p.default.createElement("span", null, "beta")),
         exampleRegex: "w+",
         regexFlags: "u",
-        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)("Make regex perform ASCII-only matching instead of full Unicode matching. Applies to [a-z] ranges and escape sequences.")), p.default.createElement("div", null, (0, h.default)("This flag does not exist in Python2, as by default your script is parsed in ascii mode. In Python3 this will behave as described."))),
+        info: p.default.createElement("div", null, p.default.createElement("div", null, (0, h.default)(LANG("Make regex perform ASCII-only matching instead of full Unicode matching. Applies to [a-z] ranges and escape sequences."))), p.default.createElement("div", null, (0, h.default)(LANG("This flag does not exist in Python2, as by default your script is parsed in ascii mode. In Python3 this will behave as described.")))),
         keywords: ["unicode", "ascii", "alphabet", "characters", "normal", "symbols", "strings", "english"],
         flavors: [v.default.PYTHON]
     }]), a(l, y.SUBSTITUTION, [{
         token: "\\0",
-        desc: (0, h.default)("Complete match contents"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the complete match result from the regex.")),
+        desc: (0, h.default)(LANG("Complete match contents")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the complete match result from the regex."))),
         keywords: ["full", "match", "all", "found", "characters", "strings"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "\\1",
-        desc: (0, h.default)("Contents in capture group 1"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group.")),
+        desc: (0, h.default)(LANG("Contents in capture group 1")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group."))),
         keywords: ["group", "capture", "first", "one", "many", "particular"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "$1",
-        desc: (0, h.default)("Contents in capture group 1"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group.")),
+        desc: (0, h.default)(LANG("Contents in capture group 1")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group."))),
         keywords: ["group", "capture", "first", "one", "many", "particular"],
         flavors: [v.default.JAVASCRIPT, v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "$`",
-        desc: (0, h.default)("Contents before match"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a portion of the source string that precedes the match.")),
+        desc: (0, h.default)(LANG("Contents before match")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a portion of the source string that precedes the match."))),
         keywords: ["before", "leading", "up", "to", "ahead"],
         flavors: [v.default.JAVASCRIPT]
     },
     {
         token: "$'",
-        desc: (0, h.default)("Contents after match"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a portion of the source string that follows the match.")),
+        desc: (0, h.default)(LANG("Contents after match")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a portion of the source string that follows the match."))),
         keywords: ["after", "following", "past", "behind"],
         flavors: [v.default.JAVASCRIPT]
     },
     {
         token: "$&",
-        desc: (0, h.default)("Complete match contents"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the complete match result from the regex.")),
+        desc: (0, h.default)(LANG("Complete match contents")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the complete match result from the regex."))),
         keywords: ["all", "total", "including"],
         flavors: [v.default.JAVASCRIPT]
     },
     {
         token: "${foo}",
-        desc: (0, h.default)("Contents in capture group `foo`"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. This syntax is made up and specific to only Regex101. If the J-flag is specified, content will be taken from the first capture group with the same name.")),
+        desc: (0, h.default)(LANG("Contents in capture group `foo`")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. This syntax is made up and specific to only Regex101. If the J-flag is specified, content will be taken from the first capture group with the same name."))),
         keywords: ["recall", "group", "named", "invoke", "request", "called", "regex101"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.GOLANG]
     },
     {
         token: "\\g<foo>",
-        desc: (0, h.default)("Contents in capture group `foo`"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. If the J-flag is specified, content will be taken from the first capture group with the same name.")),
+        desc: (0, h.default)(LANG("Contents in capture group `foo`")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the contents from the capture group named `foo`. Any name can be used as long as it is defined in the regex. If the J-flag is specified, content will be taken from the first capture group with the same name."))),
         keywords: ["recall", "group", "named", "capture", "invoke", "request", "called"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "\\g<1>",
-        desc: (0, h.default)("Contents in capture group 1"),
-        info: p.default.createElement("div", null, (0, h.default)("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group.")),
+        desc: (0, h.default)(LANG("Contents in capture group 1")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("This will return a string with the contents from the first capture group. The number, in this case 1, can be any number as long as it corresponds to a valid capture group."))),
         keywords: ["recall", "group", "id", "capture", "invoke", "request", "called", "number"],
         flavors: [v.default.PCRE, v.default.PYTHON]
     },
     {
         token: "\\x20",
-        desc: (0, h.default)("Hexadecimal replacement values"),
-        info: p.default.createElement("div", null, (0, h.default)("You can use hexadecimals to insert any character into the replacement string using the standard syntax.")),
+        desc: (0, h.default)(LANG("Hexadecimal replacement values")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("You can use hexadecimals to insert any character into the replacement string using the standard syntax."))),
         keywords: ["hexadecimal", "value", "custom", "characters"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT]
     },
     {
         token: "\\x{06fa}",
-        desc: (0, h.default)("Hexadecimal replacement values"),
-        info: p.default.createElement("div", null, (0, h.default)("You can use hexadecimals to insert any character into the replacement string using the standard syntax.")),
+        desc: (0, h.default)(LANG("Hexadecimal replacement values")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("You can use hexadecimals to insert any character into the replacement string using the standard syntax."))),
         keywords: ["hexadecimal", "value", "custom", "characters"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT, v.default.GOLANG]
     },
@@ -51473,8 +52398,8 @@ function(e, t, n) {
     },
     {
         token: "\\f",
-        desc: (0, h.default)("Form-feed"),
-        info: p.default.createElement("div", null, (0, h.default)("Insert a form-feed character.")),
+        desc: (0, h.default)(LANG("Form-feed")),
+        info: p.default.createElement("div", null, (0, h.default)(LANG("Insert a form-feed character."))),
         keywords: ["form", "feed", "new", "skip", "page"],
         flavors: [v.default.PCRE, v.default.PYTHON, v.default.JAVASCRIPT, v.default.GOLANG]
     }]), l);
@@ -56060,7 +56985,7 @@ function(e, t, n) {
             })
         }: {
             explanation: i.default.createElement(u.THtml, {
-                text: "{1} Alternative",
+                text: LANG("{1} Alternative"),
                 ph1: (0, s.ord)(e.alternative + 1)
             })
         }
@@ -56164,19 +57089,19 @@ function(e, t, n) {
     function o(e, t) {
         return e.string.indexOf("^") !== -1 ? t.brief ? {
             explanation: i.default.createElement(l.THtml, {
-                text: "Match a single character not present in the set"
+                text: LANG("Match a single character not present in the set")
             })
         }: {
             explanation: i.default.createElement(l.THtml, {
-                text: "Match a single character not present in the list below"
+                text: LANG("Match a single character not present in the list below")
             })
         }: t.brief ? {
             explanation: i.default.createElement(l.THtml, {
-                text: "Match a single character present in the set"
+                text: LANG("Match a single character present in the set")
             })
         }: {
             explanation: i.default.createElement(l.THtml, {
-                text: "Match a single character present in the list below"
+                text: LANG("Match a single character present in the list below")
             })
         }
     }
@@ -56200,12 +57125,12 @@ function(e, t, n) {
         n = e.rightToken,
         r = a(String.fromCodePoint(t.charCode)),
         o = a(String.fromCodePoint(n.charCode)),
-        i = e.flags.indexOf("i") !== -1 ? (0, f.default)("case insensitive"):
-        (0, f.default)("case sensitive");
+        i = e.flags.indexOf("i") !== -1 ? (0, f.default)(LANG("case insensitive")):
+        (0, f.default)(LANG("case sensitive"));
         return {
             explanation:
             s.default.createElement(p.THtml, {
-                text: "a single character in the range between {1} {2} and {3} {4} ({5})",
+                text: LANG("a single character in the range between {1} {2} and {3} {4} ({5})"),
                 ph1: (0, d.createTokenSample)(r),
                 ph2: (0, d.createKeyword)("(ASCII " + t.charCode + ")"),
                 ph3: (0, d.createTokenSample)(o),
@@ -56241,7 +57166,7 @@ function(e, t, n) {
     function o(e) {
         return {
             explanation: i.default.createElement("span", null, " ", e.comment),
-            string: (0, u.default)("Comment") + ":"
+            string: (0, u.default)(LANG("Comment")) + ":"
         }
     }
     Object.defineProperty(t, "__esModule", {
@@ -56501,7 +57426,7 @@ function(e, t, n) {
             return {
                 explanation:
                 l.default.createElement(g.THtml, {
-                    text: "{1} Capturing Group",
+                    text: LANG("{1} Capturing Group"),
                     ph1: (0, h.ord)(e.groupNumber)
                 })
             };
@@ -56540,7 +57465,7 @@ function(e, t, n) {
             return {
                 explanation:
                 l.default.createElement(g.THtml, {
-                    text: "Negative Lookbehind"
+                    text: LANG("Negative Lookbehind")
                 }),
                 notice: l.default.createElement(g.Notice, {
                     type: y.levels.ERROR
@@ -56551,7 +57476,7 @@ function(e, t, n) {
             return {
                 explanation:
                 l.default.createElement(g.THtml, {
-                    text: "Positive Lookbehind"
+                    text: LANG("Positive Lookbehind")
                 }),
                 notice: l.default.createElement(g.Notice, null, (0, f.default)("Assert that the Regex below matches"))
             };
@@ -56559,7 +57484,7 @@ function(e, t, n) {
             return {
                 explanation:
                 l.default.createElement(g.THtml, {
-                    text: "Negative Lookahead"
+                    text: LANG("Negative Lookahead")
                 }),
                 notice: l.default.createElement(g.Notice, {
                     type: y.levels.ERROR
@@ -56929,14 +57854,14 @@ function(e, t, n) {
         if (n && !e.inCharClass && (o = o.replace(/\s/g, "")), o = (0, h.cleanNewlines)(o), 0 === o.length) return {
             explanation: null
         };
-        var a = r ? (0, p.default)("case insensitive"):
-        (0, p.default)("case sensitive");
+        var a = r ? (0, p.default)(LANG("case insensitive")):
+        (0, p.default)(LANG("case sensitive"));
         if (e.inCharClass && o.length > 1) {
             var i = (0, u.default)(o).join("");
             return {
                 explanation:
                 c.default.createElement(d.THtml, {
-                    text: "matches a single character in the list {1} {2}",
+                    text: LANG("matches a single character in the list {1} {2}"),
                     ph1: (0, h.createTokenSample)(i),
                     ph2: "(" + a + ")"
                 })
@@ -56944,9 +57869,9 @@ function(e, t, n) {
         }
         return {
             explanation: c.default.createElement(d.THtml, {
-                text: "matches the {1} {2} literally {3}",
-                ph1: 1 === o.length ? (0, p.default)("character"):
-                (0, p.default)("characters"),
+                text: LANG("matches the {1} {2} literally {3}"),
+                ph1: 1 === o.length ? (0, p.default)(LANG("character")):
+                (0, p.default)(LANG("characters")),
                 ph2: (0, h.createTokenSample)(o),
                 ph3: "(" + a + ")"
             })
@@ -56976,7 +57901,7 @@ function(e, t, n) {
     function o(e) {
         if (e.string.indexOf("^") !== -1) return {
             explanation: i.default.createElement(s.THtml, {
-                text: "matches the negation of {1}",
+                text: LANG("matches the negation of {1}"),
                 ph1: (0, c.createTokenSample)(e.posixClass)
             })
         };
@@ -56985,12 +57910,12 @@ function(e, t, n) {
         case "ascii":
             return t ? {
                 explanation: i.default.createElement(s.THtml, {
-                    text: "equal to {1}",
-                    ph1: (0, c.createTokenSample)("\\p{InBasicLatin}")
+                    text: LANG("equal to {1}"),
+                    ph1: (0, c.createTokenSample)(LANG("\\p{InBasicLatin}"))
                 })
             }: {
                 explanation: i.default.createElement(s.THtml, {
-                    text: "matches a character with {1} value {2} through {3}",
+                    text: LANG("matches a character with {1} value {2} through {3}"),
                     ph1: (0, c.createKeyword)("ASCII"),
                     ph2: (0, c.createKeyword)("0"),
                     ph3: (0, c.createKeyword)("127")
@@ -57000,7 +57925,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a alphanumeric character {1}",
+                    text: LANG("matches a alphanumeric character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "[\\p{L&}\\p{Nd}]": "[a-zA-Z0-9]")
                 })
             };
@@ -57008,7 +57933,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a alphanumeric character or {1} {2} (also written as {3})",
+                    text: LANG("matches a alphanumeric character or {1} {2} (also written as {3})"),
                     ph1: (0, c.createKeyword)("_"),
                     ph2: (0, c.createTokenSample)(t ? "[\\p{L}\\p{N}\\p{Pc}]": "[A-Za-z0-9_]"),
                     ph3: (0, c.createTokenSample)("\\w")
@@ -57018,7 +57943,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a alphabetic character {1}",
+                    text: LANG("matches a alphabetic character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "\\p{L&}": "[a-zA-Z]")
                 })
             };
@@ -57026,7 +57951,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a whitespace character, including a line break {1} (also written as {2})",
+                    text: LANG("matches a whitespace character, including a line break {1} (also written as {2})"),
                     ph1: (0, c.createTokenSample)(t ? "[\\p{Zs}\\t]": "[ \\t]"),
                     ph2: (0, c.createTokenSample)("\\h")
                 })
@@ -57035,7 +57960,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a control character {1}",
+                    text: LANG("matches a control character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "\\p{Cc}": "[\\x00-\\x1F\\x7F]")
                 })
             };
@@ -57043,7 +57968,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a digit {1} (also written as {2})",
+                    text: LANG("matches a digit {1} (also written as {2})"),
                     ph1: (0, c.createTokenSample)(t ? "\\p{Nd}": "[0-9]"),
                     ph2: (0, c.createTokenSample)("\\d")
                 })
@@ -57052,7 +57977,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a visible character {1}",
+                    text: LANG("matches a visible character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "[^\\p{Z}\\p{C}]": "[\\x21-\\x7E]")
                 })
             };
@@ -57060,7 +57985,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a lowercase letter {1}",
+                    text: LANG("matches a lowercase letter {1}"),
                     ph1: (0, c.createTokenSample)(t ? "\\p{Ll}": "[a-z]")
                 })
             };
@@ -57068,7 +57993,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a visible character or the space character {1}",
+                    text: LANG("matches a visible character or the space character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "\\P{C}": "[\\x20-\\x7E]")
                 })
             };
@@ -57076,7 +58001,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a punctuation character {1}",
+                    text: LANG("matches a punctuation character {1}"),
                     ph1: (0, c.createTokenSample)(t ? "[\\p{P}\\p{S}]": "[!\"#$%&'()*+,\\-./:;<=>?@[\\]^_`{|}~]")
                 })
             };
@@ -57084,7 +58009,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a uppercase letter {1}",
+                    text: LANG("matches a uppercase letter {1}"),
                     ph1: (0, c.createTokenSample)(t ? "\\p{Lu}": "[A-Z]")
                 })
             };
@@ -57092,7 +58017,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a hexadecimal digit {1}",
+                    text: LANG("matches a hexadecimal digit {1}"),
                     ph1: (0, c.createTokenSample)("[A-Fa-f0-9]")
                 })
             };
@@ -57100,7 +58025,7 @@ function(e, t, n) {
             return {
                 explanation:
                 i.default.createElement(s.THtml, {
-                    text: "matches a whitespace character, including a line break {1} (also written as {2})",
+                    text: LANG("matches a whitespace character, including a line break {1} (also written as {2})"),
                     ph1: (0, c.createTokenSample)(t ? "[\\p{Z}\\t\\r\\n\\v\\f]": "[ \\t\\r\\n\\v\\f]"),
                     ph2: (0, c.createTokenSample)("\\d")
                 })
@@ -57133,20 +58058,20 @@ function(e, t, n) {
         var t = void 0; ("?" !== e.string && "??" !== e.string && e.previousToken.type === c.CAPTURING_GROUP || e.previousToken.type === c.NAMED_GROUP) && (t = l.default.createElement(f.Notice, {
             type: p.levels.WARN
         },
-        (0, s.default)("A repeated capturing group will only capture the last iteration. Put a capturing group around the repeated group to capture all iterations or use a non-capturing group instead if you're not interested in the data")));
+        (0, s.default)(LANG("A repeated capturing group will only capture the last iteration. Put a capturing group around the repeated group to capture all iterations or use a non-capturing group instead if you're not interested in the data"))));
         var n = e.to === 1 / 0 || e.to <= 1 ? a(e.to) : e.to,
         r = e.to === 1 / 0 || e.to <= 1 ? a(e.from) : e.from;
         if (e.from === e.to) {
             var o = void 0;
-            return 1 === e.from ? o = (0, s.default)("meaningless quantifier"):
-            0 === e.from && (o = (0, s.default)("causes token to be ignored")),
+            return 1 === e.from ? o = (0, s.default)(LANG("meaningless quantifier")):
+            0 === e.from && (o = (0, s.default)(LANG("causes token to be ignored"))),
             {
                 explanation: l.default.createElement(f.THtml, {
-                    text: "{1} \u2014 Matches exactly {2} {3} {4}",
-                    ph1: "<strong>" + (0, s.default)("Quantifier") + "</strong>",
+                    text: LANG("{1} \u2014 Matches exactly {2} {3} {4}"),
+                    ph1: "<strong>" + (0, s.default)(LANG("Quantifier")) + "</strong>",
                     ph2: (0, d.createKeyword)(r),
-                    ph3: 1 !== e.from ? (0, s.default)("times"):
-                    (0, s.default)("time"),
+                    ph3: 1 !== e.from ? (0, s.default)(LANG("times")):
+                    (0, s.default)(LANG("time")),
                     ph4: o ? "(" + o + ")": ""
                 }),
                 notice: t
@@ -57154,13 +58079,13 @@ function(e, t, n) {
         }
         var i = void 0,
         u = void 0;
-        return e.possessive ? (i = (0, s.default)("as many times as possible, without giving back"), u = (0, s.default)("possessive")):
-        e.lazy ? (i = (0, s.default)("as few times as possible, expanding as needed"), u = (0, s.default)("lazy")):
-        (i = (0, s.default)("as many times as possible, giving back as needed"), u = (0, s.default)("greedy")),
+        return e.possessive ? (i = (0, s.default)(LANG("as many times as possible, without giving back")), u = (0, s.default)(LANG("possessive"))):
+        e.lazy ? (i = (0, s.default)(LANG("as few times as possible, expanding as needed")), u = (0, s.default)(LANG("lazy"))):
+        (i = (0, s.default)(LANG("as many times as possible, giving back as needed")), u = (0, s.default)(LANG("greedy"))),
         {
             explanation: l.default.createElement(f.THtml, {
-                text: "{1} \u2014 Matches between {2} and {3} times, {4} {5}",
-                ph1: "<strong>" + (0, s.default)("Quantifier") + "</strong>",
+                text: LANG("{1} \u2014 Matches between {2} and {3} times, {4} {5}"),
+                ph1: "<strong>" + (0, s.default)(LANG("Quantifier")) + "</strong>",
                 ph2: (0, d.createKeyword)(r),
                 ph3: (0, d.createKeyword)(n),
                 ph4: i,
@@ -57170,9 +58095,9 @@ function(e, t, n) {
         }
     }
     function a(e) {
-        return 0 === e ? (0, s.default)("zero"):
-        1 === e ? (0, s.default)("one"):
-        e === 1 / 0 ? (0, s.default)("unlimited"):
+        return 0 === e ? (0, s.default)(LANG("zero")):
+        1 === e ? (0, s.default)(LANG("one")):
+        e === 1 / 0 ? (0, s.default)(LANG("unlimited")):
         e
     }
     Object.defineProperty(t, "__esModule", {
@@ -57274,12 +58199,12 @@ function(e, t, n) {
     }
     function i(e, t, n) {
         var r = (0, p.cleanHtml)(String.fromCodePoint(e.charCode)),
-        o = e.flags.indexOf("i") !== -1 ? (0, c.default)("case insensitive"):
-        (0, c.default)("case sensitive");
+        o = e.flags.indexOf("i") !== -1 ? (0, c.default)(LANG("case insensitive")):
+        (0, c.default)(LANG("case sensitive"));
         return {
             explanation:
             u.default.createElement(f.THtml, {
-                text: "matches the character {1} with index {2} ({3} or {4}) literally ({5})",
+                text: LANG("matches the character {1} with index {2} ({3} or {4}) literally ({5})"),
                 ph1: (0, p.createPlainText)(r),
                 ph2: (0, p.createKeyword)(e.charCode.toString(t).toUpperCase() + ("<sub>" + t + "</sub>"), !1),
                 ph3: (0, p.createKeyword)(e.charCode + "<sub>10</sub>", !1),
@@ -84845,8 +85770,5 @@ intervalTimer = setInterval(function(){
     clearInterval(intervalTimer);
     document.getElementById('home').onclick = function () {
         this.href=_HOST + '/?t=' + Math.random();
-    }
-    document.getElementById('qq-group').onclick = function (event) {
-        event.stopPropagation();
     }
 }, 1000);
