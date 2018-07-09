@@ -1,7 +1,7 @@
 var globalSettings;
 var _HOST = location.protocol + "//" + location.hostname;
 if(_HOST == 'file://') {
-    _HOST = 'http://regex.zjmainstay.cn';
+    _HOST = 'http://regex2.zjmainstay.cn';
 }
 var langMap = {
     
@@ -41532,7 +41532,7 @@ function(e, t, n) {
                     isForking: e.isForking
                 }), this.forkOrSaveRegex(e.isForking)), a && (n !== e.permalinkFragment || r !== e.version || o !== e.deleteCode)) {
                     this.setState({
-                        permalink: _HOST + (0, _.createPermalinkUrl)(e.permalinkFragment, e.version),
+                        permalink: 'https://regex101.com' + (0, _.createPermalinkUrl)(e.permalinkFragment, e.version),
                         deletelink: e.deleteCode ? _HOST + (0, _.createDeleteUrl)(e.deleteCode) : null
                     })
                 }
