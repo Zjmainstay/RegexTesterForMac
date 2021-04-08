@@ -1,6 +1,11 @@
 # RegexTesterForMac
 A regular expression tester for Mac base on regex101.com
 
+## Notice!!!
+Because my sever use for http://regex2.zjmainstay.cn is recycled, so this app is no longer run normally, thank you!
+## 注意！！！
+由于本人用于 http://regex2.zjmainstay.cn 的服务器已经被回收，因此本应用已不再正常服务，谢谢！
+
 ## Download App directly
 
 [Regex101.zip](https://raw.githubusercontent.com/Zjmainstay/RegexTesterForMac/master/dist/Regex101.zip)
